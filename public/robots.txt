@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://olkodawid.dawidolko.pl/sitemap.xml
+
+# Crawl-delay
+User-agent: *
+Crawl-delay: 1

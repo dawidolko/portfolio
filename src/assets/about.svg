@@ -1,0 +1,62 @@
+<svg width="500" height="400" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Laptop base -->
+  <rect x="100" y="250" width="300" height="10" rx="5" fill="#1a2e2a"/>
+  <path d="M80 260 L420 260 L400 275 L100 275 Z" fill="#0f2922"/>
+
+  <!-- Laptop screen -->
+  <rect x="120" y="100" width="260" height="155" rx="8" fill="#1a2e2a"/>
+  <rect x="128" y="108" width="244" height="138" rx="4" fill="#0a1f1a"/>
+
+  <!-- Code on screen -->
+  <rect x="145" y="122" width="45" height="3.5" rx="1.5" fill="#10b981" opacity="0.9"/>
+  <rect x="195" y="122" width="30" height="3.5" rx="1.5" fill="#6ee7b7" opacity="0.5"/>
+  <rect x="145" y="132" width="70" height="3.5" rx="1.5" fill="#34d399" opacity="0.6"/>
+  <rect x="155" y="142" width="55" height="3.5" rx="1.5" fill="#6ee7b7" opacity="0.4"/>
+  <rect x="155" y="152" width="80" height="3.5" rx="1.5" fill="#10b981" opacity="0.7"/>
+  <rect x="155" y="162" width="40" height="3.5" rx="1.5" fill="#34d399" opacity="0.5"/>
+  <rect x="145" y="172" width="65" height="3.5" rx="1.5" fill="#6ee7b7" opacity="0.6"/>
+  <rect x="155" y="182" width="50" height="3.5" rx="1.5" fill="#10b981" opacity="0.4"/>
+  <rect x="145" y="192" width="35" height="3.5" rx="1.5" fill="#34d399" opacity="0.7"/>
+
+  <!-- Right panel - browser -->
+  <rect x="240" y="118" width="120" height="120" rx="3" fill="#0d2b22" stroke="#10b981" stroke-width="0.5" opacity="0.6"/>
+  <rect x="240" y="118" width="120" height="12" rx="3" fill="#1a3a30"/>
+  <circle cx="249" cy="124" r="2" fill="#ef4444" opacity="0.6"/>
+  <circle cx="257" cy="124" r="2" fill="#eab308" opacity="0.6"/>
+  <circle cx="265" cy="124" r="2" fill="#22c55e" opacity="0.6"/>
+  <rect x="250" y="140" width="100" height="4" rx="2" fill="#10b981" opacity="0.3"/>
+  <rect x="250" y="150" width="80" height="30" rx="2" fill="#065f46" opacity="0.3"/>
+  <rect x="250" y="186" width="100" height="3" rx="1.5" fill="#34d399" opacity="0.2"/>
+  <rect x="250" y="194" width="70" height="3" rx="1.5" fill="#34d399" opacity="0.2"/>
+  <rect x="250" y="210" width="45" height="16" rx="3" fill="#10b981" opacity="0.4"/>
+
+  <!-- Floating icons -->
+  <!-- Git branch -->
+  <circle cx="440" cy="130" r="18" fill="#0f2922" stroke="#10b981" stroke-width="1" opacity="0.5"/>
+  <circle cx="435" cy="125" r="3" fill="#10b981" opacity="0.6"/>
+  <circle cx="445" cy="135" r="3" fill="#34d399" opacity="0.6"/>
+  <line x1="435" y1="128" x2="445" y2="132" stroke="#10b981" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Terminal -->
+  <circle cx="60" cy="160" r="18" fill="#0f2922" stroke="#10b981" stroke-width="1" opacity="0.5"/>
+  <text x="50" y="166" font-family="monospace" font-size="14" fill="#10b981" opacity="0.6">&gt;_</text>
+
+  <!-- Gear -->
+  <circle cx="430" cy="220" r="15" fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.3"/>
+  <circle cx="430" cy="220" r="6" fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- Decorative dots -->
+  <circle cx="75" cy="250" r="2" fill="#10b981" opacity="0.3"/>
+  <circle cx="85" cy="240" r="1.5" fill="#34d399" opacity="0.2"/>
+  <circle cx="440" cy="260" r="2" fill="#10b981" opacity="0.3"/>
+  <circle cx="450" cy="250" r="1.5" fill="#34d399" opacity="0.2"/>
+
+  <!-- Coffee -->
+  <rect x="40" y="230" width="18" height="22" rx="3" fill="#1a3a30"/>
+  <path d="M58 236 Q65 236 65 241 Q65 246 58 246" stroke="#1a3a30" stroke-width="2" fill="none"/>
+
+  <!-- Headphones -->
+  <path d="M430 170 Q430 155 445 155 Q460 155 460 170" stroke="#1a3a30" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <rect x="427" y="168" width="8" height="12" rx="3" fill="#1a3a30"/>
+  <rect x="455" y="168" width="8" height="12" rx="3" fill="#1a3a30"/>
+</svg>

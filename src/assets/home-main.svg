@@ -1,0 +1,48 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="80" y="340" width="340" height="12" rx="4" fill="#065f46"/>
+  <rect x="120" y="352" width="8" height="80" rx="2" fill="#047857"/>
+  <rect x="372" y="352" width="8" height="80" rx="2" fill="#047857"/>
+  <rect x="100" y="430" width="50" height="6" rx="2" fill="#047857"/>
+  <rect x="350" y="430" width="50" height="6" rx="2" fill="#047857"/>
+  <rect x="145" y="180" width="210" height="145" rx="10" fill="#1a2e2a"/>
+  <rect x="152" y="187" width="196" height="125" rx="6" fill="#0a1f1a"/>
+  <rect x="168" y="205" width="60" height="4" rx="2" fill="#10b981" opacity="0.8"/>
+  <rect x="168" y="215" width="90" height="4" rx="2" fill="#34d399" opacity="0.5"/>
+  <rect x="178" y="225" width="75" height="4" rx="2" fill="#6ee7b7" opacity="0.4"/>
+  <rect x="178" y="235" width="50" height="4" rx="2" fill="#10b981" opacity="0.6"/>
+  <rect x="168" y="245" width="100" height="4" rx="2" fill="#34d399" opacity="0.5"/>
+  <rect x="178" y="255" width="65" height="4" rx="2" fill="#6ee7b7" opacity="0.3"/>
+  <rect x="168" y="265" width="80" height="4" rx="2" fill="#10b981" opacity="0.7"/>
+  <rect x="178" y="275" width="55" height="4" rx="2" fill="#34d399" opacity="0.4"/>
+  <rect x="168" y="285" width="70" height="4" rx="2" fill="#6ee7b7" opacity="0.5"/>
+  <rect x="238" y="285" width="2" height="8" rx="1" fill="#10b981">
+    <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="235" y="325" width="30" height="16" rx="2" fill="#1a2e2a"/>
+  <rect x="220" y="336" width="60" height="5" rx="2" fill="#1a2e2a"/>
+  <rect x="370" y="310" width="25" height="30" rx="4" fill="#1a3a30"/>
+  <path d="M395 318 Q405 318 405 325 Q405 332 395 332" stroke="#1a3a30" stroke-width="3" fill="none"/>
+  <path d="M378 305 Q380 295 376 288" stroke="#34d399" stroke-width="1.5" fill="none" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="2s" repeatCount="indefinite"/>
+  </path>
+  <path d="M385 307 Q387 297 383 290" stroke="#34d399" stroke-width="1.5" fill="none" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="2.5s" repeatCount="indefinite"/>
+  </path>
+  <rect x="95" y="310" width="22" height="30" rx="4" fill="#1a3a30"/>
+  <path d="M106 310 Q100 290 90 280" stroke="#10b981" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M106 310 Q108 285 118 275" stroke="#10b981" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M106 310 Q115 295 125 290" stroke="#34d399" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <ellipse cx="88" cy="278" rx="8" ry="5" fill="#10b981" transform="rotate(-30 88 278)"/>
+  <ellipse cx="120" cy="273" rx="8" ry="5" fill="#10b981" transform="rotate(20 120 273)"/>
+  <ellipse cx="127" cy="288" rx="7" ry="4" fill="#34d399" transform="rotate(35 127 288)"/>
+  <circle cx="380" cy="160" r="5" fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.5"/>
+  <ellipse cx="380" cy="160" rx="15" ry="6" fill="none" stroke="#10b981" stroke-width="1" opacity="0.3" transform="rotate(0 380 160)"/>
+  <ellipse cx="380" cy="160" rx="15" ry="6" fill="none" stroke="#10b981" stroke-width="1" opacity="0.3" transform="rotate(60 380 160)"/>
+  <ellipse cx="380" cy="160" rx="15" ry="6" fill="none" stroke="#10b981" stroke-width="1" opacity="0.3" transform="rotate(-60 380 160)"/>
+  <text x="100" y="175" font-family="monospace" font-size="28" fill="#10b981" opacity="0.3">&lt;/&gt;</text>
+  <circle cx="420" cy="220" r="3" fill="#10b981" opacity="0.2"/>
+  <circle cx="435" cy="235" r="2" fill="#34d399" opacity="0.3"/>
+  <circle cx="425" cy="250" r="2.5" fill="#6ee7b7" opacity="0.2"/>
+  <circle cx="80" cy="230" r="2" fill="#10b981" opacity="0.3"/>
+  <circle cx="70" cy="250" r="3" fill="#34d399" opacity="0.2"/>
+</svg>
