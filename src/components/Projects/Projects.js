@@ -15,6 +15,7 @@ import weatherapp from "../../assets/Projects/weatherapp.svg";
 import simplelayout from "../../assets/Projects/simplelayout.svg";
 import curiositiesmagazine from "../../assets/Projects/curiositiesmagazine.svg";
 import bitrecruit from "../../assets/Projects/bitrecruit.svg";
+import mpindustries from "../../assets/Projects/logo30.svg";
 
 import projectBg from "../../assets/Backgrounds/backgroundFaq2-photoaidcom-greyscale.webp";
 
@@ -161,6 +162,15 @@ function Projects() {
               description="Recruitment platform built with Next.js featuring job listings, candidate management, employer dashboards, and a modern responsive design."
               ghLink="https://github.com/dawidolko/BitRecruit-Platform-NextJS"
               demoLink="http://bitrecruit.dawidolko.pl/"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={mpindustries}
+              title="MP Industries"
+              description="Fullstack business platform built with Laravel, Blade and Tailwind CSS. Features CNC machines catalog, LPG services, dog breeding and honey products with admin panel."
+              demoLink="https://mp-industries.pl/"
             />
           </Col>
         </Row>
