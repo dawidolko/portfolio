@@ -1,13 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap");
+
+html {
+  overscroll-behavior: none;
+}
 
 body {
   margin: 0;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-family:
+    "Plus Jakarta Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #0a1410;
   background-image: linear-gradient(to left, rgb(15 25 20), rgb(10 20 16));
 }
 
-code, .Typewriter__wrapper, .Typewriter__cursor {
+code,
+.Typewriter__wrapper,
+.Typewriter__cursor {
   font-family: "JetBrains Mono", monospace !important;
 }

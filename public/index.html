@@ -1,105 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" style="background-color: #0a1410">
+  <head>
+    <meta charset="utf-8" />
 
-<head>
-  <meta charset="utf-8" />
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
 
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <!-- Favicons -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.png" />
 
-  <!-- Favicons -->
-  <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.png" type="image/png" />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.png" />
+    <!-- Viewport & Theme -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a1410" />
+    <meta name="color-scheme" content="dark" />
 
-  <!-- Viewport & Theme -->
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0a1410" />
-  <meta name="color-scheme" content="dark" />
+    <!-- Primary Meta Tags -->
+    <title>Dawid Olko | Frontend Developer Portfolio</title>
+    <meta name="title" content="Dawid Olko | Frontend Developer Portfolio" />
+    <meta
+      name="description"
+      content="Dawid Olko - Frontend Developer from Rzeszów, Poland. Specializing in React, Vue.js, TypeScript, and modern web technologies. View my projects, blog, and resume." />
+    <meta
+      name="keywords"
+      content="Dawid Olko, Frontend Developer, React, Vue.js, TypeScript, JavaScript, Web Developer, Portfolio, Rzeszów, Poland, dawidolko" />
+    <meta name="author" content="Dawid Olko" />
+    <meta name="robots" content="index, follow" />
 
-  <!-- Primary Meta Tags -->
-  <title>Dawid Olko | Frontend Developer Portfolio</title>
-  <meta name="title" content="Dawid Olko | Frontend Developer Portfolio" />
-  <meta name="description" content="Dawid Olko - Frontend Developer from Rzeszów, Poland. Specializing in React, Vue.js, TypeScript, and modern web technologies. View my projects, blog, and resume." />
-  <meta name="keywords" content="Dawid Olko, Frontend Developer, React, Vue.js, TypeScript, JavaScript, Web Developer, Portfolio, Rzeszów, Poland, dawidolko" />
-  <meta name="author" content="Dawid Olko" />
-  <meta name="robots" content="index, follow" />
+    <!-- Google Site Verification -->
+    <meta
+      name="google-site-verification"
+      content="7r55RGdRmrxfhXwM5IQgFf9kbnx4DEV0l7syp0mqqL8" />
+    <meta
+      name="google-site-verification"
+      content="Pfz6VNX_VzZpi5MvsS_eoEpxeMNXILtMGcxY9qR6ivQ" />
 
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://olkodawid.dawidolko.pl/" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://olkodawid.dawidolko.pl/" />
 
-  <!-- PWA Manifest -->
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://olkodawid.dawidolko.pl/" />
-  <meta property="og:title" content="Dawid Olko | Frontend Developer Portfolio" />
-  <meta property="og:description" content="Frontend Developer from Rzeszów, Poland. Specializing in React, Vue.js, TypeScript. View projects, blog, and resume." />
-  <meta property="og:site_name" content="Dawid Olko Portfolio" />
-  <meta property="og:locale" content="en_US" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://olkodawid.dawidolko.pl/" />
+    <meta
+      property="og:title"
+      content="Dawid Olko | Frontend Developer Portfolio" />
+    <meta
+      property="og:description"
+      content="Frontend Developer from Rzeszów, Poland. Specializing in React, Vue.js, TypeScript. View projects, blog, and resume." />
+    <meta property="og:site_name" content="Dawid Olko Portfolio" />
+    <meta property="og:locale" content="en_US" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://olkodawid.dawidolko.pl/" />
-  <meta name="twitter:title" content="Dawid Olko | Frontend Developer Portfolio" />
-  <meta name="twitter:description" content="Frontend Developer from Rzeszów, Poland. Specializing in React, Vue.js, TypeScript. View projects, blog, and resume." />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://olkodawid.dawidolko.pl/" />
+    <meta
+      name="twitter:title"
+      content="Dawid Olko | Frontend Developer Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Frontend Developer from Rzeszów, Poland. Specializing in React, Vue.js, TypeScript. View projects, blog, and resume." />
 
-  <!-- Google / Search Engine Tags -->
-  <meta itemprop="name" content="Dawid Olko | Frontend Developer Portfolio" />
-  <meta itemprop="description" content="Frontend Developer from Rzeszów, Poland. Specializing in React, Vue.js, TypeScript, and modern web technologies." />
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="Dawid Olko | Frontend Developer Portfolio" />
+    <meta
+      itemprop="description"
+      content="Frontend Developer from Rzeszów, Poland. Specializing in React, Vue.js, TypeScript, and modern web technologies." />
 
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Dawid Olko",
-    "url": "https://olkodawid.dawidolko.pl",
-    "jobTitle": "Frontend Developer",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Rzeszów",
-      "addressCountry": "PL"
-    },
-    "email": "dawid_olko@outlook.com",
-    "sameAs": [
-      "https://github.com/dawidolko",
-      "https://www.linkedin.com/in/dawidolko/",
-      "https://www.instagram.com/dawid_olko/",
-      "https://www.facebook.com/olkodawid/",
-      "https://www.youtube.com/@dawid_olko",
-      "https://www.tiktok.com/@dawid_olko"
-    ],
-    "knowsAbout": ["React", "Vue.js", "TypeScript", "JavaScript", "Frontend Development", "Web Development", "UI/UX Design"],
-    "alumniOf": {
-      "@type": "EducationalOrganization",
-      "name": "University of Rzeszów"
-    }
-  }
-  </script>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dawid Olko",
+        "url": "https://olkodawid.dawidolko.pl",
+        "jobTitle": "Frontend Developer",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Rzeszów",
+          "addressCountry": "PL"
+        },
+        "email": "dawid_olko@outlook.com",
+        "sameAs": [
+          "https://github.com/dawidolko",
+          "https://www.linkedin.com/in/dawidolko/",
+          "https://www.instagram.com/dawid_olko/",
+          "https://www.facebook.com/olkodawid/",
+          "https://www.youtube.com/@dawid_olko",
+          "https://www.tiktok.com/@dawid_olko"
+        ],
+        "knowsAbout": [
+          "React",
+          "Vue.js",
+          "TypeScript",
+          "JavaScript",
+          "Frontend Development",
+          "Web Development",
+          "UI/UX Design"
+        ],
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "University of Rzeszów"
+        }
+      }
+    </script>
 
-  <!-- Website Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Dawid Olko Portfolio",
-    "url": "https://olkodawid.dawidolko.pl",
-    "description": "Personal portfolio of Dawid Olko - Frontend Developer",
-    "author": {
-      "@type": "Person",
-      "name": "Dawid Olko"
-    }
-  }
-  </script>
-</head>
+    <!-- Website Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Dawid Olko Portfolio",
+        "url": "https://olkodawid.dawidolko.pl",
+        "description": "Personal portfolio of Dawid Olko - Frontend Developer",
+        "author": {
+          "@type": "Person",
+          "name": "Dawid Olko"
+        }
+      }
+    </script>
+  </head>
 
-<body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
-</body>
-
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
 </html>

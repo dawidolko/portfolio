@@ -33,6 +33,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Copy root files to build
+        run: |
+          cp CNAME build/CNAME 2>/dev/null || true
+          cp google3466ac2ab7db6d70.html build/google3466ac2ab7db6d70.html 2>/dev/null || true
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 

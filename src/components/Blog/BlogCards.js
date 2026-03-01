@@ -15,12 +15,13 @@ function BlogCards(props) {
             className="blog-img"
             loading="lazy"
           />
+          <div className="blog-card-overlay">
+            <p>{props.description}</p>
+          </div>
         </div>
         <Card.Body className="d-flex flex-column">
           <Card.Title>{props.title}</Card.Title>
-          <Card.Text className="blog-card-desc">
-            {props.description}
-          </Card.Text>
+          <Card.Text className="blog-card-desc">{props.description}</Card.Text>
         </Card.Body>
       </Card>
 
@@ -28,9 +29,11 @@ function BlogCards(props) {
         <div className="lightbox-overlay" onClick={() => setLightbox(false)}>
           <button
             className="lightbox-close"
-            onClick={() => setLightbox(false)}
-            aria-label="Close"
-          >
+            onClick={(e) => {
+              e.stopPropagation();
+              setLightbox(false);
+            }}
+            aria-label="Close">
             &times;
           </button>
           <img src={props.imgPath} alt={props.title} className="lightbox-img" />

@@ -14,11 +14,17 @@ import cinemareserve from "../../assets/Projects/cinemareserve.svg";
 import weatherapp from "../../assets/Projects/weatherapp.svg";
 import simplelayout from "../../assets/Projects/simplelayout.svg";
 import curiositiesmagazine from "../../assets/Projects/curiositiesmagazine.svg";
-import widgetmart from "../../assets/Projects/widgetmart.svg";
+import bitrecruit from "../../assets/Projects/bitrecruit.svg";
+
+import projectBg from "../../assets/Backgrounds/backgroundFaq2-photoaidcom-greyscale.webp";
 
 function Projects() {
   return (
     <Container fluid className="project-section">
+      <div
+        className="section-bg-overlay"
+        style={{ backgroundImage: `url(${projectBg})` }}
+      />
       <Particle />
       <Container>
         <h1 className="project-heading">
@@ -32,7 +38,7 @@ function Projects() {
             <ProjectCard
               imgPath={smartrecommender}
               title="SmartRecommender"
-              description="A recommendation system built with Django and React. Full-stack application with intelligent content recommendations, user authentication, and responsive design."
+              description="Recommendation system built with Django and React featuring intelligent content suggestions, user authentication, and a fully responsive interface."
               ghLink="https://github.com/dawidolko/SmartRecommender-Projekt-Django-React"
               demoLink="https://project.dawidolko.pl"
             />
@@ -42,7 +48,7 @@ function Projects() {
             <ProjectCard
               imgPath={fitnessgym}
               title="FitnessGym"
-              description="A modern fitness gym application built with React. Features workout plans, class schedules, membership management, and a responsive user interface."
+              description="Modern fitness gym app built with React featuring workout plans, class schedules, membership management, and a responsive user interface."
               ghLink="https://github.com/dawidolko/FitnessGym-Project-React"
               demoLink="https://fitnessgym.dawidolko.pl/"
             />
@@ -52,7 +58,7 @@ function Projects() {
             <ProjectCard
               imgPath={techbyte}
               title="TechByte"
-              description="A computer store database project with full e-commerce functionality. Built with PHP, JavaScript and SASS, featuring product catalog, shopping cart, and order management."
+              description="Computer store with full e-commerce functionality built with PHP, JavaScript and SASS. Includes product catalog, cart, and order management."
               ghLink="https://github.com/dawidolko/Database-Project-ComputerStore"
               demoLink="https://piotrsmola.dawidolko.pl/"
             />
@@ -62,7 +68,7 @@ function Projects() {
             <ProjectCard
               imgPath={movievault}
               title="MovieVault"
-              description="A movie management application built with Spring Boot and React. Features movie browsing, reviews, user ratings, and a modern responsive interface."
+              description="Movie management app built with Spring Boot and React. Features browsing, reviews, user ratings, and a modern responsive interface design."
               ghLink="https://github.com/dawidolko/MovieVault-Project-SpringBoot-React"
               youtubeLink="https://youtu.be/ooIoa_PGRzk"
             />
@@ -72,7 +78,7 @@ function Projects() {
             <ProjectCard
               imgPath={workstation}
               title="WorkStation"
-              description="A workspace application built with Vue.js and TypeScript. Features task management, productivity tools, and a clean, modern interface."
+              description="Workspace app built with Vue.js and TypeScript featuring task management, productivity tools, and a clean, modern user-friendly interface."
               ghLink="https://github.com/dawidolko/WorkStation-Vue-TypeScript"
               demoLink="https://workstation.dawidolko.pl/"
             />
@@ -82,7 +88,7 @@ function Projects() {
             <ProjectCard
               imgPath={f1zone}
               title="F1Zone"
-              description="A Formula 1 fan site built with HTML, CSS, JavaScript, and SASS. Features race schedules, driver profiles, team standings, and news updates."
+              description="Formula 1 fan site built with HTML, CSS, JS, SASS. Features race schedules, driver profiles, team standings, and latest news updates."
               ghLink="https://github.com/dawidolko/F1Zone-Project-HTML-CSS-JS-SASS"
               demoLink="https://f1.dawidolko.pl/"
             />
@@ -92,7 +98,7 @@ function Projects() {
             <ProjectCard
               imgPath={kebab}
               title="Kebab Project"
-              description="A food ordering application built with React. Features menu browsing, order customization, cart management, and responsive design."
+              description="Food ordering application built with React featuring menu browsing, order customization, cart management, and fully responsive design."
               ghLink="https://github.com/dawidolko/Kebab-Project-React"
               demoLink="https://kebab.dawidolko.pl/"
             />
@@ -102,7 +108,7 @@ function Projects() {
             <ProjectCard
               imgPath={weatherapp}
               title="Weather App"
-              description="A weather application built with Laravel and React. Displays real-time weather data, forecasts, and location-based weather information."
+              description="Weather app built with Laravel and React displaying real-time weather data, forecasts, and location-based weather information system."
               ghLink="https://github.com/dawidolko/Weather-App-Laravel-React"
               youtubeLink="https://www.youtube.com/watch?v=WTi2i2wHPt0"
             />
@@ -112,7 +118,7 @@ function Projects() {
             <ProjectCard
               imgPath={cinemareserve}
               title="CinemaReserve"
-              description="A cinema reservation system built with Node.js and Angular. Features movie listings, seat selection, booking management, and payment integration."
+              description="Cinema reservation system built with Node.js and Angular with movie listings, seat selection, booking management and payment flow."
               ghLink="https://github.com/dawidolko/CinemaReserve-Project-Node-Angular"
               youtubeLink="https://youtu.be/7ygXIAm0sFc"
             />
@@ -122,7 +128,7 @@ function Projects() {
             <ProjectCard
               imgPath={devtechblog}
               title="DevTechBlog"
-              description="A developer blog platform built with React. Features article publishing, category filtering, syntax highlighting, and a clean reading experience."
+              description="Developer blog platform built with React featuring article publishing, category filtering, syntax highlighting, and clean reading experience."
               ghLink="https://github.com/dawidolko/DevTechBlog-Platform-React"
               demoLink="https://devtechblog.dawidolko.pl/#/"
             />
@@ -132,7 +138,7 @@ function Projects() {
             <ProjectCard
               imgPath={simplelayout}
               title="Simple Layout"
-              description="A clean layout showcase built with Vue.js. Demonstrates modern CSS layouts, responsive design patterns, and Vue component architecture."
+              description="Clean layout showcase built with Vue.js demonstrating modern CSS layouts, responsive design patterns, and Vue component architecture."
               ghLink="https://github.com/dawidolko/Layout-Simple-Vue"
               demoLink="https://simplelayout.dawidolko.pl/"
             />
@@ -142,8 +148,19 @@ function Projects() {
             <ProjectCard
               imgPath={curiositiesmagazine}
               title="CuriositiesMagazine"
-              description="A magazine-style website built with JavaScript, HTML, and SASS. Features article layouts, image galleries, and a polished editorial design."
+              description="Magazine-style website built with JS, HTML and SASS featuring article layouts, image galleries, and polished editorial design elements."
+              ghLink="https://github.com/dawidolko/CuriositiesMagazine-Project-HTML-CSS"
               demoLink="https://projekt1.dawidolko.pl/index.html"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={bitrecruit}
+              title="BitRecruit"
+              description="Recruitment platform built with Next.js featuring job listings, candidate management, employer dashboards, and a modern responsive design."
+              ghLink="https://github.com/dawidolko/BitRecruit-Platform-NextJS"
+              demoLink="http://bitrecruit.dawidolko.pl/"
             />
           </Col>
         </Row>

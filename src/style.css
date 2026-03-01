@@ -41,12 +41,12 @@ button:focus {
 
 #preloader::after {
   content: "";
-  width: 44px;
-  height: 44px;
-  border: 3px solid rgba(16, 185, 129, 0.15);
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgba(16, 185, 129, 0.12);
   border-top-color: #10b981;
   border-radius: 50%;
-  animation: preloader-spin 0.8s linear infinite;
+  animation: preloader-spin 0.7s linear infinite;
 }
 
 @keyframes preloader-spin {
@@ -91,25 +91,40 @@ button:focus {
 /* Navbar     */
 /* --------- */
 .sticky {
-  background-color: rgba(10, 20, 16, 0.85) !important;
+  background-color: rgba(8, 18, 14, 0.78) !important;
   transition: all 0.3s ease-out 0s !important;
-  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.25) !important;
-  backdrop-filter: blur(20px) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(24px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.08) !important;
 }
 
 .navbar {
   position: fixed !important;
   transition: all 0.3s ease-out 0s !important;
-  padding: 0.6rem 2rem !important;
-  font-size: 1.1rem !important;
+  padding: 0.7rem 2rem !important;
+  font-size: 1.05rem !important;
 }
 
 .navbar-brand-text {
-  color: #10b981;
   font-weight: 700;
-  font-size: 1.3rem;
-  margin-left: 8px;
-  letter-spacing: 1px;
+  font-size: 1.35rem;
+  margin-left: 10px;
+  letter-spacing: 0.5px;
+}
+
+.brand-first {
+  color: #ffffff;
+}
+
+.brand-dot {
+  color: #10b981;
+  font-weight: 800;
+  margin: 0 1px;
+}
+
+.brand-second {
+  color: #10b981;
 }
 
 .navbar-toggler {
@@ -166,7 +181,7 @@ button:focus {
   .navbar {
     padding: 1rem 2rem !important;
     font-size: 1.4rem !important;
-    background-color: rgba(10, 20, 16, 0.95) !important;
+    background-color: rgba(8, 18, 14, 0.95) !important;
   }
   .navbar-nav .nav-item a::after {
     display: none !important;
@@ -182,13 +197,20 @@ button:focus {
   width: 2.5em !important;
 }
 
+.nav-icon {
+  margin-right: 5px;
+  font-size: 1.1em;
+  vertical-align: -1px;
+}
+
 .navbar-nav .nav-link {
-  color: rgba(255, 255, 255, 0.75) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
   padding-right: 1rem !important;
   padding-left: 1rem !important;
-  transition: color 0.3s ease !important;
+  transition: all 0.3s ease !important;
   font-weight: 500 !important;
   letter-spacing: 0.3px;
+  font-size: 0.95rem !important;
 }
 
 .navbar-nav .nav-link:hover {
@@ -200,11 +222,24 @@ button:focus {
 }
 
 .navbar-nav .nav-link.external-link {
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: rgba(255, 255, 255, 0.45) !important;
 }
 
 .navbar-nav .nav-link.external-link:hover {
   color: #34d399 !important;
+}
+
+.nav-external-badge {
+  font-size: 0.7em;
+  margin-left: 3px;
+  opacity: 0.6;
+  vertical-align: super;
+}
+
+.nav-workstation {
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  margin-left: 8px !important;
+  padding-left: 1.2rem !important;
 }
 
 .nav-link {
@@ -215,11 +250,17 @@ button:focus {
   .nav-link {
     padding: 0.7rem 1rem !important;
   }
+  .nav-workstation {
+    border-left: none;
+    margin-left: 0 !important;
+    padding-left: 1rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
 }
 
 .navbar-nav .nav-item {
   position: relative;
-  margin-left: 20px;
+  margin-left: 8px;
 }
 
 .navbar-nav .nav-item a {
@@ -236,7 +277,7 @@ button:focus {
   height: 2px;
   width: 0;
   border-radius: 16px;
-  background: #10b981;
+  background: linear-gradient(90deg, #10b981, #34d399);
   bottom: 0px;
   left: 0;
   z-index: -1;
@@ -246,6 +287,23 @@ button:focus {
 .navbar-nav .nav-item a:hover::after,
 .navbar-nav .nav-item a.active-nav::after {
   width: 100%;
+}
+
+/* --------- */
+/* Section BG */
+/* --------- */
+.section-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+  filter: grayscale(100%) brightness(0.5);
 }
 
 /* --------- */
@@ -292,6 +350,8 @@ button:focus {
   background-size: cover !important;
   width: 100%;
   height: 100%;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .home-header {
@@ -300,7 +360,7 @@ button:focus {
 
 .home-section {
   position: relative;
-  z-index: -1;
+  z-index: 1;
   background-position: top center;
   background-repeat: no-repeat;
   padding-bottom: 30px !important;
@@ -357,11 +417,25 @@ button:focus {
   padding-top: 9em !important;
 }
 
+.myAvtar img {
+  border-radius: 50%;
+  box-shadow: 0 8px 40px rgba(16, 185, 129, 0.2);
+  border: 3px solid rgba(16, 185, 129, 0.2);
+  max-width: 280px;
+}
+
 @media (max-width: 767px) {
   .myAvtar {
     padding-top: 2em !important;
     padding-bottom: 2em !important;
   }
+}
+
+.home-projects-section {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  background-image: var(--section-background-color);
 }
 
 .home-about-section {
@@ -400,15 +474,20 @@ button:focus {
 
 .home-social-icons {
   position: relative !important;
-  display: inline-block !important;
-  width: 40px !important;
-  height: 40px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px !important;
+  height: 44px !important;
   text-align: center !important;
-  font-size: 1.2em !important;
-  line-height: 2em !important;
-  background: rgba(255, 255, 255, 0.972) !important;
+  font-size: 1.3em !important;
+  line-height: 1 !important;
+  background: rgba(16, 185, 129, 0.12) !important;
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
   border-radius: 50% !important;
-  transition: 0.5s !important;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  z-index: 1 !important;
+  overflow: visible !important;
 }
 
 .home-social-icons::before {
@@ -420,20 +499,24 @@ button:focus {
   height: 100%;
   border-radius: 50%;
   background: #065f46;
-  transition: 0.5s;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   transform: scale(0.9);
   z-index: -1;
 }
 
-.home-social-icons:hover::before {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px #059669;
+.home-social-icons:hover {
+  color: #fff !important;
+  background: #10b981 !important;
+  border-color: #10b981 !important;
+  transform: translateY(-4px) scale(1.12);
+  box-shadow:
+    0 0 20px rgba(16, 185, 129, 0.5),
+    0 8px 25px rgba(16, 185, 129, 0.3) !important;
 }
 
-.home-social-icons:hover {
-  color: #059669;
-  box-shadow: 0 0 5px #059669;
-  text-shadow: 0 0 2px #059669;
+.home-social-icons:hover::before {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px #059669;
 }
 
 .social-icons {
@@ -443,17 +526,63 @@ button:focus {
 }
 
 .icon-colour {
-  color: #047857 !important;
+  color: #10b981 !important;
+}
+
+.home-social-icons:hover .icon-colour,
+.home-social-icons:hover {
+  color: #fff !important;
+}
+
+/* ---------- */
+/* Days I Code (GitHub Calendar) */
+/* ---------- */
+.github-calendar-wrapper {
+  background: rgba(16, 185, 129, 0.04);
+  border: 1px solid rgba(16, 185, 129, 0.12);
+  border-radius: 16px;
+  padding: 30px 25px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.github-calendar-wrapper:hover {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow:
+    0 0 30px rgba(16, 185, 129, 0.15),
+    0 10px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+}
+
+.github-calendar-wrapper rect:hover {
+  stroke: #10b981 !important;
+  stroke-width: 1px;
+  filter: brightness(1.4);
 }
 
 /* --------- */
 /* Footer     */
 /* --------- */
 .footer {
-  background-color: rgb(4, 22, 16);
-  padding-top: 40px !important;
+  position: relative;
+  background-color: rgb(4, 20, 14);
+  padding-top: 50px !important;
   padding-bottom: 15px !important;
-  border-top: 1px solid rgba(16, 185, 129, 0.1);
+  overflow: hidden;
+}
+
+.footer-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #10b981, transparent);
 }
 
 .footer-content {
@@ -461,20 +590,37 @@ button:focus {
 }
 
 .footer-section {
-  padding: 10px 15px;
+  padding: 12px 20px;
 }
 
 .footer-title {
   color: #10b981 !important;
-  font-size: 1.1em;
-  font-weight: 600;
-  margin-bottom: 12px;
+  font-size: 1.15em;
+  font-weight: 700;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-title-icon {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85em;
+  opacity: 0.7;
 }
 
 .footer-desc {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.55);
   font-size: 0.9em;
   line-height: 1.7;
+}
+
+.footer-location {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.85em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .footer-links {
@@ -484,58 +630,182 @@ button:focus {
 }
 
 .footer-links li {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .footer-links a {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.55);
   text-decoration: none;
   font-size: 0.9em;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 0;
+}
+
+.footer-links a::before {
+  content: "›";
+  margin-right: 8px;
+  color: #10b981;
+  opacity: 0;
+  transition: all 0.3s ease;
 }
 
 .footer-links a:hover {
   color: #10b981;
+  padding-left: 4px;
+}
+
+.footer-links a:hover::before {
+  opacity: 1;
+}
+
+.footer-tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-badge {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.78em;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.4);
 }
 
 .footer-icons {
   padding: 0 !important;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  display: flex;
+  gap: 4px;
 }
 
 .footer-icons .social-icons {
   padding-left: 0;
-  padding-right: 12px;
+  padding-right: 8px;
 }
 
 .footer-icons .social-icons a {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 1.3em;
-  transition: color 0.3s ease;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.35em;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .footer-icons .social-icons a:hover {
   color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  transform: translateY(-2px);
 }
 
 .footer-email {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.45);
   font-size: 0.85em;
   display: flex;
   align-items: center;
 }
 
+.footer-email a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-email a:hover {
+  color: #10b981;
+}
+
 .footer-bottom {
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 15px;
+  padding-top: 18px;
   margin-top: 10px;
 }
 
+.footer-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.06),
+    transparent
+  );
+  margin-bottom: 18px;
+}
+
 .footer-bottom p {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.35);
   font-size: 0.85em;
   margin: 0;
+}
+
+.footer-heart {
+  color: #ef4444;
+  margin: 0 3px;
+  font-size: 0.85em;
+  animation: heartbeat 1.5s ease infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(16, 185, 129, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #10b981;
+  font-size: 1.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.3s ease;
+}
+
+.back-to-top:hover {
+  background: rgba(16, 185, 129, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.2);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 767px) {
@@ -544,6 +814,18 @@ button:focus {
     margin-bottom: 15px;
   }
   .footer-email {
+    justify-content: center;
+  }
+  .footer-tech-badges {
+    justify-content: center;
+  }
+  .footer-icons {
+    justify-content: center;
+  }
+  .footer-title {
+    justify-content: center;
+  }
+  .footer-location {
     justify-content: center;
   }
 }
@@ -574,18 +856,19 @@ button:focus {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
   color: white !important;
   background-color: rgba(15, 41, 34, 0.5) !important;
-  border: 1px solid rgba(16, 185, 129, 0.15) !important;
-  transition: all 0.4s ease !important;
+  border: 1px solid rgba(16, 185, 129, 0.1) !important;
+  transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1) !important;
   height: 100% !important;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  border-radius: 14px !important;
 }
 
 .project-card-view:hover {
-  transform: translateY(-8px) !important;
-  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.2) !important;
-  border-color: rgba(16, 185, 129, 0.4) !important;
+  transform: translateY(-10px) !important;
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15) !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
 }
 
 .project-card-img-wrapper {
@@ -595,16 +878,17 @@ button:focus {
 }
 
 .project-card-img-wrapper img {
-  width: 50%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  padding: 15px !important;
-  border-radius: 12px !important;
-  transition: transform 0.4s ease;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card-view:hover .project-card-img-wrapper img {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  filter: brightness(0.4);
 }
 
 .project-card-overlay {
@@ -613,7 +897,11 @@ button:focus {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(5, 19, 14, 0.9);
+  background: linear-gradient(
+    135deg,
+    rgba(5, 19, 14, 0.92),
+    rgba(16, 185, 129, 0.08)
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -627,20 +915,25 @@ button:focus {
 }
 
 .project-card-overlay p {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.85em;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.88em;
   text-align: center;
-  line-height: 1.6;
+  line-height: 1.7;
   margin: 0;
+  font-weight: 400;
 }
 
 .project-card-desc {
   text-align: justify;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   min-height: 4.5em;
+  font-size: 0.9em;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .project-card-buttons {
@@ -651,6 +944,7 @@ button:focus {
 
 .project-card-buttons .btn {
   font-size: 0.85em;
+  border-radius: 8px;
 }
 
 /* --------- */
@@ -666,25 +960,27 @@ button:focus {
 
 .blog-card-view {
   background-color: rgba(15, 41, 34, 0.5) !important;
-  border: 1px solid rgba(16, 185, 129, 0.15) !important;
+  border: 1px solid rgba(16, 185, 129, 0.1) !important;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
   color: white !important;
-  transition: all 0.4s ease !important;
+  transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1) !important;
   height: 100% !important;
   cursor: pointer;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  border-radius: 14px !important;
 }
 
 .blog-card-view:hover {
-  transform: translateY(-8px) !important;
-  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.2) !important;
-  border-color: rgba(16, 185, 129, 0.4) !important;
+  transform: translateY(-10px) !important;
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15) !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
 }
 
 .blog-img-wrapper {
-  height: 200px;
+  position: relative;
+  height: 220px;
   overflow: hidden;
 }
 
@@ -694,20 +990,57 @@ button:focus {
   object-fit: cover !important;
   padding: 0 !important;
   border-radius: 0 !important;
-  transition: transform 0.4s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .blog-card-view:hover .blog-img {
   transform: scale(1.08);
+  filter: brightness(0.3);
+}
+
+.blog-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(5, 19, 14, 0.92),
+    rgba(16, 185, 129, 0.08)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  padding: 24px;
+}
+
+.blog-card-view:hover .blog-card-overlay {
+  opacity: 1;
+}
+
+.blog-card-overlay p {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.9em;
+  text-align: center;
+  line-height: 1.7;
+  margin: 0;
+  font-weight: 400;
 }
 
 .blog-card-desc {
   text-align: justify;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   min-height: 4.5em;
+  font-size: 0.9em;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .blog-link {
@@ -728,14 +1061,15 @@ button:focus {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.92);
+  background: rgba(0, 0, 0, 0.94);
   z-index: 100000;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  animation: lightbox-fade 0.3s ease;
+  animation: lightbox-fade 0.25s ease;
+  backdrop-filter: blur(8px);
 }
 
 @keyframes lightbox-fade {
@@ -751,43 +1085,59 @@ button:focus {
   position: absolute;
   top: 20px;
   right: 30px;
-  background: none;
-  border: none;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: white;
-  font-size: 2.5rem;
+  font-size: 2rem;
   cursor: pointer;
   z-index: 100001;
   line-height: 1;
-  transition: color 0.3s ease;
-  padding: 5px 15px;
+  transition: all 0.3s ease;
+  padding: 6px 16px;
+  border-radius: 10px;
 }
 
 .lightbox-close:hover {
   color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.3);
 }
 
 .lightbox-img {
-  max-width: 85vw;
-  max-height: 80vh;
+  max-width: 88vw;
+  max-height: 82vh;
   object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: lightbox-zoom 0.3s ease;
+}
+
+@keyframes lightbox-zoom {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .lightbox-caption {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 1.1em;
-  margin-top: 15px;
-  font-weight: 500;
+  margin-top: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 /* --------- */
 /* General cards */
 /* --------- */
 .card-img-top {
-  padding: 15px !important;
+  padding: 0 !important;
   opacity: 0.9 !important;
-  border-radius: 12px !important;
+  border-radius: 0 !important;
   width: 50% !important;
 }
 
@@ -795,12 +1145,16 @@ button:focus {
   color: #fff !important;
   background-color: #065f46 !important;
   border-color: #065f46 !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
 }
 
 .btn-primary:hover {
   color: #fff !important;
   background-color: #059669 !important;
   border-color: #059669 !important;
+  transform: translateY(-1px) !important;
 }
 
 .btn:focus {
@@ -811,7 +1165,7 @@ button:focus {
 .project-heading {
   color: white !important;
   font-size: 2.3em !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   padding-top: 10px !important;
 }
 

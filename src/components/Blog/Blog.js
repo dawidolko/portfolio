@@ -11,9 +11,15 @@ import family from "../../assets/Blog/family.webp";
 import graduation from "../../assets/Blog/graduation.webp";
 import egypt from "../../assets/Blog/egypt.webp";
 
+import blogBg from "../../assets/Backgrounds/backgroundContact2-photoaidcom-greyscale.png";
+
 function Blog() {
   return (
     <Container fluid className="project-section">
+      <div
+        className="section-bg-overlay"
+        style={{ backgroundImage: `url(${blogBg})` }}
+      />
       <Particle />
       <Container>
         <h1 className="project-heading">
@@ -27,7 +33,7 @@ function Blog() {
             <BlogCards
               imgPath={hello}
               title="Hello!"
-              description="A personal introduction — who I am, my passion for programming, and my journey through the world of technology and teamwork."
+              description="A personal introduction — who I am, my passion for programming, tech journey, teamwork experiences, and the path that led me here."
             />
           </Col>
 
@@ -35,7 +41,7 @@ function Blog() {
             <BlogCards
               imgPath={childhood}
               title="Childhood"
-              description="A time worth returning to... Reflections on childhood interests — technology, drawing, storytelling, and the curiosity that shaped who I am today."
+              description="A time worth returning to — reflections on childhood interests, technology, drawing, storytelling, and the curiosity that shaped who I am."
             />
           </Col>
 
@@ -43,7 +49,7 @@ function Blog() {
             <BlogCards
               imgPath={love}
               title="Love"
-              description="Someone I care about... A deep personal reflection about love, relationships, and the people who make life meaningful."
+              description="Someone I care about — a deep personal reflection about love, relationships, trust, and the people who make our lives truly meaningful."
             />
           </Col>
 
@@ -51,7 +57,7 @@ function Blog() {
             <BlogCards
               imgPath={sport}
               title="Sport"
-              description="A healthy mind in a healthy body. The importance of sports, physical and mental health, mountain hiking, and outdoor activities."
+              description="A healthy mind in a healthy body — the importance of sports, physical and mental health, mountain hiking, and outdoor team activities."
             />
           </Col>
 
@@ -59,7 +65,7 @@ function Blog() {
             <BlogCards
               imgPath={computerscience}
               title="Computer Science"
-              description="Never-ending learning... My passion for computer science, technology innovation, problem-solving, and the journey of lifelong learning."
+              description="Never-ending learning — my passion for computer science, technology innovation, creative problem-solving, and the journey of lifelong growth."
             />
           </Col>
 
@@ -67,7 +73,7 @@ function Blog() {
             <BlogCards
               imgPath={family}
               title="Family"
-              description="Continuous support. The importance of family bonds, support systems, and the values that keep us grounded through life's journey."
+              description="Continuous support — the importance of family bonds, support systems, shared values, and the strength that keeps us grounded every day."
             />
           </Col>
 
@@ -75,7 +81,7 @@ function Blog() {
             <BlogCards
               imgPath={graduation}
               title="Graduation"
-              description="A new chapter begins. My thesis defense, graduation accomplishment, and the exciting transition from academic to professional life."
+              description="A new chapter begins — my thesis defense, graduation accomplishment, and the exciting transition from academic life to professional career."
             />
           </Col>
 
@@ -83,7 +89,7 @@ function Blog() {
             <BlogCards
               imgPath={egypt}
               title="Egypt"
-              description="Journey to ancient wonders. Travel to Egypt — the pyramids, the Nile, ancient history, and unforgettable vacation experiences."
+              description="Journey to ancient wonders — travel to Egypt, the pyramids, the Nile, ancient history, culture, and unforgettable vacation experiences."
             />
           </Col>
         </Row>
