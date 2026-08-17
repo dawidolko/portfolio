@@ -16,6 +16,9 @@ import simplelayout from "../../assets/Projects/simplelayout.svg";
 import curiositiesmagazine from "../../assets/Projects/curiositiesmagazine.svg";
 import bitrecruit from "../../assets/Projects/bitrecruit.svg";
 import mpindustries from "../../assets/Projects/logo30.svg";
+import zbudujkompa from "../../assets/Projects/zbudujkompa.svg";
+import bodykit from "../../assets/Projects/bodykit.svg";
+import neobank from "../../assets/Projects/neobank.svg";
 
 import projectBg from "../../assets/Backgrounds/backgroundFaq2-photoaidcom-greyscale.webp";
 
@@ -35,6 +38,35 @@ function Projects() {
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={zbudujkompa}
+              title="ZbudujKompa"
+              description="Bilingual PC building guide built with Next.js and Tailwind CSS. Covers CPU platforms, cooling classes, reference builds and step-by-step assembly, with a compatibility checker and PSU calculator."
+              ghLink="https://github.com/dawidolko/ZbudujKompa"
+              demoLink="https://zbudujkompa.dawidolko.pl/"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={bodykit}
+              title="BodyKit"
+              description="Car tuning and body kit storefront built with Next.js, TypeScript and Tailwind CSS. Features a product catalog, filtering, cart and a fully responsive static export."
+              ghLink="https://github.com/dawidolko/BodyKit-Shop-Frontend-NextJS"
+              demoLink="https://bodykit.dawidolko.pl/"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={neobank}
+              title="NeoBank"
+              description="Fullstack banking platform built with Nuxt, TypeScript, Prisma and PostgreSQL. Features accounts, transfers, transaction history, authentication and an admin panel."
+              ghLink="https://github.com/dawidolko/NeoBank-Platform-Nuxt"
+            />
+          </Col>
+
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={smartrecommender}
