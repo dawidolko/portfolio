@@ -1455,7 +1455,12 @@ summary:focus-visible,
   border-radius: 4px;
 }
 
+/* Bootstrap ships its own `.btn:focus-visible` that sets `outline: 0` and a
+   white box-shadow. It is loaded after this file, so the offset and colour
+   below must be marked !important or the ring collapses flush against the
+   button edge and reads as a plain white border instead of a focus ring. */
 .btn:focus-visible,
+.btn-primary:focus-visible,
 .navbar-toggler:focus-visible,
 .navbar-brand:focus-visible,
 .navbar-nav .nav-link:focus-visible,
@@ -1468,7 +1473,19 @@ summary:focus-visible,
 .project-card-view a:focus-visible {
   outline: 3px solid #6ee7b7 !important;
   outline-offset: 3px !important;
-  box-shadow: 0 0 0 5px rgba(5, 19, 14, 0.9) !important;
+  /* Dark halo separates the ring from the button fill; the outer emerald
+     glow keeps the ring visible where an ancestor card clips the outline. */
+  box-shadow: 0 0 0 5px rgba(5, 19, 14, 0.95),
+    0 0 0 7px rgba(110, 231, 183, 0.55) !important;
+}
+
+/* Project and blog cards clip their children (overflow is not visible), so a
+   focus ring drawn on an inner link would be cut off at the card edge.
+   Letting the ring paint outside restores it. */
+.project-card-view,
+.blog-card-view,
+.card {
+  overflow: visible !important;
 }
 
 /* Blog cards are activated with role="button" + tabIndex, so they need a
@@ -1518,4 +1535,30 @@ summary:focus-visible,
   .particles-wrapper {
     display: none !important;
   }
+}
+
+/* ------------------------------------------------------------------ */
+/* Focus ring — final override (WCAG 2.4.7 / 2.4.11)                   */
+/* Bootstrap's own `.btn:focus-visible { outline: 0 }` and the browser  */
+/* default UA ring both compete here. `:where(html)` raises specificity */
+/* without inflating it further, and the longhand properties (rather    */
+/* than the `outline` shorthand) make sure colour, style, width and     */
+/* offset are each set individually and cannot be reset as a group.     */
+/* ------------------------------------------------------------------ */
+html body a:focus-visible,
+html body button:focus-visible,
+html body .btn:focus-visible,
+html body [role="button"]:focus-visible,
+html body input:focus-visible,
+html body textarea:focus-visible,
+html body select:focus-visible,
+html body summary:focus-visible,
+html body [tabindex]:focus-visible {
+  outline-color: #6ee7b7 !important;
+  outline-style: solid !important;
+  outline-width: 3px !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 5px rgba(5, 19, 14, 0.95),
+    0 0 0 7px rgba(110, 231, 183, 0.55) !important;
+  border-radius: 6px;
 }

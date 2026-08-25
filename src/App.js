@@ -9,9 +9,13 @@ import {
   Navigate
 } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+// Bootstrap first so the project's own styles (including the WCAG focus
+// rules in style.css) cascade over the framework defaults rather than under
+// them. Bootstrap's `.btn:focus-visible { outline: 0 }` otherwise wins on
+// source order and collapses the focus ring.
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const Home = lazy(() => import("./components/Home/Home"));
 const About = lazy(() => import("./components/About/About"));
