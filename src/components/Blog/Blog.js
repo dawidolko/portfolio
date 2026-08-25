@@ -17,6 +17,7 @@ function Blog() {
   return (
     <Container fluid className="project-section">
       <div
+        aria-hidden="true"
         className="section-bg-overlay"
         style={{ backgroundImage: `url(${blogBg})` }}
       />

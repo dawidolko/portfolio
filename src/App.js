@@ -34,18 +34,25 @@ function App() {
     <Router>
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
+        <a className="skip-link" href="#main-content">
+          Skip to main content
+        </a>
+        <header className="site-header">
+          <Navbar />
+        </header>
         <ScrollToTop />
-        <Suspense fallback={<div />}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/project" element={<Projects />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/resume" element={<Resume />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="*" element={<Navigate to="/"/>} />
-          </Routes>
-        </Suspense>
+        <main id="main-content" tabIndex={-1}>
+          <Suspense fallback={<div />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/project" element={<Projects />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/resume" element={<Resume />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="*" element={<Navigate to="/"/>} />
+            </Routes>
+          </Suspense>
+        </main>
         <Footer />
       </div>
     </Router>

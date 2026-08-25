@@ -9,9 +9,9 @@ function Home2() {
       <Container>
         <Row>
           <Col md={8} className="home-about-description">
-            <h1 style={{ fontSize: "2.6em" }}>
+            <h2 style={{ fontSize: "2.6em" }}>
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
-            </h1>
+            </h2>
             <p className="home-about-body">
               I'm a Frontend Developer from{" "}
               <b className="purple">Rzeszów, Poland</b> who loves transforming
@@ -47,7 +47,15 @@ function Home2() {
           </Col>
           <Col md={4} className="myAvtar">
             <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
+              <img
+                src={myImg}
+                className="img-fluid"
+                alt="Portrait of Dawid Olko"
+                width="800"
+                height="637"
+                loading="lazy"
+                decoding="async"
+              />
             </Tilt>
           </Col>
         </Row>

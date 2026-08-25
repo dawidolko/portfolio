@@ -1387,3 +1387,135 @@ button:focus {
 .fork-btn-inner::after {
   display: none !important;
 }
+
+/* ------------------------------------------------------------------ */
+/* Accessibility                                                       */
+/* ------------------------------------------------------------------ */
+
+/* Visually hidden, but still announced by screen readers. */
+.visually-hidden-a11y {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Skip link: first focusable element, revealed only on keyboard focus. */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 1000000;
+  padding: 12px 20px;
+  border-radius: 0 0 10px 10px;
+  background-color: #05130e;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid #34d399;
+  transition: top 0.2s ease-in-out;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 0;
+  color: #ffffff;
+  text-decoration: underline;
+  outline: 3px solid #6ee7b7;
+  outline-offset: 2px;
+}
+
+/* The main landmark is focus target of the skip link; never show a ring
+   for the programmatic focus it receives. */
+#main-content:focus,
+#main-content:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* Visible keyboard focus (WCAG 2.4.7)                                 */
+/* Re-instates an indicator for the rules above that set outline/box-   */
+/* shadow to none. Only :focus-visible, so mouse clicks look unchanged. */
+/* ------------------------------------------------------------------ */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #6ee7b7 !important;
+  outline-offset: 2px !important;
+  border-radius: 4px;
+}
+
+.btn:focus-visible,
+.navbar-toggler:focus-visible,
+.navbar-brand:focus-visible,
+.navbar-nav .nav-link:focus-visible,
+.footer-links a:focus-visible,
+.social-icons a:focus-visible,
+.home-social-icons:focus-visible,
+.back-to-top:focus-visible,
+.lightbox-close:focus-visible,
+.blog-card-view:focus-visible,
+.project-card-view a:focus-visible {
+  outline: 3px solid #6ee7b7 !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 5px rgba(5, 19, 14, 0.9) !important;
+}
+
+/* Blog cards are activated with role="button" + tabIndex, so they need a
+   focus ring that reads clearly against the dark card background. */
+.blog-card-view:focus-visible {
+  border-color: #6ee7b7 !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* Reduced motion (WCAG 2.3.3 / user preference)                       */
+/* ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  /* Hover lifts / zooms are motion too. */
+  .project-card-view:hover,
+  .blog-card-view:hover,
+  .tech-icons:hover,
+  .fork-btn-inner:hover {
+    transform: none !important;
+  }
+
+  .project-card-view:hover .project-card-img-wrapper img,
+  .blog-card-view:hover .blog-img {
+    transform: none !important;
+  }
+
+  .wave {
+    animation: none !important;
+  }
+
+  /* The decorative particle field is continuous motion with no controls. */
+  #tsparticles,
+  .particles-wrapper {
+    display: none !important;
+  }
+}

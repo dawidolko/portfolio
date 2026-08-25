@@ -29,15 +29,15 @@ function Home() {
             <Col md={7} className="home-header">
               <h1 style={{ paddingBottom: 15 }} className="heading">
                 Hi There!{" "}
-                <span className="wave" role="img" aria-labelledby="wave">
+                <span className="wave" role="img" aria-label="waving hand">
                   👋🏻
                 </span>
               </h1>
 
-              <h1 className="heading-name">
+              <h2 className="heading-name">
                 I'M
                 <strong className="main-name"> DAWID OLKO</strong>
-              </h1>
+              </h2>
 
               <div style={{ padding: 50, textAlign: "left" }}>
                 <Type />
@@ -47,8 +47,11 @@ function Home() {
             <Col md={5} style={{ paddingBottom: 20 }}>
               <img
                 src={homeLogo}
-                alt="home pic"
+                alt="Dawid Olko working at his desk"
                 className="img-fluid"
+                width="1000"
+                height="689"
+                decoding="async"
                 style={{
                   maxHeight: "450px",
                   borderRadius: "20px",
@@ -64,9 +67,9 @@ function Home() {
       {/* Featured Projects */}
       <Container fluid className="home-projects-section">
         <Container>
-          <h1 className="project-heading" style={{ paddingBottom: "10px" }}>
+          <h2 className="project-heading" style={{ paddingBottom: "10px" }}>
             Featured <strong className="purple">Projects</strong>
-          </h1>
+          </h2>
           <p style={{ color: "rgba(255,255,255,0.7)", marginBottom: "30px" }}>
             A few highlights from my recent work.
           </p>
@@ -123,7 +126,7 @@ function Home() {
       <Container>
         <Row style={{ paddingTop: "50px", paddingBottom: "80px" }}>
           <Col md={12} className="home-about-social">
-            <h1>Find Me On</h1>
+            <h2>Find Me On</h2>
             <p>
               Feel free to <span className="purple">connect </span>with me
             </p>
@@ -132,54 +135,60 @@ function Home() {
                 <a
                   href="https://github.com/dawidolko"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub (opens in a new tab)"
                   className="icon-colour  home-social-icons">
-                  <AiFillGithub />
+                  <AiFillGithub aria-hidden="true" />
                 </a>
               </li>
               <li className="social-icons">
                 <a
                   href="https://www.linkedin.com/in/dawidolko/"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn (opens in a new tab)"
                   className="icon-colour  home-social-icons">
-                  <FaLinkedinIn />
+                  <FaLinkedinIn aria-hidden="true" />
                 </a>
               </li>
               <li className="social-icons">
                 <a
                   href="https://www.instagram.com/dawid_olko/"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram (opens in a new tab)"
                   className="icon-colour home-social-icons">
-                  <AiFillInstagram />
+                  <AiFillInstagram aria-hidden="true" />
                 </a>
               </li>
               <li className="social-icons">
                 <a
                   href="https://www.facebook.com/olkodawid/"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook (opens in a new tab)"
                   className="icon-colour home-social-icons">
-                  <FaFacebookF />
+                  <FaFacebookF aria-hidden="true" />
                 </a>
               </li>
               <li className="social-icons">
                 <a
                   href="https://www.youtube.com/@dawid_olko"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube (opens in a new tab)"
                   className="icon-colour home-social-icons">
-                  <AiFillYoutube />
+                  <AiFillYoutube aria-hidden="true" />
                 </a>
               </li>
               <li className="social-icons">
                 <a
                   href="https://www.tiktok.com/@dawid_olko"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
+                  aria-label="TikTok (opens in a new tab)"
                   className="icon-colour home-social-icons">
-                  <FaTiktok />
+                  <FaTiktok aria-hidden="true" />
                 </a>
               </li>
             </ul>

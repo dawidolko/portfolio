@@ -1,14 +1,28 @@
 {
   "short_name": "Dawid Olko",
-  "name": "Dawid Olko - Portfolio",
+  "name": "Dawid Olko | Frontend Developer Portfolio",
+  "description": "Portfolio of Dawid Olko - Frontend Developer from Rzeszów, Poland, working with React, Vue.js and TypeScript.",
+  "lang": "en",
   "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
     {
       "src": "favicon.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/png"
+    },
+    {
+      "src": "og-image.png",
+      "sizes": "1000x689",
+      "type": "image/png"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "theme_color": "#0a1410",
   "background_color": "#0a1410"

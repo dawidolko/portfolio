@@ -10,23 +10,23 @@ function Toolstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={macOs} alt="macOs" className="tech-icon-images" />
+        <img src={macOs} alt="" className="tech-icon-images" loading="lazy" decoding="async" />
         <div className="tech-icons-text">macOS</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons ">
-        <img src={chrome} alt="Chrome" className="tech-icon-images" />
+        <img src={chrome} alt="" className="tech-icon-images" loading="lazy" decoding="async" />
         <div className="tech-icons-text">Chrome</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons ">
-        <img src={vsCode} alt="vsCode" className="tech-icon-images" />
+        <img src={vsCode} alt="" className="tech-icon-images" loading="lazy" decoding="async" />
         <div className="tech-icons-text">VS Code</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons ">
-        <img src={intelliJ} alt="intellij" className="tech-icon-images" />
+        <img src={intelliJ} alt="" className="tech-icon-images" loading="lazy" decoding="async" />
         <div className="tech-icons-text">IntelliJ</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons ">
-        <img src={pycharm} alt="PyCharm" className="tech-icon-images" />
+        <img src={pycharm} alt="" className="tech-icon-images" loading="lazy" decoding="async" />
         <div className="tech-icons-text">PyCharm</div>
       </Col>
     </Row>

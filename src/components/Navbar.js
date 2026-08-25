@@ -47,6 +47,8 @@ function NavBar() {
       expanded={expand}
       fixed="top"
       expand="md"
+      role="navigation"
+      aria-label="Primary"
       className={navColour ? "sticky" : "navbar"}>
       <Container>
         <Navbar.Brand
@@ -63,10 +65,12 @@ function NavBar() {
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
+          aria-expanded={expand ? true : false}
+          aria-label="Toggle navigation menu"
           onClick={() => updateExpanded(expand ? false : "expanded")}>
-          <span></span>
-          <span></span>
-          <span></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
@@ -76,10 +80,15 @@ function NavBar() {
                   as={Link}
                   to={item.path}
                   onClick={() => updateExpanded(false)}
+                  aria-current={
+                    location.pathname === item.path ? "page" : undefined
+                  }
                   className={
                     location.pathname === item.path ? "active-nav" : ""
                   }>
-                  <span className="nav-icon">{item.icon}</span>
+                  <span className="nav-icon" aria-hidden="true">
+                    {item.icon}
+                  </span>
                   {item.label}
                 </Nav.Link>
               </Nav.Item>
@@ -88,10 +97,17 @@ function NavBar() {
               <Nav.Link
                 href="https://workstation.dawidolko.pl/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
+                aria-label="WorkStation (opens in a new tab)"
                 className="external-link nav-workstation">
-                <MdWorkspaces style={{ marginBottom: "2px" }} /> WorkStation
-                <span className="nav-external-badge">↗</span>
+                <MdWorkspaces
+                  aria-hidden="true"
+                  style={{ marginBottom: "2px" }}
+                />{" "}
+                WorkStation
+                <span className="nav-external-badge" aria-hidden="true">
+                  ↗
+                </span>
               </Nav.Link>
             </Nav.Item>
           </Nav>

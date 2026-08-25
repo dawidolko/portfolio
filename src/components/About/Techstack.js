@@ -17,67 +17,67 @@ function Techstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={Javascript} alt="javascript" />
+        <img src={Javascript} alt="" loading="lazy" decoding="async" />
         <div className="tech-icons-text">JavaScript</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={Typescript} alt="typescript" />
+        <img src={Typescript} alt="" loading="lazy" decoding="async" />
         <div className="tech-icons-text">TypeScript</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={ReactIcon} alt="react" />
+        <img src={ReactIcon} alt="" loading="lazy" decoding="async" />
         <div className="tech-icons-text">React.js</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiVuedotjs fontSize={"24px"} color="#4FC08D" />
+        <SiVuedotjs aria-hidden="true" fontSize={"24px"} color="#4FC08D" />
         <div className="tech-icons-text">Vue.js</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiNextdotjs fontSize={"24px"} />
+        <SiNextdotjs aria-hidden="true" fontSize={"24px"} />
         <div className="tech-icons-text">Next.js</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={Node} alt="node" />
+        <img src={Node} alt="" loading="lazy" decoding="async" />
         <div className="tech-icons-text">Node.js</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiLaravel fontSize={"24px"} color="#FF2D20" />
+        <SiLaravel aria-hidden="true" fontSize={"24px"} color="#FF2D20" />
         <div className="tech-icons-text">Laravel</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={Python} alt="Python" />
+        <img src={Python} alt="" loading="lazy" decoding="async" />
         <div className="tech-icons-text">Python</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={Java} alt="java" />
+        <img src={Java} alt="" loading="lazy" decoding="async" />
         <div className="tech-icons-text">Java</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={C} alt="C++" />
+        <img src={C} alt="" loading="lazy" decoding="async" />
         <div className="tech-icons-text">C/C++</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiSass fontSize={"24px"} color="#CC6699" />
+        <SiSass aria-hidden="true" fontSize={"24px"} color="#CC6699" />
         <div className="tech-icons-text">SASS/SCSS</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={Tailwind} alt="tailwind" />
+        <img src={Tailwind} alt="" loading="lazy" decoding="async" />
         <div className="tech-icons-text">Tailwind CSS</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <SiBootstrap fontSize={"24px"} color="#7952B3" />
+        <SiBootstrap aria-hidden="true" fontSize={"24px"} color="#7952B3" />
         <div className="tech-icons-text">Bootstrap</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={SQL} alt="SQL" />
+        <img src={SQL} alt="" loading="lazy" decoding="async" />
         <div className="tech-icons-text">SQL/MySQL</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={Git} alt="git" />
+        <img src={Git} alt="" loading="lazy" decoding="async" />
         <div className="tech-icons-text">Git</div>
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <img src={Docker} alt="docker" />
+        <img src={Docker} alt="" loading="lazy" decoding="async" />
         <div className="tech-icons-text">Docker</div>
       </Col>
     </Row>

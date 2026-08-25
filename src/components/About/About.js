@@ -16,6 +16,7 @@ function About() {
       <Particle />
       <Container fluid className="about-section">
         <div
+          aria-hidden="true"
           className="section-bg-overlay"
           style={{ backgroundImage: `url(${aboutBg})` }}
         />
@@ -39,8 +40,12 @@ function About() {
               className="about-img">
               <img
                 src={laptopImg}
-                alt="about"
+                alt="Dawid Olko working at his desk"
                 className="img-fluid"
+                width="1000"
+                height="689"
+                loading="lazy"
+                decoding="async"
                 style={{
                   borderRadius: "16px",
                   boxShadow: "0 8px 32px rgba(16,185,129,0.15)",
@@ -48,15 +53,15 @@ function About() {
               />
             </Col>
           </Row>
-          <h1 className="project-heading">
+          <h2 className="project-heading">
             Professional <strong className="purple">Skillset </strong>
-          </h1>
+          </h2>
 
           <Techstack />
 
-          <h1 className="project-heading">
+          <h2 className="project-heading">
             <strong className="purple">Tools</strong> I use
-          </h1>
+          </h2>
           <Toolstack />
 
           <Github />
