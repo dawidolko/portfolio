@@ -7,6 +7,23 @@
 
 ---
 
+## 🖼️ Screenshots
+
+| Home — animated intro | About — skills & GitHub activity |
+|---|---|
+| [<img src="docs/screenshots/home.webp" alt="Portfolio home page with typewriter intro and particle background"/>](docs/screenshots/home.webp) | [<img src="docs/screenshots/about.webp" alt="About page showing skillset badges, toolstack and GitHub contribution calendar"/>](docs/screenshots/about.webp) |
+
+| Projects — card grid | Blog — photo journal |
+|---|---|
+| [<img src="docs/screenshots/projects.webp" alt="Projects page with card grid and hover overlays linking to GitHub and live demos"/>](docs/screenshots/projects.webp) | [<img src="docs/screenshots/blog.webp" alt="Blog page with photo cards opening in a fullscreen lightbox"/>](docs/screenshots/blog.webp) |
+
+| Resume — built-in PDF viewer |
+|---|
+| [<img src="docs/screenshots/resume.webp" alt="Resume page rendering the CV in an embedded PDF viewer with a download button" width="49%"/>](docs/screenshots/resume.webp) |
+
+
+---
+
 ## Features
 
 - **Modern UI** — Dark theme with glassmorphism navbar, smooth animations, and emerald accent colors
