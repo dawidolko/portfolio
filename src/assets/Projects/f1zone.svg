@@ -1,11 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="none">
-  <!-- F1Zone - Formula 1 -->
-  <path d="M10 30c0 0 5-18 15-18s15 18 15 18" fill="#E34F26"/>
-  <rect x="8" y="30" width="34" height="6" rx="3" fill="#CC0000"/>
-  <circle cx="15" cy="38" r="5" fill="#333"/>
-  <circle cx="15" cy="38" r="2" fill="#999"/>
-  <circle cx="35" cy="38" r="5" fill="#333"/>
-  <circle cx="35" cy="38" r="2" fill="#999"/>
-  <rect x="20" y="26" width="10" height="4" rx="1" fill="#fff" opacity="0.3"/>
-  <text x="22" y="22" font-family="Arial,sans-serif" font-size="8" font-weight="bold" fill="#fff">F1</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="none" role="img" aria-label="F1Zone">
+  <!-- Speed lines trailing behind the car -->
+  <g stroke="#E10600" stroke-width="2" stroke-linecap="round" opacity="0.5">
+    <path d="M3 15h9"/>
+    <path d="M3 20h6"/>
+  </g>
+  <!-- Open-wheel silhouette: nose, body, rear wing -->
+  <path d="M11 27h13l5-4h6l-2 4h3a1.6 1.6 0 0 1 0 3.2H17z" fill="#E10600"/>
+  <rect x="33" y="21" width="8" height="2" rx="1" fill="#FF5A5A"/>
+  <!-- Wheels -->
+  <circle cx="17" cy="33" r="4" fill="#1A1A1A"/>
+  <circle cx="17" cy="33" r="1.6" fill="#888"/>
+  <circle cx="34" cy="33" r="4" fill="#1A1A1A"/>
+  <circle cx="34" cy="33" r="1.6" fill="#888"/>
+  <!-- Chequered strip: reads as motorsport even at small sizes -->
+  <g fill="#F5F5F5">
+    <rect x="11" y="41" width="4" height="4"/>
+    <rect x="19" y="41" width="4" height="4"/>
+    <rect x="27" y="41" width="4" height="4"/>
+    <rect x="15" y="45" width="4" height="4"/>
+    <rect x="23" y="45" width="4" height="4"/>
+    <rect x="31" y="45" width="4" height="4"/>
+  </g>
 </svg>

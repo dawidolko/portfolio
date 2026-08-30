@@ -19,6 +19,7 @@ import mpindustries from "../../assets/Projects/logo30.svg";
 import zbudujkompa from "../../assets/Projects/zbudujkompa.svg";
 import bodykit from "../../assets/Projects/bodykit.svg";
 import neobank from "../../assets/Projects/neobank.svg";
+import framevision from "../../assets/Projects/framevision.svg";
 
 import projectBg from "../../assets/Backgrounds/backgroundFaq2-photoaidcom-greyscale.webp";
 
@@ -204,6 +205,15 @@ function Projects() {
               title="MP Industries"
               description="Fullstack business platform built with Laravel, Blade and Tailwind CSS. Features CNC machines catalog, LPG services, dog breeding and honey products with admin panel."
               demoLink="https://mp-industries.pl/"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={framevision}
+              title="FrameVision"
+              description="Front-end site for a professional photography studio, covering portrait, business, family and fine art sessions. Built with HTML, SASS and JavaScript with a fully responsive layout."
+              ghLink="https://github.com/dawidolko/FrameVision-Project-HTML-CSS-JS-SASS"
+              demoLink="https://framevision.dawidolko.pl/"
             />
           </Col>
         </Row>
