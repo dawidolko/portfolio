@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dawid Olko | Portfolio</title>
+    <meta name="robots" content="noindex" />
+    <script>
+      /*
+        GitHub Pages serves static files only: it has no router, so a request
+        for /about returns 404 instead of the SPA shell. Without this file the
+        deep links in sitemap.xml are uncrawlable and Search Console reports
+        every route as "not indexed".
+
+        The redirect below encodes the requested path into a query string and
+        hands it to index.html, which restores it via the history API (see the
+        matching snippet in index.html). Adapted from rafgraph/spa-github-pages.
+      */
+      (function () {
+        var pathSegmentsToKeep = 0;
+        var l = window.location;
+        l.replace(
+          l.protocol +
+            "//" +
+            l.hostname +
+            (l.port ? ":" + l.port : "") +
+            l.pathname
+              .split("/")
+              .slice(0, 1 + pathSegmentsToKeep)
+              .join("/") +
+            "/?/" +
+            l.pathname
+              .slice(1)
+              .split("/")
+              .slice(pathSegmentsToKeep)
+              .join("/")
+              .replace(/&/g, "~and~") +
+            (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+            l.hash
+        );
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to <a href="/">the portfolio home page</a>&hellip;</p>
+  </body>
+</html>
