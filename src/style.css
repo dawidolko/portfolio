@@ -1,3 +1,17 @@
+/*
+ * Miejsce na pasek przewijania jest rezerwowane na stale.
+ *
+ * Bez tego strony krotsze od okna (np. 404 albo Resume przed zaladowaniem
+ * PDF-a) nie maja paska, a dluzsze go dostaja — i cala tresc przeskakuje
+ * w bok o jego szerokosc przy kazdym przejsciu miedzy zakladkami.
+ *
+ * `scrollbar-gutter` obsluguja wszystkie obecne przegladarki; starsze po
+ * prostu je ignoruja i zachowuja sie jak dotad.
+ */
+html {
+  scrollbar-gutter: stable;
+}
+
 html {
   --section-background-color: linear-gradient(
     to bottom left,
