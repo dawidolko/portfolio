@@ -42,24 +42,21 @@ function Projects() {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={zbudujkompa}
-              title="ZbudujKompa"
-              description="Bilingual PC building guide built with Next.js and Tailwind CSS. Covers CPU platforms, cooling classes, reference builds and step-by-step assembly, with a compatibility checker and PSU calculator."
-              ghLink="https://github.com/dawidolko/ZbudujKompa"
-              demoLink="https://zbudujkompa.dawidolko.pl/"
+              imgPath={smartrecommender}
+              title="SmartRecommender"
+              description="Recommendation system built with Django and React featuring intelligent content suggestions, user authentication, and a fully responsive interface."
+              ghLink="https://github.com/dawidolko/SmartRecommender-Projekt-Django-React"
+              demoLink="https://project.dawidolko.pl"
             />
           </Col>
-
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={bodykit}
-              title="BodyKit"
-              description="Car tuning and body kit storefront built with Next.js, TypeScript and Tailwind CSS. Features a product catalog, filtering, cart and a fully responsive static export."
-              ghLink="https://github.com/dawidolko/BodyKit-Shop-Frontend-NextJS"
-              demoLink="https://bodykit.dawidolko.pl/"
+              imgPath={mpindustries}
+              title="MP Industries"
+              description="Fullstack business platform built with Laravel, Blade and Tailwind CSS. Features CNC machines catalog, LPG services, dog breeding and honey products with admin panel."
+              demoLink="https://mp-industries.pl/"
             />
           </Col>
-
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={neobank}
@@ -68,27 +65,6 @@ function Projects() {
               ghLink="https://github.com/dawidolko/NeoBank-Platform-Nuxt"
             />
           </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={smartrecommender}
-              title="SmartRecommender"
-              description="Recommendation system built with Django and React featuring intelligent content suggestions, user authentication, and a fully responsive interface."
-              ghLink="https://github.com/dawidolko/SmartRecommender-Projekt-Django-React"
-              demoLink="https://project.dawidolko.pl"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={fitnessgym}
-              title="FitnessGym"
-              description="Modern fitness gym app built with React featuring workout plans, class schedules, membership management, and a responsive user interface."
-              ghLink="https://github.com/dawidolko/FitnessGym-Project-React"
-              demoLink="https://fitnessgym.dawidolko.pl/"
-            />
-          </Col>
-
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={techbyte}
@@ -98,7 +74,6 @@ function Projects() {
               demoLink="https://piotrsmola.dawidolko.pl/"
             />
           </Col>
-
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={movievault}
@@ -108,47 +83,6 @@ function Projects() {
               youtubeLink="https://youtu.be/ooIoa_PGRzk"
             />
           </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={workstation}
-              title="WorkStation"
-              description="Workspace app built with Vue.js and TypeScript featuring task management, productivity tools, and a clean, modern user-friendly interface."
-              ghLink="https://github.com/dawidolko/WorkStation-Vue-TypeScript"
-              demoLink="https://workstation.dawidolko.pl/"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={f1zone}
-              title="F1Zone"
-              description="Formula 1 fan site built with HTML, CSS, JS, SASS. Features race schedules, driver profiles, team standings, and latest news updates."
-              ghLink="https://github.com/dawidolko/F1Zone-Project-HTML-CSS-JS-SASS"
-              demoLink="https://f1.dawidolko.pl/"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={kebab}
-              title="Kebab Project"
-              description="Food ordering application built with React featuring menu browsing, order customization, cart management, and fully responsive design."
-              ghLink="https://github.com/dawidolko/Kebab-Project-React"
-              demoLink="https://kebab.dawidolko.pl/"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={weatherapp}
-              title="Weather App"
-              description="Weather app built with Laravel and React displaying real-time weather data, forecasts, and location-based weather information system."
-              ghLink="https://github.com/dawidolko/Weather-App-Laravel-React"
-              youtubeLink="https://www.youtube.com/watch?v=WTi2i2wHPt0"
-            />
-          </Col>
-
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={cinemareserve}
@@ -158,37 +92,33 @@ function Projects() {
               youtubeLink="https://youtu.be/7ygXIAm0sFc"
             />
           </Col>
-
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={devtechblog}
-              title="DevTechBlog"
-              description="Developer blog platform built with React featuring article publishing, category filtering, syntax highlighting, and clean reading experience."
-              ghLink="https://github.com/dawidolko/DevTechBlog-Platform-React"
-              demoLink="https://devtechblog.dawidolko.pl/#/"
+              imgPath={zbudujkompa}
+              title="ZbudujKompa"
+              description="Bilingual PC building guide built with Next.js and Tailwind CSS. Covers CPU platforms, cooling classes, reference builds and step-by-step assembly, with a compatibility checker and PSU calculator."
+              ghLink="https://github.com/dawidolko/ZbudujKompa"
+              demoLink="https://zbudujkompa.dawidolko.pl/"
             />
           </Col>
-
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={simplelayout}
-              title="Simple Layout"
-              description="Clean layout showcase built with Vue.js demonstrating modern CSS layouts, responsive design patterns, and Vue component architecture."
-              ghLink="https://github.com/dawidolko/Layout-Simple-Vue"
-              demoLink="https://simplelayout.dawidolko.pl/"
+              imgPath={weatherapp}
+              title="Weather App"
+              description="Weather app built with Laravel and React displaying real-time weather data, forecasts, and location-based weather information system."
+              ghLink="https://github.com/dawidolko/Weather-App-Laravel-React"
+              youtubeLink="https://www.youtube.com/watch?v=WTi2i2wHPt0"
             />
           </Col>
-
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={curiositiesmagazine}
-              title="CuriositiesMagazine"
-              description="Magazine-style website built with JS, HTML and SASS featuring article layouts, image galleries, and polished editorial design elements."
-              ghLink="https://github.com/dawidolko/CuriositiesMagazine-Project-HTML-CSS"
-              demoLink="https://projekt1.dawidolko.pl/index.html"
+              imgPath={bodykit}
+              title="BodyKit"
+              description="Car tuning and body kit storefront built with Next.js, TypeScript and Tailwind CSS. Features a product catalog, filtering, cart and a fully responsive static export."
+              ghLink="https://github.com/dawidolko/BodyKit-Shop-Frontend-NextJS"
+              demoLink="https://bodykit.dawidolko.pl/"
             />
           </Col>
-
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={bitrecruit}
@@ -198,13 +128,67 @@ function Projects() {
               demoLink="http://bitrecruit.dawidolko.pl/"
             />
           </Col>
-
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={mpindustries}
-              title="MP Industries"
-              description="Fullstack business platform built with Laravel, Blade and Tailwind CSS. Features CNC machines catalog, LPG services, dog breeding and honey products with admin panel."
-              demoLink="https://mp-industries.pl/"
+              imgPath={workstation}
+              title="WorkStation"
+              description="Workspace app built with Vue.js and TypeScript featuring task management, productivity tools, and a clean, modern user-friendly interface."
+              ghLink="https://github.com/dawidolko/WorkStation-Vue-TypeScript"
+              demoLink="https://workstation.dawidolko.pl/"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={devtechblog}
+              title="DevTechBlog"
+              description="Developer blog platform built with React featuring article publishing, category filtering, syntax highlighting, and clean reading experience."
+              ghLink="https://github.com/dawidolko/DevTechBlog-Platform-React"
+              demoLink="https://devtechblog.dawidolko.pl/#/"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={fitnessgym}
+              title="FitnessGym"
+              description="Modern fitness gym app built with React featuring workout plans, class schedules, membership management, and a responsive user interface."
+              ghLink="https://github.com/dawidolko/FitnessGym-Project-React"
+              demoLink="https://fitnessgym.dawidolko.pl/"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={kebab}
+              title="Kebab Project"
+              description="Food ordering application built with React featuring menu browsing, order customization, cart management, and fully responsive design."
+              ghLink="https://github.com/dawidolko/Kebab-Project-React"
+              demoLink="https://kebab.dawidolko.pl/"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={f1zone}
+              title="F1Zone"
+              description="Formula 1 fan site built with HTML, CSS, JS, SASS. Features race schedules, driver profiles, team standings, and latest news updates."
+              ghLink="https://github.com/dawidolko/F1Zone-Project-HTML-CSS-JS-SASS"
+              demoLink="https://f1.dawidolko.pl/"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={curiositiesmagazine}
+              title="CuriositiesMagazine"
+              description="Magazine-style website built with JS, HTML and SASS featuring article layouts, image galleries, and polished editorial design elements."
+              ghLink="https://github.com/dawidolko/CuriositiesMagazine-Project-HTML-CSS"
+              demoLink="https://projekt1.dawidolko.pl/index.html"
+            />
+          </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={simplelayout}
+              title="Simple Layout"
+              description="Clean layout showcase built with Vue.js demonstrating modern CSS layouts, responsive design patterns, and Vue component architecture."
+              ghLink="https://github.com/dawidolko/Layout-Simple-Vue"
+              demoLink="https://simplelayout.dawidolko.pl/"
             />
           </Col>
           <Col md={4} className="project-card">

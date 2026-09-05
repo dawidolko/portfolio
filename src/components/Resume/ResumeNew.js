@@ -47,7 +47,16 @@ function ResumeNew() {
           </Document>
         </Row>
 
-        <Row style={{ justifyContent: "center", position: "relative" }}>
+        {/* The hosted CV carries a Polish and an English version and prints to
+            the same one-page layout, so it sits next to the download rather
+            than replacing it. */}
+        <Row
+          style={{
+            justifyContent: "center",
+            position: "relative",
+            gap: "0.75rem",
+          }}
+        >
           <Button
             variant="primary"
             href={pdf}
@@ -58,6 +67,16 @@ function ResumeNew() {
           >
             <AiOutlineDownload aria-hidden="true" />
             &nbsp;Download CV
+          </Button>
+          <Button
+            variant="primary"
+            href="https://cv.dawidolko.pl/en/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the online CV at cv.dawidolko.pl (opens in a new tab)"
+            style={{ maxWidth: "250px" }}
+          >
+            &nbsp;View online
           </Button>
         </Row>
       </Container>
