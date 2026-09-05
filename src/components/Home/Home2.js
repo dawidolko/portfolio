@@ -13,7 +13,7 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h2>
             <p className="home-about-body">
-              I'm a Frontend Developer from{" "}
+              I'm a Full-Stack Developer from{" "}
               <b className="purple">Rzeszów, Poland</b> who loves transforming
               ideas into beautiful, functional websites and applications.
               <br />

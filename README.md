@@ -1,6 +1,6 @@
 # dawidolko.pl — Portfolio
 
-> Personal portfolio website of **Dawid Olko** — Frontend Developer from Rzeszów, Poland.  
+> Personal portfolio website of **Dawid Olko** — Full-Stack Developer from Rzeszów, Poland.  
 > Built with **React.js**, featuring a modern dark theme with emerald accents.
 
 **Live:** [https://olkodawid.dawidolko.pl](https://olkodawid.dawidolko.pl)
@@ -133,7 +133,7 @@ This project is open source under the [MIT License](LICENSE).
 ## 👨‍💻 Author
 
 **Dawid Olko**  
-Frontend Developer · Rzeszów, Poland
+Full-Stack Developer · Rzeszów, Poland
 
 - Website: [olkodawid.dawidolko.pl](https://olkodawid.dawidolko.pl)
 - GitHub: [@dawidolko](https://github.com/dawidolko)
