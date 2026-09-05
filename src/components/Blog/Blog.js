@@ -10,6 +10,7 @@ import computerscience from "../../assets/Blog/computerscience.webp";
 import family from "../../assets/Blog/family.webp";
 import graduation from "../../assets/Blog/graduation.webp";
 import egypt from "../../assets/Blog/egypt.webp";
+import mountains from "../../assets/Blog/mountains.webp";
 
 import blogBg from "../../assets/Backgrounds/backgroundContact2-photoaidcom-greyscale.png";
 
@@ -91,6 +92,18 @@ function Blog() {
               imgPath={egypt}
               title="Egypt"
               description="Journey to ancient wonders — travel to Egypt, the pyramids, the Nile, ancient history, culture, and unforgettable vacation experiences."
+            />
+          </Col>
+
+          {/*
+            Dziewiata karta domyka siatke: przy `md={4}` rzad mieści trzy
+            pozycje, więc przy ośmiu ostatni rząd kończył się pustą luką.
+          */}
+          <Col md={4} className="blog-card">
+            <BlogCards
+              imgPath={mountains}
+              title="Mountains"
+              description="Summer 2026 in the Polish mountains — a cruise on Lake Solina, a rainy funicular ride and Morskie Oko at dawn. Time away from the screen."
             />
           </Col>
         </Row>
