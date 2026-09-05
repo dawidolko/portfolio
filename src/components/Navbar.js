@@ -49,13 +49,15 @@ function NavBar() {
       expand="md"
       role="navigation"
       aria-label="Primary"
-      className={navColour ? "sticky" : "navbar"}>
+      className={navColour ? "sticky" : "navbar"}
+    >
       <Container>
         <Navbar.Brand
           as={Link}
           to="/"
           onClick={scrollToTop}
-          className="d-flex align-items-center">
+          className="d-flex align-items-center"
+        >
           {/* <img src={logo} className="img-fluid logo" alt="brand" /> */}
           <span className="navbar-brand-text">
             <span className="brand-first">Dawid</span>
@@ -67,7 +69,8 @@ function NavBar() {
           aria-controls="responsive-navbar-nav"
           aria-expanded={expand ? true : false}
           aria-label="Toggle navigation menu"
-          onClick={() => updateExpanded(expand ? false : "expanded")}>
+          onClick={() => updateExpanded(expand ? false : "expanded")}
+        >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -85,7 +88,8 @@ function NavBar() {
                   }
                   className={
                     location.pathname === item.path ? "active-nav" : ""
-                  }>
+                  }
+                >
                   <span className="nav-icon" aria-hidden="true">
                     {item.icon}
                   </span>
@@ -99,12 +103,31 @@ function NavBar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WorkStation (opens in a new tab)"
-                className="external-link nav-workstation">
+                className="external-link nav-workstation"
+              >
                 <MdWorkspaces
                   aria-hidden="true"
                   style={{ marginBottom: "2px" }}
                 />{" "}
                 WorkStation
+                <span className="nav-external-badge" aria-hidden="true">
+                  ↗
+                </span>
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link
+                href="https://cv.dawidolko.pl/en/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="CV (opens in a new tab)"
+                className="external-link"
+              >
+                <CgFileDocument
+                  aria-hidden="true"
+                  style={{ marginBottom: "2px" }}
+                />{" "}
+                CV
                 <span className="nav-external-badge" aria-hidden="true">
                   ↗
                 </span>

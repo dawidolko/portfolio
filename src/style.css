@@ -9,6 +9,16 @@
  * prostu je ignoruja i zachowuja sie jak dotad.
  */
 html {
+  /*
+   * `scrollbar-gutter` dziala tylko na kontenerze przewijania, a `html` mial
+   * `overflow-y: visible` — wlasciwosc byla wiec ignorowana i strona nadal
+   * przeskakiwala w lewo w momencie, gdy tresc urosla ponad wysokosc okna
+   * i przegladarka doklada pasek.
+   *
+   * `overflow-y: scroll` rezerwuje tor paska od pierwszej klatki, niezaleznie
+   * od dlugosci strony i od tego, czy przegladarka rysuje pasek nakladkowy.
+   */
+  overflow-y: scroll;
   scrollbar-gutter: stable;
 }
 

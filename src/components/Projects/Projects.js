@@ -5,6 +5,8 @@ import Particle from "../Particle";
 import smartrecommender from "../../assets/Projects/smartrecommender.svg";
 import fitnessgym from "../../assets/Projects/fitnessgym.svg";
 import techbyte from "../../assets/Projects/techbyte.svg";
+import ezscout from "../../assets/Projects/ezscout.svg";
+import ezpace from "../../assets/Projects/ezpace.svg";
 import workstation from "../../assets/Projects/workstation.svg";
 import movievault from "../../assets/Projects/movievault.svg";
 import f1zone from "../../assets/Projects/f1zone.svg";
@@ -101,6 +103,26 @@ function Projects() {
               demoLink="https://zbudujkompa.dawidolko.pl/"
             />
           </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={ezscout}
+              title="EzScout"
+              description="Scouting reports and match analysis for football clubs and agents, built with Next.js, TypeScript and Tailwind. Four packages, a sample report card in the hero and a CSS-only FAQ."
+              ghLink="https://github.com/dawidolko/EzScout-Platform-NextJS"
+              demoLink="https://ezscout.dawidolko.pl"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={ezpace}
+              title="EzPace"
+              description="Running coaching site with a working pace calculator: pick a distance and a target time, get pace, speed and a split table that accounts for the leftover distance. Next.js, TypeScript, Tailwind."
+              ghLink="https://github.com/dawidolko/EzPace-Platform-NextJS"
+              demoLink="https://ezpace.dawidolko.pl"
+            />
+          </Col>
+
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={weatherapp}
