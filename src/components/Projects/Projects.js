@@ -7,6 +7,8 @@ import fitnessgym from "../../assets/Projects/fitnessgym.svg";
 import techbyte from "../../assets/Projects/techbyte.svg";
 import ezscout from "../../assets/Projects/ezscout.svg";
 import ezpace from "../../assets/Projects/ezpace.svg";
+import cvforge from "../../assets/Projects/cvforge.svg";
+import reelcut from "../../assets/Projects/reelcut.svg";
 import workstation from "../../assets/Projects/workstation.svg";
 import movievault from "../../assets/Projects/movievault.svg";
 import f1zone from "../../assets/Projects/f1zone.svg";
@@ -110,6 +112,26 @@ function Projects() {
               description="Scouting reports and match analysis for football clubs and agents, built with Next.js, TypeScript and Tailwind. Four packages, a sample report card in the hero and a CSS-only FAQ."
               ghLink="https://github.com/dawidolko/EzScout-Platform-NextJS"
               demoLink="https://ezscout.dawidolko.pl"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={cvforge}
+              title="CVForge"
+              description="CV builder that runs entirely in the browser: fill in the form, pick one of three templates and print an A4 sheet identical to the preview. Data stays on the device; JSON export carries it between computers. Next.js, TypeScript, Tailwind."
+              ghLink="https://github.com/dawidolko/CVForge-Platform"
+              demoLink="https://cvforge.dawidolko.pl"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={reelcut}
+              title="ReelCut"
+              description="Browser video editor: split the timeline, switch off what you do not need, correct picture and sound, then render a WebM through canvas and MediaRecorder. Nothing is uploaded. Next.js, TypeScript, Tailwind."
+              ghLink="https://github.com/dawidolko/ReelCut-Platform"
+              demoLink="https://reelcut.dawidolko.pl"
             />
           </Col>
 
