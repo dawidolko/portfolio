@@ -4,7 +4,7 @@ import Particle from "../Particle";
 import Github from "./Github";
 import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
-import laptopImg from "../../assets/about.png";
+import portraitImg from "../../assets/avatar.webp";
 import morskieOko from "../../assets/morskie-oko-2026.webp";
 import Toolstack from "./Toolstack";
 
@@ -42,11 +42,11 @@ function About() {
               className="about-img"
             >
               <img
-                src={laptopImg}
-                alt="Dawid Olko working at his desk"
+                src={portraitImg}
+                alt="Portrait of Dawid Olko"
                 className="img-fluid"
-                width="1000"
-                height="689"
+                width="800"
+                height="800"
                 loading="lazy"
                 decoding="async"
                 style={{
