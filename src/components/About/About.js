@@ -8,7 +8,7 @@ import laptopImg from "../../assets/about.png";
 import morskieOko from "../../assets/morskie-oko-2026.webp";
 import Toolstack from "./Toolstack";
 
-import aboutBg from "../../assets/Backgrounds/backgroundHobbies2-photoaidcom-greyscale.webp";
+import aboutBg from "../../assets/Backgrounds/backgroundAbout.webp";
 
 function About() {
   return (

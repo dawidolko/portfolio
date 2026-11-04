@@ -39,7 +39,7 @@ function Footer() {
               </span> Dawid Olko
             </h2>
             <p className="footer-desc">
-              Full-Stack Developer from Rzeszów, Poland. Building modern web
+              Fullstack / AI Developer from Rzeszów, Poland. Building modern web
               experiences with React, Vue.js, and TypeScript.
             </p>
             <p className="footer-location">

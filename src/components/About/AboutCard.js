@@ -11,7 +11,7 @@ function AboutCard() {
             Hi everyone! I'm <span className="purple">Dawid Olko</span> from{" "}
             <span className="purple">Rzeszów, Poland</span>.
             <br />
-            I'm a <span className="purple">Full-Stack Developer</span> working
+            I'm a <span className="purple">Fullstack / AI Developer</span> working
             across{" "}
             <span className="purple">Laravel, Django, React and Vue.js</span> —
             from the database up to the interface.

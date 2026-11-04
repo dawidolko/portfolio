@@ -25,7 +25,7 @@ import bodykit from "../../assets/Projects/bodykit.svg";
 import neobank from "../../assets/Projects/neobank.svg";
 import framevision from "../../assets/Projects/framevision.svg";
 
-import projectBg from "../../assets/Backgrounds/backgroundFaq2-photoaidcom-greyscale.webp";
+import projectBg from "../../assets/Backgrounds/backgroundProjects.webp";
 
 function Projects() {
   return (

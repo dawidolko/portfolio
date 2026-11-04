@@ -12,7 +12,7 @@ import graduation from "../../assets/Blog/graduation.webp";
 import egypt from "../../assets/Blog/egypt.webp";
 import mountains from "../../assets/Blog/mountains.webp";
 
-import blogBg from "../../assets/Backgrounds/backgroundContact2-photoaidcom-greyscale.png";
+import blogBg from "../../assets/Backgrounds/backgroundBlog.webp";
 
 function Blog() {
   return (

@@ -13,7 +13,7 @@ import smartrecommender from "../../assets/Projects/smartrecommender.svg";
 import bitrecruit from "../../assets/Projects/bitrecruit.svg";
 import workstation from "../../assets/Projects/workstation.svg";
 
-import homeBg from "../../assets/Backgrounds/backgroundHome2-photoaidcom-greyscale.webp";
+import homeBg from "../../assets/Backgrounds/backgroundHome.webp";
 
 function Home() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../assets/avatar.png";
+import myImg from "../../assets/avatar.webp";
 import Tilt from "react-parallax-tilt";
 
 function Home2() {
@@ -13,7 +13,7 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h2>
             <p className="home-about-body">
-              I'm a Full-Stack Developer from{" "}
+              I'm a Fullstack / AI Developer from{" "}
               <b className="purple">Rzeszów, Poland</b> who loves transforming
               ideas into beautiful, functional websites and applications.
               <br />
@@ -52,7 +52,7 @@ function Home2() {
                 className="img-fluid"
                 alt="Portrait of Dawid Olko"
                 width="800"
-                height="637"
+                height="800"
                 loading="lazy"
                 decoding="async"
               />
