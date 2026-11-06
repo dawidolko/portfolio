@@ -1,57 +1,72 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 import { CgWebsite } from "react-icons/cg";
 import { BsGithub, BsYoutube } from "react-icons/bs";
+import cards from "../../data/project-cards.json";
+import ProjectTip from "./ProjectTip";
+import { dateRange, repoUrl } from "./projectUtils";
+import "./ProjectUi.css";
 
-function ProjectCards(props) {
+function ProjectCards({ slug, imgPath, description }) {
+  const project = cards.find((item) => item.slug === slug);
+  const ghLink = repoUrl(project);
+  const text = description || project.tagline;
   return (
-    <Card className="project-card-view">
-      <div className="project-card-img-wrapper">
-        <Card.Img
-          variant="top"
-          src={props.imgPath}
-          alt={`${props.title} project logo`}
-          loading="lazy"
-          decoding="async"
-        />
-        <div className="project-card-overlay" aria-hidden="true">
-          <p>{props.description}</p>
+    <Card className={`project-card-view${imgPath ? "" : " project-card-view--plain"}`}>
+      {imgPath ? (
+        <div className="project-card-img-wrapper">
+          <Card.Img
+            variant="top"
+            src={imgPath}
+            alt={`${project.title} project logo`}
+            loading="lazy"
+            decoding="async"
+          />
+          <div className="project-card-overlay" aria-hidden="true">
+            <p>{text}</p>
+          </div>
+          <ProjectTip project={project} />
         </div>
-      </div>
+      ) : (
+        <ProjectTip project={project} />
+      )}
       <Card.Body className="d-flex flex-column">
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text className="project-card-desc">
-          {props.description}
-        </Card.Text>
+        <Card.Title>{project.title}</Card.Title>
+        {!imgPath && <p className="project-card-date">{dateRange(project)}</p>}
+        <Card.Text className="project-card-desc">{text}</Card.Text>
         <div className="mt-auto project-card-buttons">
-          {props.ghLink && (
+          <Button as={Link} to={`/project/${slug}`} variant="primary">
+            Show<span className="visually-hidden-a11y"> {project.title}</span>
+          </Button>
+          {ghLink && (
             <Button
               variant="primary"
-              href={props.ghLink}
+              href={ghLink}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`${props.title} source code on GitHub (opens in a new tab)`}>
+              aria-label={`${project.title} source code on GitHub (opens in a new tab)`}>
               <BsGithub aria-hidden="true" /> &nbsp;GitHub
             </Button>
           )}
-          {props.demoLink && (
+          {project.live && (
             <Button
               variant="primary"
-              href={props.demoLink}
+              href={project.live}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`${props.title} live demo (opens in a new tab)`}>
+              aria-label={`${project.title} live demo (opens in a new tab)`}>
               <CgWebsite aria-hidden="true" /> &nbsp;Demo
             </Button>
           )}
-          {props.youtubeLink && (
+          {!project.live && project.video && (
             <Button
               variant="primary"
-              href={props.youtubeLink}
+              href={project.video}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`${props.title} video walkthrough on YouTube (opens in a new tab)`}>
+              aria-label={`${project.title} video walkthrough on YouTube (opens in a new tab)`}>
               <BsYoutube aria-hidden="true" /> &nbsp;Video
             </Button>
           )}

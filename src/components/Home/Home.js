@@ -9,6 +9,7 @@ import { FaLinkedinIn, FaTiktok, FaFacebookF } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import ProjectCard from "../Projects/ProjectCards";
+import skribly from "../../assets/Projects/skribly.svg";
 import smartrecommender from "../../assets/Projects/smartrecommender.svg";
 import bitrecruit from "../../assets/Projects/bitrecruit.svg";
 import workstation from "../../assets/Projects/workstation.svg";
@@ -74,31 +75,32 @@ function Home() {
             A few highlights from my recent work.
           </p>
           <Row style={{ justifyContent: "center" }}>
-            <Col md={4} className="project-card">
+            <Col md={3} className="project-card">
               <ProjectCard
+                slug="skribly"
+                imgPath={skribly}
+                description="A set of three tools for building software with AI coding agents: a task tracker, a desktop app that runs the agents and a shared library of rules."
+              />
+            </Col>
+            <Col md={3} className="project-card">
+              <ProjectCard
+                slug="bitrecruit"
                 imgPath={bitrecruit}
-                title="BitRecruit"
                 description="Recruitment platform built with Next.js featuring job listings, candidate management, employer dashboards, and a modern responsive design."
-                ghLink="https://github.com/dawidolko/BitRecruit-Platform-NextJS"
-                demoLink="http://bitrecruit.dawidolko.pl/"
               />
             </Col>
-            <Col md={4} className="project-card">
+            <Col md={3} className="project-card">
               <ProjectCard
+                slug="smartrecommender"
                 imgPath={smartrecommender}
-                title="SmartRecommender"
                 description="Recommendation system built with Django and React featuring intelligent content suggestions, user authentication, and a fully responsive interface."
-                ghLink="https://github.com/dawidolko/SmartRecommender-Projekt-Django-React"
-                demoLink="https://project.dawidolko.pl"
               />
             </Col>
-            <Col md={4} className="project-card">
+            <Col md={3} className="project-card">
               <ProjectCard
+                slug="workstation"
                 imgPath={workstation}
-                title="WorkStation"
                 description="Workspace app built with Vue.js and TypeScript featuring task management, productivity tools, and a clean, modern user-friendly interface."
-                ghLink="https://github.com/dawidolko/WorkStation-Vue-TypeScript"
-                demoLink="https://workstation.dawidolko.pl/"
               />
             </Col>
           </Row>

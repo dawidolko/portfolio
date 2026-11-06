@@ -1,0 +1,158 @@
+/*
+ * Project tooltip, its button and the compact cards. The look follows
+ * Tippy.js: dark box, arrow, short fade.
+ */
+.tip-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background: rgba(5, 19, 14, 0.85);
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1;
+  cursor: help;
+  transition: background-color 0.2s ease;
+}
+
+.tip-btn:hover,
+.tip-btn:focus-visible {
+  background: #047857;
+}
+
+.tip {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+  width: max-content;
+  max-width: min(300px, calc(100vw - 16px));
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: #1f2d28;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.45;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.tip--open {
+  opacity: 1;
+}
+
+.tip p {
+  margin: 0;
+}
+
+.tip::after {
+  content: "";
+  position: absolute;
+  left: var(--tip-arrow, 50%);
+  width: 0;
+  height: 0;
+  margin-left: -8px;
+  border: 8px solid transparent;
+}
+
+.tip[data-placement="top"]::after {
+  top: 100%;
+  border-top-color: #1f2d28;
+}
+
+.tip[data-placement="bottom"]::after {
+  bottom: 100%;
+  border-bottom-color: #1f2d28;
+}
+
+.tip .tip__title {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.tip .tip__date {
+  color: #6ee7b7;
+  font-size: 13px;
+}
+
+.tip .tip__kind {
+  margin-top: 4px;
+}
+
+.tip .tip__label {
+  margin-top: 8px;
+  color: #cfd8d4;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tip__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tip__list li {
+  position: relative;
+  padding-left: 12px;
+}
+
+.tip__list li::before {
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #6ee7b7;
+}
+
+.project-card-view--plain {
+  position: relative;
+}
+
+.project-card-view--plain .card-title {
+  padding-right: 34px;
+}
+
+.project-card--compact {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+.project-card--compact .project-card-desc {
+  min-height: 0;
+}
+
+.project-card-date {
+  margin: 0 0 6px;
+  color: #6ee7b7;
+  font-size: 0.85em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tip,
+  .tip-btn {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .tip {
+    border-color: CanvasText;
+  }
+}

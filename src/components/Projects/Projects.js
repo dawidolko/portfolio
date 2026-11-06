@@ -2,6 +2,8 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
+import cards from "../../data/project-cards.json";
+import skribly from "../../assets/Projects/skribly.svg";
 import smartrecommender from "../../assets/Projects/smartrecommender.svg";
 import fitnessgym from "../../assets/Projects/fitnessgym.svg";
 import techbyte from "../../assets/Projects/techbyte.svg";
@@ -27,6 +29,150 @@ import framevision from "../../assets/Projects/framevision.svg";
 
 import projectBg from "../../assets/Backgrounds/backgroundProjects.webp";
 
+const featured = [
+  {
+    slug: "skribly",
+    imgPath: skribly,
+    description:
+      "A set of three tools for building software with AI coding agents: a task tracker, a desktop app that runs the agents and a shared library of rules. Electron, Laravel, TypeScript.",
+  },
+  {
+    slug: "smartrecommender",
+    imgPath: smartrecommender,
+    description:
+      "Recommendation system built with Django and React featuring intelligent content suggestions, user authentication, and a fully responsive interface.",
+  },
+  {
+    slug: "mp-industries",
+    imgPath: mpindustries,
+    description:
+      "Fullstack business platform built with Laravel, Blade and Tailwind CSS. Features CNC machines catalog, LPG installations, dog breeding and honey products with admin panel.",
+  },
+  {
+    slug: "neobank",
+    imgPath: neobank,
+    description:
+      "Fullstack banking platform built with Nuxt, TypeScript, Prisma and PostgreSQL. Features accounts, transfers, transaction history, authentication and an admin panel.",
+  },
+  {
+    slug: "techbyte",
+    imgPath: techbyte,
+    description:
+      "Computer store with full e-commerce functionality built with PHP, JavaScript and SASS. Includes product catalog, cart, and order management.",
+  },
+  {
+    slug: "movievault",
+    imgPath: movievault,
+    description:
+      "Movie management app built with Spring Boot and React. Features browsing, reviews, user ratings, and a modern responsive interface design.",
+  },
+  {
+    slug: "cinemareserve",
+    imgPath: cinemareserve,
+    description:
+      "Cinema reservation system built with Node.js and Angular with movie listings, seat selection, booking management and payment flow.",
+  },
+  {
+    slug: "zbudujkompa",
+    imgPath: zbudujkompa,
+    description:
+      "Bilingual PC building guide built with Next.js and Tailwind CSS. Covers CPU platforms, cooling classes, reference builds and step-by-step assembly, with a compatibility checker and PSU calculator.",
+  },
+  {
+    slug: "ezscout",
+    imgPath: ezscout,
+    description:
+      "Scouting reports and match analysis for football clubs and agents, built with Next.js, TypeScript and Tailwind. Four packages, a sample report card in the hero and a CSS-only FAQ.",
+  },
+  {
+    slug: "cvforge",
+    imgPath: cvforge,
+    description:
+      "CV builder that runs entirely in the browser: fill in the form, pick one of three templates and print an A4 sheet identical to the preview. Data stays on the device; JSON export carries it between computers. Next.js, TypeScript, Tailwind.",
+  },
+  {
+    slug: "reelcut",
+    imgPath: reelcut,
+    description:
+      "Browser video editor: split the timeline, switch off what you do not need, correct picture and sound, then render a WebM through canvas and MediaRecorder. Nothing is uploaded. Next.js, TypeScript, Tailwind.",
+  },
+  {
+    slug: "ezpace",
+    imgPath: ezpace,
+    description:
+      "Running coaching site with a working pace calculator: pick a distance and a target time, get pace, speed and a split table that accounts for the leftover distance. Next.js, TypeScript, Tailwind.",
+  },
+  {
+    slug: "weather-app",
+    imgPath: weatherapp,
+    description:
+      "Weather app built with Laravel and React displaying real-time weather data, forecasts, and location-based weather information system.",
+  },
+  {
+    slug: "bodykit",
+    imgPath: bodykit,
+    description:
+      "Car tuning and body kit storefront built with Next.js, TypeScript and Tailwind CSS. Features a product catalog, filtering, cart and a fully responsive static export.",
+  },
+  {
+    slug: "bitrecruit",
+    imgPath: bitrecruit,
+    description:
+      "Recruitment platform built with Next.js featuring job listings, candidate management, employer dashboards, and a modern responsive design.",
+  },
+  {
+    slug: "workstation",
+    imgPath: workstation,
+    description:
+      "Workspace app built with Vue.js and TypeScript featuring task management, productivity tools, and a clean, modern user-friendly interface.",
+  },
+  {
+    slug: "devpulse",
+    imgPath: devtechblog,
+    description:
+      "Developer blog platform built with React featuring article publishing, category filtering, syntax highlighting, and clean reading experience.",
+  },
+  {
+    slug: "fitnessgym",
+    imgPath: fitnessgym,
+    description:
+      "Modern fitness gym app built with React featuring workout plans, class schedules, membership management, and a responsive user interface.",
+  },
+  {
+    slug: "kebab",
+    imgPath: kebab,
+    description:
+      "Food ordering application built with React featuring menu browsing, order customization, cart management, and fully responsive design.",
+  },
+  {
+    slug: "f1-zone",
+    imgPath: f1zone,
+    description:
+      "Formula 1 fan site built with HTML, CSS, JS, SASS. Features race schedules, driver profiles, team standings, and latest news updates.",
+  },
+  {
+    slug: "curiosities-magazine",
+    imgPath: curiositiesmagazine,
+    description:
+      "Magazine-style website built with JS, HTML and SASS featuring article layouts, image galleries, and polished editorial design elements.",
+  },
+  {
+    slug: "layout-simple",
+    imgPath: simplelayout,
+    description:
+      "Clean layout showcase built with Vue.js demonstrating modern CSS layouts, responsive design patterns, and Vue component architecture.",
+  },
+  {
+    slug: "framevision",
+    imgPath: framevision,
+    description:
+      "Front-end site for a professional photography studio, covering portrait, business, family and fine art sessions. Built with HTML, SASS and JavaScript with a fully responsive layout.",
+  },
+];
+
+const featuredSlugs = new Set(featured.map((item) => item.slug));
+const others = cards.filter((item) => !featuredSlugs.has(item.slug));
+
 function Projects() {
   return (
     <Container fluid className="project-section">
@@ -44,206 +190,21 @@ function Projects() {
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={smartrecommender}
-              title="SmartRecommender"
-              description="Recommendation system built with Django and React featuring intelligent content suggestions, user authentication, and a fully responsive interface."
-              ghLink="https://github.com/dawidolko/SmartRecommender-Projekt-Django-React"
-              demoLink="https://project.dawidolko.pl"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={mpindustries}
-              title="MP Industries"
-              description="Fullstack business platform built with Laravel, Blade and Tailwind CSS. Features CNC machines catalog, LPG services, dog breeding and honey products with admin panel."
-              demoLink="https://mp-industries.pl/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={neobank}
-              title="NeoBank"
-              description="Fullstack banking platform built with Nuxt, TypeScript, Prisma and PostgreSQL. Features accounts, transfers, transaction history, authentication and an admin panel."
-              ghLink="https://github.com/dawidolko/NeoBank-Platform-Nuxt"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={techbyte}
-              title="TechByte"
-              description="Computer store with full e-commerce functionality built with PHP, JavaScript and SASS. Includes product catalog, cart, and order management."
-              ghLink="https://github.com/dawidolko/Database-Project-ComputerStore"
-              demoLink="https://piotrsmola.dawidolko.pl/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={movievault}
-              title="MovieVault"
-              description="Movie management app built with Spring Boot and React. Features browsing, reviews, user ratings, and a modern responsive interface design."
-              ghLink="https://github.com/dawidolko/MovieVault-Project-SpringBoot-React"
-              youtubeLink="https://youtu.be/ooIoa_PGRzk"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={cinemareserve}
-              title="CinemaReserve"
-              description="Cinema reservation system built with Node.js and Angular with movie listings, seat selection, booking management and payment flow."
-              ghLink="https://github.com/dawidolko/CinemaReserve-Project-Node-Angular"
-              youtubeLink="https://youtu.be/7ygXIAm0sFc"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={zbudujkompa}
-              title="ZbudujKompa"
-              description="Bilingual PC building guide built with Next.js and Tailwind CSS. Covers CPU platforms, cooling classes, reference builds and step-by-step assembly, with a compatibility checker and PSU calculator."
-              ghLink="https://github.com/dawidolko/ZbudujKompa"
-              demoLink="https://zbudujkompa.dawidolko.pl/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={ezscout}
-              title="EzScout"
-              description="Scouting reports and match analysis for football clubs and agents, built with Next.js, TypeScript and Tailwind. Four packages, a sample report card in the hero and a CSS-only FAQ."
-              ghLink="https://github.com/dawidolko/EzScout-Platform-NextJS"
-              demoLink="https://ezscout.dawidolko.pl"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={cvforge}
-              title="CVForge"
-              description="CV builder that runs entirely in the browser: fill in the form, pick one of three templates and print an A4 sheet identical to the preview. Data stays on the device; JSON export carries it between computers. Next.js, TypeScript, Tailwind."
-              ghLink="https://github.com/dawidolko/CVForge-Platform"
-              demoLink="https://cvforge.dawidolko.pl"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={reelcut}
-              title="ReelCut"
-              description="Browser video editor: split the timeline, switch off what you do not need, correct picture and sound, then render a WebM through canvas and MediaRecorder. Nothing is uploaded. Next.js, TypeScript, Tailwind."
-              ghLink="https://github.com/dawidolko/ReelCut-Platform"
-              demoLink="https://reelcut.dawidolko.pl"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={ezpace}
-              title="EzPace"
-              description="Running coaching site with a working pace calculator: pick a distance and a target time, get pace, speed and a split table that accounts for the leftover distance. Next.js, TypeScript, Tailwind."
-              ghLink="https://github.com/dawidolko/EzPace-Platform-NextJS"
-              demoLink="https://ezpace.dawidolko.pl"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={weatherapp}
-              title="Weather App"
-              description="Weather app built with Laravel and React displaying real-time weather data, forecasts, and location-based weather information system."
-              ghLink="https://github.com/dawidolko/Weather-App-Laravel-React"
-              youtubeLink="https://www.youtube.com/watch?v=WTi2i2wHPt0"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={bodykit}
-              title="BodyKit"
-              description="Car tuning and body kit storefront built with Next.js, TypeScript and Tailwind CSS. Features a product catalog, filtering, cart and a fully responsive static export."
-              ghLink="https://github.com/dawidolko/BodyKit-Shop-Frontend-NextJS"
-              demoLink="https://bodykit.dawidolko.pl/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={bitrecruit}
-              title="BitRecruit"
-              description="Recruitment platform built with Next.js featuring job listings, candidate management, employer dashboards, and a modern responsive design."
-              ghLink="https://github.com/dawidolko/BitRecruit-Platform-NextJS"
-              demoLink="http://bitrecruit.dawidolko.pl/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={workstation}
-              title="WorkStation"
-              description="Workspace app built with Vue.js and TypeScript featuring task management, productivity tools, and a clean, modern user-friendly interface."
-              ghLink="https://github.com/dawidolko/WorkStation-Vue-TypeScript"
-              demoLink="https://workstation.dawidolko.pl/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={devtechblog}
-              title="DevTechBlog"
-              description="Developer blog platform built with React featuring article publishing, category filtering, syntax highlighting, and clean reading experience."
-              ghLink="https://github.com/dawidolko/DevTechBlog-Platform-React"
-              demoLink="https://devtechblog.dawidolko.pl/#/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={fitnessgym}
-              title="FitnessGym"
-              description="Modern fitness gym app built with React featuring workout plans, class schedules, membership management, and a responsive user interface."
-              ghLink="https://github.com/dawidolko/FitnessGym-Project-React"
-              demoLink="https://fitnessgym.dawidolko.pl/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={kebab}
-              title="Kebab Project"
-              description="Food ordering application built with React featuring menu browsing, order customization, cart management, and fully responsive design."
-              ghLink="https://github.com/dawidolko/Kebab-Project-React"
-              demoLink="https://kebab.dawidolko.pl/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={f1zone}
-              title="F1Zone"
-              description="Formula 1 fan site built with HTML, CSS, JS, SASS. Features race schedules, driver profiles, team standings, and latest news updates."
-              ghLink="https://github.com/dawidolko/F1Zone-Project-HTML-CSS-JS-SASS"
-              demoLink="https://f1.dawidolko.pl/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={curiositiesmagazine}
-              title="CuriositiesMagazine"
-              description="Magazine-style website built with JS, HTML and SASS featuring article layouts, image galleries, and polished editorial design elements."
-              ghLink="https://github.com/dawidolko/CuriositiesMagazine-Project-HTML-CSS"
-              demoLink="https://projekt1.dawidolko.pl/index.html"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={simplelayout}
-              title="Simple Layout"
-              description="Clean layout showcase built with Vue.js demonstrating modern CSS layouts, responsive design patterns, and Vue component architecture."
-              ghLink="https://github.com/dawidolko/Layout-Simple-Vue"
-              demoLink="https://simplelayout.dawidolko.pl/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={framevision}
-              title="FrameVision"
-              description="Front-end site for a professional photography studio, covering portrait, business, family and fine art sessions. Built with HTML, SASS and JavaScript with a fully responsive layout."
-              ghLink="https://github.com/dawidolko/FrameVision-Project-HTML-CSS-JS-SASS"
-              demoLink="https://framevision.dawidolko.pl/"
-            />
-          </Col>
+          {featured.map((item) => (
+            <Col md={4} className="project-card" key={item.slug}>
+              <ProjectCard {...item} />
+            </Col>
+          ))}
+        </Row>
+        <h2 className="project-heading">
+          More <strong className="purple">Projects</strong>
+        </h2>
+        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          {others.map((item) => (
+            <Col md={4} className="project-card project-card--compact" key={item.slug}>
+              <ProjectCard slug={item.slug} />
+            </Col>
+          ))}
         </Row>
       </Container>
     </Container>

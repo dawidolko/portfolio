@@ -1,0 +1,852 @@
+[
+  {
+    "slug": "skribly",
+    "title": "Skribly",
+    "start": "Oct 2026",
+    "end": "present",
+    "kind": "Developer tools for AI coding agents",
+    "tagline": "From a task to an approved commit",
+    "shows": [
+      "Task tracking people and agents can share",
+      "Agents you can watch while they work",
+      "One library of rules for every agent"
+    ],
+    "repo": "",
+    "live": "https://skribly.pl",
+    "video": "",
+    "private": true
+  },
+  {
+    "slug": "cv",
+    "title": "CV",
+    "start": "Sep 2026",
+    "end": "present",
+    "kind": "Static résumé website",
+    "tagline": "The page is the source, the PDF is the export",
+    "shows": [
+      "One layout, two languages",
+      "The print output is the deliverable",
+      "Light palette forced when printing"
+    ],
+    "repo": "cv.dawidolko.pl",
+    "live": "https://cv.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "zbudujkompa",
+    "title": "ZbudujKompa",
+    "start": "Jul 2026",
+    "end": "present",
+    "kind": "Bilingual reference website for PC builders",
+    "tagline": "Build your PC without guessing",
+    "shows": [
+      "Configurator",
+      "Components",
+      "Platforms"
+    ],
+    "repo": "ZbudujKompa",
+    "live": "https://zbudujkompa.dawidolko.pl/pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "mp-industries",
+    "title": "MP Industries",
+    "start": "Jun 2025",
+    "end": "present",
+    "kind": "Laravel company website",
+    "tagline": "Four businesses, one website",
+    "shows": [
+      "A real model per branch",
+      "Everything editable in Filament",
+      "Page content is data"
+    ],
+    "repo": "",
+    "live": "https://mp-industries.pl",
+    "video": "",
+    "private": true
+  },
+  {
+    "slug": "cvforge",
+    "title": "CVForge",
+    "start": "Aug 2026",
+    "end": "Sep 2026",
+    "kind": "CV builder that runs in the browser",
+    "tagline": "The preview is the print",
+    "shows": [
+      "The preview is the printed sheet",
+      "Open the finished CV in its own tab",
+      "Import an existing CV from a PDF"
+    ],
+    "repo": "CVForge-Platform",
+    "live": "https://cvforge.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "reelcut",
+    "title": "ReelCut",
+    "start": "Aug 2026",
+    "end": "Sep 2026",
+    "kind": "Video editor that runs in the browser",
+    "tagline": "The footage never leaves the tab",
+    "shows": [
+      "Several clips on one timeline",
+      "Delete, not just disable",
+      "Nothing is uploaded"
+    ],
+    "repo": "ReelCut-Platform",
+    "live": "https://reelcut.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "neobank",
+    "title": "NeoBank",
+    "start": "Jul 2026",
+    "end": "Aug 2026",
+    "kind": "Full-stack retail banking system",
+    "tagline": "Fullstack Retail Banking Platform",
+    "shows": [
+      "Multi-Currency Accounts",
+      "Double-Entry Ledger",
+      "Instant Internal Transfers"
+    ],
+    "repo": "NeoBank-Platform-Nuxt",
+    "live": "https://neobank.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "bodykit",
+    "title": "BodyKit",
+    "start": "Jun 2026",
+    "end": "Jul 2026",
+    "kind": "Front-end web shop with static export",
+    "tagline": "A front-end shop for car body kits and styling parts",
+    "shows": [
+      "Bilingual",
+      "Full catalog",
+      "Cart & checkout"
+    ],
+    "repo": "BodyKit-Shop-Frontend-NextJS",
+    "live": "https://bodykit.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "ezpace",
+    "title": "EzPace",
+    "start": "Jun 2026",
+    "end": "Jul 2026",
+    "kind": "Running coach product site",
+    "tagline": "A plan counted back from the race date, not bolted onto it",
+    "shows": [
+      "A pace calculator that is not a mock-up",
+      "Splits that include the leftover distance",
+      "Three plans, one price each"
+    ],
+    "repo": "EzPace-Platform-NextJS",
+    "live": "https://ezpace.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "ezscout",
+    "title": "EzScout",
+    "start": "Jun 2026",
+    "end": "Jul 2026",
+    "kind": "Football scouting product site",
+    "tagline": "A report that says whether he is worth buying",
+    "shows": [
+      "Four packages",
+      "A sample report card in the hero",
+      "Honest results section"
+    ],
+    "repo": "EzScout-Platform-NextJS",
+    "live": "https://ezscout.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "airline-passenger-satisfaction",
+    "title": "Airline Passenger Satisfaction",
+    "start": "May 2026",
+    "end": "Jun 2026",
+    "kind": "Machine learning classifier",
+    "tagline": "Multiclass flight-class prediction with a PyTorch MLP built from scratch",
+    "shows": [
+      "MLP from scratch in PyTorch",
+      "18-configuration grid search",
+      "Random Forest reference"
+    ],
+    "repo": "Airline-Passenger-Classifier-Python-MLP-Classifier-Python",
+    "live": "",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "cyber-security-attacks-classifier",
+    "title": "Cyber Security Attacks Classifier",
+    "start": "Apr 2026",
+    "end": "Jun 2026",
+    "kind": "Machine learning classifier",
+    "tagline": "End-to-end multiclass classification of network attacks",
+    "shows": [
+      "Balanced three-class target",
+      "Automatic data acquisition",
+      "Full EDA suite"
+    ],
+    "repo": "CyberAttack-Classifier-Python",
+    "live": "",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "wine-quality-classification",
+    "title": "Wine Quality Classification",
+    "start": "Apr 2026",
+    "end": "May 2026",
+    "kind": "Machine learning study",
+    "tagline": "Multiclass wine quality classification with leakage-free scikit-learn pipelines",
+    "shows": [
+      "Multiclass target",
+      "Nine classifier variants",
+      "Majority-voting ensemble"
+    ],
+    "repo": "WineQuality-Classifier-Python",
+    "live": "",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "bitrecruit",
+    "title": "BitRecruit",
+    "start": "Feb 2026",
+    "end": "Mar 2026",
+    "kind": "IT job board front end",
+    "tagline": "IT Career Platform",
+    "shows": [
+      "Filter offers",
+      "Pagination",
+      "Sorting"
+    ],
+    "repo": "BitRecruit-Platform-NextJS",
+    "live": "https://bitrecruit.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "cinemareserve",
+    "title": "CinemaReserve",
+    "start": "Jan 2026",
+    "end": "Feb 2026",
+    "kind": "Full-stack cinema booking application",
+    "tagline": "Full-Stack Cinema Seat Reservation Platform",
+    "shows": [
+      "Home",
+      "Movie Detail",
+      "Seat Selection"
+    ],
+    "repo": "CinemaReserve-Project-Node-Angular",
+    "live": "",
+    "video": "https://youtu.be/7ygXIAm0sFc",
+    "private": false
+  },
+  {
+    "slug": "devpulse",
+    "title": "DevPulse",
+    "start": "Jan 2026",
+    "end": "Feb 2026",
+    "kind": "Developer blog as a React single-page app",
+    "tagline": "Modern Developer Tech Blog with React & TypeScript",
+    "shows": [
+      "Blog Post Cards",
+      "Post Detail Pages",
+      "Category System"
+    ],
+    "repo": "DevTechBlog-Platform-React",
+    "live": "https://devtechblog.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "movievault",
+    "title": "MovieVault",
+    "start": "Jan 2026",
+    "end": "Feb 2026",
+    "kind": "Full-stack movie review platform",
+    "tagline": "Full-Stack Movie Review Platform",
+    "shows": [
+      "Movie Catalogue",
+      "Filtering & Sorting",
+      "JWT Authentication"
+    ],
+    "repo": "MovieVault-Project-SpringBoot-React",
+    "live": "",
+    "video": "https://youtu.be/ooIoa_PGRzk",
+    "private": false
+  },
+  {
+    "slug": "smartrecommender",
+    "title": "SmartRecommender",
+    "start": "Dec 2024",
+    "end": "Feb 2026",
+    "kind": "Full-stack e-commerce recommendation platform",
+    "tagline": "Full-Stack Product Recommendation Platform",
+    "shows": [
+      "Collaborative Filtering",
+      "Content-Based Filtering",
+      "Association Rules"
+    ],
+    "repo": "SmartRecommender-Project-Django-React",
+    "live": "https://project.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "hirudozdrowie",
+    "title": "HirudoZdrowie",
+    "start": "Jan 2026",
+    "end": "Feb 2026",
+    "kind": "Clinic information website",
+    "tagline": "A clinic site that answers before it sells",
+    "shows": [
+      "Every route prerendered",
+      "Type-checked before it ships",
+      "Content as typed data"
+    ],
+    "repo": "",
+    "live": "https://hirudozdrowie.com",
+    "video": "",
+    "private": true
+  },
+  {
+    "slug": "workstation",
+    "title": "WorkStation",
+    "start": "Apr 2025",
+    "end": "Jan 2026",
+    "kind": "Interactive hardware setup showcase",
+    "tagline": "Interactive Gaming & Work Setup Showcase with Vue 3 + TypeScript",
+    "shows": [
+      "Full Setup Showcase",
+      "Six Hardware Categories",
+      "Detailed Specifications"
+    ],
+    "repo": "WorkStation-Vue-TypeScript",
+    "live": "https://workstation.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "anfis-vs-classical-machine-learning",
+    "title": "ANFIS vs Classical Machine Learning",
+    "start": "Oct 2025",
+    "end": "Dec 2025",
+    "kind": "Machine learning comparison study",
+    "tagline": "A model that can be read out loud",
+    "shows": [
+      "ANFIS implemented, not imported",
+      "Rules exported as JSON",
+      "Membership functions plotted"
+    ],
+    "repo": "Comparison-ANFIS-Classical-Machine-Learning-Models-Python",
+    "live": "",
+    "video": "https://youtu.be/O3X3MsWPVi8",
+    "private": false
+  },
+  {
+    "slug": "it-help-desk",
+    "title": "IT Help Desk",
+    "start": "Oct 2025",
+    "end": "Nov 2025",
+    "kind": "Full-stack ticketing system",
+    "tagline": "Modern IT Help Desk Ticketing System",
+    "shows": [
+      "Full CRUD Operations",
+      "Assignment System",
+      "Seven Ticket Statuses"
+    ],
+    "repo": "ITHelpDeskSystem-Project-ASPNetCore-Vue",
+    "live": "https://ithelpdesk.dawidolko.pl",
+    "video": "https://youtu.be/CjPaI4beypc",
+    "private": false
+  },
+  {
+    "slug": "taskapp",
+    "title": "TaskApp",
+    "start": "Mar 2025",
+    "end": "Jun 2025",
+    "kind": "JavaFX desktop application",
+    "tagline": "Four roles, four applications",
+    "shows": [
+      "A separate interface per role",
+      "Tasks with a history",
+      "Projects, teams and members as real relations"
+    ],
+    "repo": "TaskApp-JavaFX",
+    "live": "",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "datafusion",
+    "title": "DataFusion",
+    "start": "Mar 2025",
+    "end": "May 2025",
+    "kind": "Python desktop application for data preparation",
+    "tagline": "A CSV workbench that runs on the desktop",
+    "shows": [
+      "Undo is a first-class button",
+      "Descriptive statistics on demand",
+      "Both correlation matrices, side by side"
+    ],
+    "repo": "DataFusion-App-Python",
+    "live": "https://datafusion.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "framevision",
+    "title": "FrameVision",
+    "start": "May 2025",
+    "end": "May 2025",
+    "kind": "Single-page studio website",
+    "tagline": "One page, five sections, no framework",
+    "shows": [
+      "Reveal animations written by hand",
+      "A navigation that reacts to position",
+      "A burger menu that closes itself"
+    ],
+    "repo": "FrameVision-Project-HTML-CSS-JS-SASS",
+    "live": "https://framevision.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "rent-app",
+    "title": "Rent App",
+    "start": "Apr 2025",
+    "end": "Apr 2025",
+    "kind": "Vue property search page",
+    "tagline": "Filters that show their work",
+    "shows": [
+      "Active filters are visible and individually clearable",
+      "Three range sliders, not six number fields",
+      "A panel that expands"
+    ],
+    "repo": "Rent-App-Vue",
+    "live": "https://rent.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "kebab",
+    "title": "Kebab",
+    "start": "Mar 2025",
+    "end": "Mar 2025",
+    "kind": "React restaurant ordering page",
+    "tagline": "The cart is in one place",
+    "shows": [
+      "One cart, three consumers",
+      "Quantities keyed by product name",
+      "A sidebar, not a separate page"
+    ],
+    "repo": "Kebab-Project-React",
+    "live": "https://kebab.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "shop",
+    "title": "Shop",
+    "start": "Mar 2025",
+    "end": "Mar 2025",
+    "kind": "Serverless Vue and Firestore shop",
+    "tagline": "The same shop, without a backend",
+    "shows": [
+      "No backend to run",
+      "The dataset ships with the code",
+      "A basket per account"
+    ],
+    "repo": "Shop-Vue-Firestore-Demo",
+    "live": "",
+    "video": "https://www.youtube.com/watch?v=WTi2i2wHPt0",
+    "private": false
+  },
+  {
+    "slug": "employee-directory",
+    "title": "Employee Directory",
+    "start": "Feb 2025",
+    "end": "Feb 2025",
+    "kind": "Laravel data browser",
+    "tagline": "300 000 employees, one query at a time",
+    "shows": [
+      "Filters that compose",
+      "Exports match the screen",
+      "One person, their whole history"
+    ],
+    "repo": "Employees-List-Project-Laravel",
+    "live": "",
+    "video": "https://youtu.be/IrXowM1RJ0U?si=BhE7ExEXMQ9pChby",
+    "private": false
+  },
+  {
+    "slug": "layout-simple",
+    "title": "Layout Simple",
+    "start": "Feb 2025",
+    "end": "Feb 2025",
+    "kind": "Vue landing page built from components",
+    "tagline": "Content lives in files, not in templates",
+    "shows": [
+      "Content as data modules",
+      "One stylesheet per section",
+      "Nine sections that stand alone"
+    ],
+    "repo": "Layout-Simple-Vue",
+    "live": "https://simplelayout.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "shop-app",
+    "title": "Shop App",
+    "start": "Feb 2025",
+    "end": "Feb 2025",
+    "kind": "Full-stack Laravel and Vue shop",
+    "tagline": "A basket that survives the browser",
+    "shows": [
+      "The basket is a table, not browser state",
+      "Checkout writes the paperwork",
+      "Browse by category or by brand"
+    ],
+    "repo": "Shop-App-Laravel-Vue",
+    "live": "",
+    "video": "https://www.youtube.com/watch?v=WTi2i2wHPt0",
+    "private": false
+  },
+  {
+    "slug": "weather-app",
+    "title": "Weather App",
+    "start": "Jan 2025",
+    "end": "Jan 2025",
+    "kind": "Full-stack Laravel and React weather app",
+    "tagline": "Weather that remembers",
+    "shows": [
+      "Readings are kept, not discarded",
+      "Your own list of cities",
+      "Search any city in the world"
+    ],
+    "repo": "Weather-App-Laravel-React",
+    "live": "",
+    "video": "https://www.youtube.com/watch?v=WTi2i2wHPt0",
+    "private": false
+  },
+  {
+    "slug": "wifidirect-file-transfer",
+    "title": "WiFiDirect File Transfer",
+    "start": "Nov 2024",
+    "end": "Jan 2025",
+    "kind": "Android application",
+    "tagline": "Two phones, no network",
+    "shows": [
+      "Peer-to-peer, not cloud",
+      "Sender and receiver are separate screens",
+      "Transfer history"
+    ],
+    "repo": "WiFiDirectFileTransfer-Kotlin",
+    "live": "",
+    "video": "https://www.youtube.com/shorts/CwdRK33g_8U",
+    "private": false
+  },
+  {
+    "slug": "dawidolko-pl",
+    "title": "dawidolko.pl",
+    "start": "Jan 2023",
+    "end": "Dec 2024",
+    "kind": "Personal website without a framework",
+    "tagline": "Multi-page personal website built from scratch",
+    "shows": [
+      "Multi-page structure",
+      "Modular SASS architecture",
+      "Responsive image pipeline"
+    ],
+    "repo": "dawidolko.pl",
+    "live": "https://dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "language-courses",
+    "title": "Language Courses",
+    "start": "May 2024",
+    "end": "Jun 2024",
+    "kind": "Laravel course enrolment platform",
+    "tagline": "Enrolment, not just a catalogue",
+    "shows": [
+      "A basket that produces enrolments",
+      "A date chosen at the point of buying",
+      "Roles enforced by middleware"
+    ],
+    "repo": "LanguageCourses-Project-Laravel",
+    "live": "",
+    "video": "https://youtu.be/Rjnw00AN1Xw",
+    "private": false
+  },
+  {
+    "slug": "techbyte",
+    "title": "TechByte",
+    "start": "Mar 2024",
+    "end": "May 2024",
+    "kind": "Laravel computer store on Oracle",
+    "tagline": "A shop that runs on Oracle",
+    "shows": [
+      "Oracle as the primary database",
+      "Logic in PL/SQL where it belongs",
+      "Two guards, two areas"
+    ],
+    "repo": "TechByte-Project-Laravel",
+    "live": "https://techbyte.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "rentalvod",
+    "title": "RentalVOD",
+    "start": "Apr 2024",
+    "end": "May 2024",
+    "kind": "Laravel film rental platform",
+    "tagline": "Rules the admin can rewrite",
+    "shows": [
+      "An editable recommendation rule",
+      "Rentals, not purchases",
+      "Loyalty points and referral codes"
+    ],
+    "repo": "RentalVOD-Project-Laravel",
+    "live": "",
+    "video": "https://www.youtube.com/watch?v=uPIp8MLDDec",
+    "private": false
+  },
+  {
+    "slug": "widgetmart",
+    "title": "WidgetMart",
+    "start": "Jan 2024",
+    "end": "Feb 2024",
+    "kind": "Shop front without a framework",
+    "tagline": "Nine pages, one browser",
+    "shows": [
+      "A cart in localStorage",
+      "Live weather with a search history",
+      "A note manager as a real class"
+    ],
+    "repo": "WidgetMart-Project-HTML-CSS-JS",
+    "live": "https://projekt2.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "atm-simulator",
+    "title": "ATM Simulator",
+    "start": "Dec 2023",
+    "end": "Jan 2024",
+    "kind": "Java desktop simulator",
+    "tagline": "A cash machine with a real ledger",
+    "shows": [
+      "State in the database, not in the process",
+      "A PIN gate with card selection",
+      "Four operations, each its own window"
+    ],
+    "repo": "ATM-System-Java-Swing",
+    "live": "",
+    "video": "https://www.youtube.com/watch?v=PrwN3nVvUKE",
+    "private": false
+  },
+  {
+    "slug": "curiosities-magazine",
+    "title": "Curiosities Magazine",
+    "start": "Nov 2023",
+    "end": "Dec 2023",
+    "kind": "Website template without JavaScript",
+    "tagline": "Sixteen pages, no JavaScript",
+    "shows": [
+      "No behavioural JavaScript",
+      "Sixteen pages, one visual language",
+      "A full purchase path"
+    ],
+    "repo": "CuriositiesMagazine-Project-HTML-CSS",
+    "live": "https://projekt1.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "fitnessgym",
+    "title": "FitnessGym",
+    "start": "Mar 2023",
+    "end": "Apr 2023",
+    "kind": "React marketing site with a shop",
+    "tagline": "A gym site with a shop attached",
+    "shows": [
+      "A cart that survives a refresh",
+      "Scroll as a narrative device",
+      "Page transitions, not page jumps"
+    ],
+    "repo": "FitnessGym-Project-React",
+    "live": "https://fitnessgym.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "f1-zone",
+    "title": "F1 Zone",
+    "start": "Feb 2023",
+    "end": "Mar 2023",
+    "kind": "Poster shop in plain JavaScript",
+    "tagline": "A poster shop without a framework",
+    "shows": [
+      "A cart that survives the tab",
+      "Duplicate protection with feedback",
+      "The catalogue is data"
+    ],
+    "repo": "F1Zone-Project-HTML-CSS-JS-SASS",
+    "live": "https://f1.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "windows-desktop-portfolio",
+    "title": "Windows Desktop Portfolio",
+    "start": "Apr 2024",
+    "end": "",
+    "kind": "Portfolio shaped like a Windows desktop",
+    "tagline": "A portfolio that boots",
+    "shows": [
+      "Windows that behave like windows",
+      "A working start menu",
+      "Fluent UI for the controls"
+    ],
+    "repo": "Windows-Simulaing-System-GUI",
+    "live": "https://windows.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "ubuntu-desktop-portfolio",
+    "title": "Ubuntu Desktop Portfolio",
+    "start": "Jul 2023",
+    "end": "",
+    "kind": "Portfolio shaped like an Ubuntu desktop",
+    "tagline": "GNOME, rebuilt as a static site",
+    "shows": [
+      "Applications defined in one config",
+      "A GNOME dock and window behaviour",
+      "Static export"
+    ],
+    "repo": "Ubuntu-Simulaing-System-GUI",
+    "live": "https://ubuntu.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "deepin-desktop-portfolio",
+    "title": "Deepin Desktop Portfolio",
+    "start": "Jun 2023",
+    "end": "",
+    "kind": "Portfolio shaped like a Deepin desktop",
+    "tagline": "A desktop with a blog inside it",
+    "shows": [
+      "A blog that lives in a window",
+      "A toy terminal",
+      "A music player"
+    ],
+    "repo": "Linux-Simulaing-System-GUI",
+    "live": "https://linux.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "macos-desktop-portfolio",
+    "title": "macOS Desktop Portfolio",
+    "start": "Jun 2023",
+    "end": "",
+    "kind": "Portfolio shaped like a macOS desktop",
+    "tagline": "The dock, the launchpad and the animations",
+    "shows": [
+      "A dock that magnifies",
+      "Launchpad and window management",
+      "A real markdown editor"
+    ],
+    "repo": "Macos-Simulaing-System-GUI",
+    "live": "https://macos.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "website-templates",
+    "title": "Website Templates",
+    "start": "Jul 2023",
+    "end": "",
+    "kind": "Collection of HTML templates",
+    "tagline": "170 templates, all of them openable",
+    "shows": [
+      "Every template previewable",
+      "Complete sites, not fragments",
+      "Responsive throughout"
+    ],
+    "repo": "Website-Templates",
+    "live": "https://templateswebsite.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "github-achievements",
+    "title": "GitHub Achievements",
+    "start": "Jul 2023",
+    "end": "",
+    "kind": "Reference site for GitHub badges",
+    "tagline": "Every badge, with the numbers behind it",
+    "shows": [
+      "Every achievement with its thresholds",
+      "Honest about the unknowns",
+      "Skin-tone variants"
+    ],
+    "repo": "Github-Badges-Achievements",
+    "live": "https://achievements.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "portfolio",
+    "title": "Portfolio",
+    "start": "Feb 2026",
+    "end": "",
+    "kind": "React personal portfolio",
+    "tagline": "Personal portfolio website of Dawid Olko",
+    "shows": [
+      "Modern UI",
+      "Responsive Design",
+      "Project Showcase"
+    ],
+    "repo": "portfolio",
+    "live": "https://olkodawid.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "wordpress-cinema",
+    "title": "WordPress Cinema",
+    "start": "Feb 2025",
+    "end": "",
+    "kind": "WordPress site run in Docker",
+    "tagline": "A cinema in two containers",
+    "shows": [
+      "One command from nothing to a running site",
+      "wp-content in git, core in the image",
+      "A custom theme"
+    ],
+    "repo": "Wordpress-Cinema-Docker",
+    "live": "",
+    "video": "",
+    "private": false
+  }
+]
