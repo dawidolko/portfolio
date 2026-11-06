@@ -18,8 +18,11 @@
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
     "react-tsparticles": "^1.42.2",
-    "typewriter-effect": "^2.18.2",
-    "web-vitals": "^2.1.4"
+    "typewriter-effect": "^2.18.2"
+  },
+  "devDependencies": {
+    "jsdom": "^16.7.0",
+    "postcss": "^8.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,7 +30,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "routes:static": "node scripts/static-routes.js",
-    "projects:sync": "node scripts/sync-projects.js"
+    "projects:sync": "node scripts/sync-projects.js",
+    "resume:preview": "node scripts/resume-preview.js"
   },
   "eslintConfig": {
     "extends": [

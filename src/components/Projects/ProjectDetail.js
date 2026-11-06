@@ -4,8 +4,6 @@ import { Link, useParams } from "react-router-dom";
 import projects from "../../data/projects.json";
 import NotFound from "../NotFound";
 import { dateRange, describeShot, loadMedia, MEDIA_ORIGIN, repoUrl, youtube } from "./projectUtils";
-import "./ProjectUi.css";
-import "./ProjectDetail.css";
 
 /*
  * The native dialog already traps focus, closes on Escape and hands focus back

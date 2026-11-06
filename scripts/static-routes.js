@@ -1,21 +1,30 @@
 /*
  * GitHub Pages serves files, not routes, so after the build this writes one
  * HTML file per address from a route table. Each file answers 200 with its own
- * title, description, canonical and a real h1, and React replaces the static
- * body when it mounts.
+ * title, description and canonical, and with the real page rendered into it.
+ *
+ * The page comes from the production bundle itself: it runs in jsdom and hands
+ * back renderToString output through window.prerender (see src/index.js), which
+ * is what ReactDOM.hydrate then expects to find. The stylesheet is trimmed to
+ * the classes the site can use and inlined, so nothing blocks the first paint
+ * and the largest image is there before any script has run.
  *
  * Project pages get `noindex, follow` and no canonical, because they are
  * indexed on dawidolko.pl and must not show up as duplicates here. They are
  * also left out of sitemap.xml. build/404.html answers everything else with a
  * real 404 status.
  */
+const crypto = require("crypto");
 const fs = require("fs");
 const path = require("path");
+const { JSDOM, ResourceLoader, VirtualConsole } = require("jsdom");
+const postcss = require("postcss");
 const routes = require("../src/data/routes.json");
 const projects = require("../src/data/projects.json");
 
 const SITE = "https://olkodawid.dawidolko.pl";
-const buildDir = path.join(__dirname, "..", "build");
+const root = path.join(__dirname, "..");
+const buildDir = path.join(root, "build");
 const indexPath = path.join(buildDir, "index.html");
 
 if (!fs.existsSync(indexPath)) {
@@ -23,29 +32,110 @@ if (!fs.existsSync(indexPath)) {
   process.exit(1);
 }
 
+const cvHash = crypto.createHash("sha256").update(fs.readFileSync(path.join(root, "src/assets/Dawid_Olko_CV.pdf"))).digest("hex");
+if (cvHash !== fs.readFileSync(path.join(root, "src/assets/Resume/source.sha256"), "utf8").trim()) {
+  console.error("The resume preview is older than the PDF — run npm run resume:preview.");
+  process.exit(1);
+}
+
 const shell = fs.readFileSync(indexPath, "utf8");
+const manifest = JSON.parse(fs.readFileSync(path.join(buildDir, "asset-manifest.json"), "utf8"));
 
 const esc = (value) =>
   String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
-const links = [
-  ["/", "Home"],
-  ["/project/", "Projects"],
-  ["/about/", "About"],
-  ["/resume/", "Resume"],
-  ["/blog/", "Blog"],
-];
+/*
+ * Serves the build to jsdom. Only the app's own scripts run: the accessibility
+ * panel would add itself to the page.
+ */
+class BuildLoader extends ResourceLoader {
+  constructor(chunks) {
+    super();
+    this.chunks = chunks;
+  }
 
-function staticBody({ heading, text, extra = "" }) {
-  const nav = links.map(([href, label]) => `<a href="${href}">${label}</a>`).join(" ");
-  return `<div id="root"><div class="static-page"><nav aria-label="Site">${nav}</nav><main><h1>${esc(heading)}</h1><p>${esc(text)}</p>${extra}</main></div></div>`;
+  fetch(url) {
+    const { pathname } = new URL(url);
+    if (!pathname.startsWith("/static/js/")) return Promise.resolve(Buffer.from(""));
+    if (!/\/(main|prerender)\./.test(pathname)) this.chunks.push(pathname);
+    return fs.promises.readFile(path.join(buildDir, pathname));
+  }
+}
+
+function prerender(pathname) {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    const virtualConsole = new VirtualConsole();
+    virtualConsole.on("error", (...args) => reject(new Error(`${pathname}: ${args.join(" ")}`)));
+    virtualConsole.on("jsdomError", (error) => reject(new Error(`${pathname}: ${error.detail || error.message}`)));
+    const dom = new JSDOM(shell, {
+      url: `${SITE}${pathname}`,
+      runScripts: "dangerously",
+      resources: new BuildLoader(chunks),
+      virtualConsole,
+      beforeParse(window) {
+        window.prerender = (body) => {
+          resolve({ body, chunks });
+          setTimeout(() => dom.window.close());
+        };
+      },
+    });
+  });
+}
+
+/*
+ * Drops every rule that needs a class or data attribute which appears in
+ * neither the rendered pages nor the scripts those pages run, so classes added
+ * at run time (a collapsing navbar, the tooltip) keep their rules. Custom
+ * properties nothing reads go too, which is most of Bootstrap's :root block.
+ * Anything unsure is kept: a rule only goes when something it requires is
+ * nowhere to be found.
+ */
+function trimCss(css, sources) {
+  const known = new Set(sources.join(" ").match(/[\w-]+/g));
+  const required = (selector) =>
+    (selector.replace(/:not\([^)]*\)/g, "").match(/\.-?[_a-zA-Z][\w-]*|\[data-[\w-]+/g) || []).map((name) => name.replace(/^[.[]/, ""));
+  const tree = postcss.parse(css);
+  tree.walkRules((rule) => {
+    if (/keyframes$/.test(rule.parent.name || "")) return;
+    const kept = rule.selectors.filter((selector) => required(selector).every((name) => known.has(name)));
+    if (kept.length === 0) rule.remove();
+    else if (kept.length < rule.selectors.length) rule.selector = kept.join(",");
+  });
+  for (let removed = true; removed; ) {
+    removed = false;
+    const read = new Set(tree.toString().match(/var\(--[\w-]+/g));
+    tree.walkDecls(/^--bs-/, (decl) => {
+      if (read.has(`var(${decl.prop}`) || known.has(decl.prop)) return;
+      decl.remove();
+      removed = true;
+    });
+  }
+  tree.walkRules((rule) => {
+    if (rule.nodes.length === 0) rule.remove();
+  });
+  tree.walkAtRules(/^(media|supports|container)$/, (rule) => {
+    if (rule.nodes.length === 0) rule.remove();
+  });
+  tree.walkComments((comment) => {
+    if (comment.text.startsWith("# sourceMappingURL")) comment.remove();
+  });
+  return tree.toString();
 }
 
 function setContent(html, pattern, value) {
   return html.replace(pattern, (_, open, close) => `${open}${esc(value)}${close}`);
 }
 
-function renderPage({ title, description, url, robots, heading, text, extra, image }) {
+function imagePreload(body) {
+  const [img] = body.match(/<img[^>]*fetchpriority="high"[^>]*>/) || [];
+  if (!img) return "";
+  const attr = (name) => (img.match(new RegExp(` ${name}="([^"]*)"`, "i")) || [])[1];
+  const set = attr("srcset") ? ` imagesrcset="${attr("srcset")}" imagesizes="${attr("sizes")}"` : "";
+  return `<link rel="preload" as="image" href="${attr("src")}"${set} fetchpriority="high"/>`;
+}
+
+function renderPage({ title, description, url, robots, image, pathname, body, chunks }, css) {
   let html = shell;
   html = html.replace(/<title>.*?<\/title>/, `<title>${esc(title)}</title>`);
   for (const name of ['name="title"', 'property="og:title"', 'name="twitter:title"']) {
@@ -66,7 +156,12 @@ function renderPage({ title, description, url, robots, heading, text, extra, ima
     html = html.replace(/(<meta\s+property="og:image:alt"\s+content=")[^"]*(")/, `$1${esc(title)}$2`);
     html = html.replace(/(<meta\s+name="twitter:image:alt"\s+content=")[^"]*(")/, `$1${esc(title)}$2`);
   }
-  return html.replace('<div id="root"></div>', staticBody({ heading, text, extra }));
+  const preloads = imagePreload(body) + chunks.map((src) => `<link rel="preload" as="script" href="${src}"/>`).join("");
+  return html
+    .replace(/<link[^>]*href="\/fonts\/fonts\.css"[^>]*>/, () => "")
+    .replace(/<link[^>]*href="\/static\/css\/main\.[^>]*>/, () => `<style>${css}</style>`)
+    .replace(/<link rel="preload" as="font"/, (font) => `${preloads}${font}`)
+    .replace('<div id="root"></div>', () => `<div id="root" data-route="${pathname}">${body}</div>`);
 }
 
 function write(route, html) {
@@ -78,62 +173,64 @@ function write(route, html) {
   fs.writeFileSync(path.join(dir, "index.html"), html);
 }
 
-const manifest = JSON.parse(fs.readFileSync(path.join(buildDir, "asset-manifest.json"), "utf8"));
-const heroImage = manifest.files["static/media/about.webp"];
-
-/*
- * The hero image is in the served HTML so it paints before the scripts run,
- * instead of after React has mounted the home page.
- */
-function withHero(html) {
-  return html.replace("</head>", `<link rel="preload" as="image" href="${heroImage}" fetchpriority="high"/></head>`);
-}
-
-const projectList = `<ul>${projects.map((p) => `<li><a href="/project/${p.slug}/">${esc(p.title)}</a></li>`).join("")}</ul>`;
-
-for (const [route, meta] of Object.entries(routes)) {
-  const url = `${SITE}${route === "/" ? "/" : `${route}/`}`;
-  const extra = { "/project": projectList, "/": `<img src="${heroImage}" alt="Dawid Olko working at his desk" width="1000" height="689" fetchpriority="high"/>` }[route] || "";
-  const page = renderPage({ ...meta, url, robots: "index, follow", extra });
-  write(route, route === "/" ? withHero(page) : page);
-}
-
-for (const p of projects) {
-  write(
-    `project/${p.slug}`,
-    renderPage({
-      title: `${p.title}: ${p.kind} | Dawid Olko`,
-      description: `${p.title}: ${p.tagline}.`,
-      url: `${SITE}/project/${p.slug}/`,
-      robots: "noindex, follow",
-      heading: p.title,
-      text: p.summary,
-      image: `https://dawidolko.pl/src/assets/img/og/${p.slug}.jpg`,
-    }),
-  );
-}
-
-fs.writeFileSync(
-  path.join(buildDir, "404.html"),
-  renderPage({
+const pages = [
+  ...Object.entries(routes).map(([route, meta]) => {
+    const pathname = route === "/" ? "/" : `${route}/`;
+    return { ...meta, route, pathname, url: `${SITE}${pathname}`, robots: "index, follow" };
+  }),
+  ...projects.map((p) => ({
+    title: `${p.title}: ${p.kind} | Dawid Olko`,
+    description: `${p.title}: ${p.tagline}.`,
+    route: `project/${p.slug}`,
+    pathname: `/project/${p.slug}/`,
+    url: `${SITE}/project/${p.slug}/`,
+    robots: "noindex, follow",
+    image: `https://dawidolko.pl/src/assets/img/og/${p.slug}.jpg`,
+  })),
+  {
     title: "Page not found | Dawid Olko",
     description: "This address does not exist on this site. Go back to the home page, or open the projects, about, resume or blog pages from the links above.",
+    route: "404",
+    pathname: "/404/",
     url: `${SITE}/`,
     robots: "noindex",
-    heading: "Page not found",
-    text: "This address does not exist on this site.",
-  }),
-);
+  },
+];
 
-fs.copyFileSync(require.resolve("pdfjs-dist/build/pdf.worker.min.js"), path.join(buildDir, "pdf.worker.min.js"));
+async function main() {
+  for (const page of pages) {
+    Object.assign(page, await prerender(page.pathname));
+  }
 
-const pages = Object.entries(routes)
-  .map(([route, meta]) => `- [${meta.heading}](${SITE}${route === "/" ? "/" : `${route}/`}): ${meta.description}`)
-  .join("\n");
-const list = projects.map((p) => `- [${p.title}](https://dawidolko.pl/projects/${p.slug}/): ${p.kind}.`).join("\n");
-fs.writeFileSync(
-  path.join(buildDir, "llms.txt"),
-  `# Dawid Olko\n\n> Portfolio of Dawid Olko, a Fullstack / AI Developer from Rzeszów, Poland: projects, resume, blog and background.\n\n## Pages\n\n${pages}\n\n## Projects\n\n${list}\n`,
-);
+  const scripts = [...new Set([manifest.files["main.js"], ...pages.flatMap((page) => page.chunks)])]
+    .map((file) => fs.readFileSync(path.join(buildDir, file), "utf8"));
+  const panel = fs.readFileSync(path.join(buildDir, "a11y/a11y-panel.js"), "utf8");
+  const sheet = fs.readFileSync(path.join(buildDir, manifest.files["main.css"]), "utf8");
+  const fonts = fs.readFileSync(path.join(buildDir, "fonts/fonts.css"), "utf8").replace(/\/\*[\s\S]*?\*\//, "").trim();
+  const css = fonts + trimCss(sheet, [...pages.map((page) => page.body), ...scripts, panel]);
+  console.log(`Inlined stylesheet: ${sheet.length} bytes trimmed to ${css.length}.`);
 
-console.log(`Static pages written for ${Object.keys(routes).length} routes and ${projects.length} projects, plus 404.html.`);
+  for (const page of pages) {
+    const html = renderPage(page, css);
+    if (page.route === "404") fs.writeFileSync(path.join(buildDir, "404.html"), html);
+    else write(page.route, html);
+  }
+
+  fs.copyFileSync(require.resolve("pdfjs-dist/build/pdf.worker.min.js"), path.join(buildDir, "pdf.worker.min.js"));
+
+  const routeList = Object.entries(routes)
+    .map(([route, meta]) => `- [${meta.heading}](${SITE}${route === "/" ? "/" : `${route}/`}): ${meta.description}`)
+    .join("\n");
+  const list = projects.map((p) => `- [${p.title}](https://dawidolko.pl/projects/${p.slug}/): ${p.kind}.`).join("\n");
+  fs.writeFileSync(
+    path.join(buildDir, "llms.txt"),
+    `# Dawid Olko\n\n> Portfolio of Dawid Olko, a Fullstack / AI Developer from Rzeszów, Poland: projects, resume, blog and background.\n\n## Pages\n\n${routeList}\n\n## Projects\n\n${list}\n`,
+  );
+
+  console.log(`Static pages written for ${Object.keys(routes).length} routes and ${projects.length} projects, plus 404.html.`);
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});

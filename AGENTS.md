@@ -48,6 +48,18 @@ focus ring in particular — win on source order. Do not move the Bootstrap impo
 below it: Bootstrap ships `.btn:focus-visible { outline: 0 }`, which collapses
 the focus ring back into an invisible border.
 
+## Prerendering
+
+Every address is served as HTML rendered from the production bundle, and React
+hydrates it. A component's first render must therefore give the same result in
+the build and in the browser:
+
+- Read `window`, the viewport or anything else from the browser in an effect,
+  never during render.
+- Portals and `Suspense` do not render on the server, so add them after mount.
+- A class that only appears at run time must exist as a literal in the scripts,
+  or `scripts/static-routes.js` trims its rules from the stylesheet.
+
 ## Before finishing
 
 - [ ] `npm run build` succeeds.

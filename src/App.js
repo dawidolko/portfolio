@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import {
   BrowserRouter as Router,
+  matchRoutes,
   Route,
   Routes
 } from "react-router-dom";
@@ -17,14 +18,48 @@ import PageMeta from "./components/PageMeta";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
 import "./App.css";
+import "./components/Projects/ProjectUi.css";
+import "./components/Projects/ProjectDetail.css";
 
-const Home = lazy(() => import("./components/Home/Home"));
-const About = lazy(() => import("./components/About/About"));
-const Projects = lazy(() => import("./components/Projects/Projects"));
-const Blog = lazy(() => import("./components/Blog/Blog"));
-const Resume = lazy(() => import("./components/Resume/ResumeNew"));
-const ProjectDetail = lazy(() => import("./components/Projects/ProjectDetail"));
-const NotFound = lazy(() => import("./components/NotFound"));
+/*
+ * A page that is already loaded renders without Suspense. Hydration needs that:
+ * the served HTML has no Suspense markers, and ReactDOM.hydrate gives up on the
+ * whole subtree when it meets a boundary it cannot match, which would throw the
+ * prerendered page away and repaint it.
+ */
+function page(load) {
+  let Loaded = null;
+  const preload = () =>
+    load().then((module) => {
+      Loaded = module.default;
+      return module;
+    });
+  const Lazy = lazy(preload);
+  function Page() {
+    if (Loaded) return <Loaded />;
+    return (
+      <Suspense fallback={<div />}>
+        <Lazy />
+      </Suspense>
+    );
+  }
+  Page.preload = preload;
+  return Page;
+}
+
+const pages = [
+  { path: "/", Page: page(() => import("./components/Home/Home")) },
+  { path: "/project", Page: page(() => import("./components/Projects/Projects")) },
+  { path: "/project/:slug", Page: page(() => import("./components/Projects/ProjectDetail")) },
+  { path: "/about", Page: page(() => import("./components/About/About")) },
+  { path: "/resume", Page: page(() => import("./components/Resume/ResumeNew")) },
+  { path: "/blog", Page: page(() => import("./components/Blog/Blog")) },
+  { path: "*", Page: page(() => import("./components/NotFound")) },
+];
+
+export function preloadPage(pathname) {
+  return matchRoutes(pages, pathname)[0].route.Page.preload();
+}
 
 function App() {
   return (
@@ -46,17 +81,11 @@ function App() {
         <ScrollToTop />
         <PageMeta />
         <main id="main-content" tabIndex={-1}>
-          <Suspense fallback={<div />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/project" element={<Projects />} />
-              <Route path="/project/:slug" element={<ProjectDetail />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/resume" element={<Resume />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
+          <Routes>
+            {pages.map(({ path, Page }) => (
+              <Route key={path} path={path} element={<Page />} />
+            ))}
+          </Routes>
         </main>
         <Footer />
       </div>

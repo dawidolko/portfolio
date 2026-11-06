@@ -2,31 +2,26 @@
   "/": {
     "title": "Dawid Olko | Fullstack / AI Developer Portfolio",
     "description": "Dawid Olko is a Fullstack / AI Developer from Rzeszów, Poland, building with Laravel, Django, React and Vue.js. View his projects, blog and resume.",
-    "heading": "Dawid Olko, Fullstack / AI Developer",
-    "text": "Fullstack / AI Developer from Rzeszów, Poland, building with Laravel, Django, React and Vue.js, from database to interface."
+    "heading": "Dawid Olko, Fullstack / AI Developer"
   },
   "/project": {
     "title": "Projects | Dawid Olko, Fullstack / AI Developer",
     "description": "Projects by Dawid Olko: Skribly, SmartRecommender, NeoBank, WorkStation and more, built with React, Vue, Laravel, Django and TypeScript.",
-    "heading": "My Recent Works",
-    "text": "Here are a few projects I've worked on recently."
+    "heading": "My Recent Works"
   },
   "/about": {
     "title": "About | Dawid Olko, Fullstack / AI Developer",
     "description": "About Dawid Olko: Fullstack / AI Developer from Rzeszów, Poland. Skillset, everyday tools, interests outside code and GitHub activity.",
-    "heading": "About Dawid Olko",
-    "text": "Skillset, everyday tools, interests outside code and GitHub activity."
+    "heading": "About Dawid Olko"
   },
   "/resume": {
     "title": "Resume | Dawid Olko, Fullstack / AI Developer",
     "description": "Resume of Dawid Olko, Fullstack / AI Developer from Rzeszów, Poland. Read it in the browser or download the PDF in English or Polish.",
-    "heading": "Resume — Dawid Olko",
-    "text": "Read the resume in the browser or download the PDF."
+    "heading": "Resume — Dawid Olko"
   },
   "/blog": {
     "title": "Blog | Dawid Olko, Fullstack / AI Developer",
     "description": "Personal photo blog of Dawid Olko: studies, graduation, travel, mountains, sport and the people and places behind the programming work.",
-    "heading": "Blog",
-    "text": "A personal photo blog about studies, travel, mountains and sport."
+    "heading": "Blog"
   }
 }

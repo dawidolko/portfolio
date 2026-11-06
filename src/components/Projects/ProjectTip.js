@@ -26,6 +26,13 @@ function ProjectTip({ project }) {
   const state = useRef({ open: false, pinned: false, overTip: false, leave: 0, fade: 0, frame: 0 });
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
+  /*
+   * Portals do not exist in server rendering, so the tooltip joins after
+   * hydration.
+   */
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   const close = useCallback(() => {
     const s = state.current;
@@ -156,7 +163,7 @@ function ProjectTip({ project }) {
         }}>
         <span aria-hidden="true">i</span>
       </button>
-      {createPortal(
+      {mounted && createPortal(
         <div
           ref={tip}
           id={id}

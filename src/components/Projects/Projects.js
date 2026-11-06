@@ -192,7 +192,7 @@ function Projects() {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           {featured.map((item, index) => (
             <Col md={4} className="project-card" key={item.slug}>
-              <ProjectCard {...item} eager={index < 3} />
+              <ProjectCard {...item} eager={index < 3} priority={index === 0} />
             </Col>
           ))}
         </Row>

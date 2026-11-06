@@ -7,9 +7,8 @@ import { BsGithub, BsYoutube } from "react-icons/bs";
 import cards from "../../data/project-cards.json";
 import ProjectTip from "./ProjectTip";
 import { dateRange, repoUrl } from "./projectUtils";
-import "./ProjectUi.css";
 
-function ProjectCards({ slug, imgPath, description, eager }) {
+function ProjectCards({ slug, imgPath, description, eager, priority }) {
   const project = cards.find((item) => item.slug === slug);
   const ghLink = repoUrl(project);
   const text = description || project.tagline;
@@ -22,7 +21,8 @@ function ProjectCards({ slug, imgPath, description, eager }) {
             src={imgPath}
             alt={`${project.title} project logo`}
             loading={eager ? "eager" : "lazy"}
-            decoding="async"
+            decoding={priority ? undefined : "async"}
+            fetchpriority={priority ? "high" : undefined}
           />
           <div className="project-card-overlay" aria-hidden="true">
             <p>{text}</p>
