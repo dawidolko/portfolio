@@ -29,17 +29,17 @@ function Home() {
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15 }} className="heading">
+              <p style={{ paddingBottom: 15 }} className="heading h1">
                 Hi There!{" "}
                 <span className="wave" role="img" aria-label="waving hand">
                   👋🏻
                 </span>
-              </h1>
+              </p>
 
-              <h2 className="heading-name">
+              <h1 className="heading-name h2">
                 I'M
                 <strong className="main-name"> DAWID OLKO</strong>
-              </h2>
+              </h1>
 
               <div style={{ padding: 50, textAlign: "left" }}>
                 <Type />
