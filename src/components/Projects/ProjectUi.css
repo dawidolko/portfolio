@@ -21,7 +21,7 @@
   font-style: italic;
   font-weight: 700;
   line-height: 1;
-  cursor: help;
+  cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
