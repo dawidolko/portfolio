@@ -114,8 +114,8 @@ function Blog() {
           </Col>
 
           {/*
-            Dziewiata karta domyka siatke: przy `md={4}` rzad mieści trzy
-            pozycje, więc przy ośmiu ostatni rząd kończył się pustą luką.
+            The ninth card completes the grid: with `md={4}` a row fits three items, so
+            with eight the last row ended in an empty gap.
           */}
           <Col md={4} className="blog-card">
             <BlogCards

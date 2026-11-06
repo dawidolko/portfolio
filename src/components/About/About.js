@@ -56,8 +56,8 @@ function About() {
             </Col>
           </Row>
           {/*
-            Zdjecie spoza pracy. Strona jest poza tym w calosci o technologiach;
-            podpis niesie miejsce i date, wiec obraz nie jest sama dekoracja.
+            A photo from outside work. The page is otherwise entirely about technology;
+            the caption carries the place and date, so the image is not just decoration.
           */}
           <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
             <Col md={5} className="about-img">
