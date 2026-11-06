@@ -78,11 +78,24 @@ function write(route, html) {
   fs.writeFileSync(path.join(dir, "index.html"), html);
 }
 
+const manifest = JSON.parse(fs.readFileSync(path.join(buildDir, "asset-manifest.json"), "utf8"));
+const heroImage = manifest.files["static/media/about.webp"];
+
+/*
+ * The hero image is in the served HTML so it paints before the scripts run,
+ * instead of after React has mounted the home page.
+ */
+function withHero(html) {
+  return html.replace("</head>", `<link rel="preload" as="image" href="${heroImage}" fetchpriority="high"/></head>`);
+}
+
 const projectList = `<ul>${projects.map((p) => `<li><a href="/project/${p.slug}/">${esc(p.title)}</a></li>`).join("")}</ul>`;
 
 for (const [route, meta] of Object.entries(routes)) {
   const url = `${SITE}${route === "/" ? "/" : `${route}/`}`;
-  write(route, renderPage({ ...meta, url, robots: "index, follow", extra: route === "/project" ? projectList : "" }));
+  const extra = { "/project": projectList, "/": `<img src="${heroImage}" alt="Dawid Olko working at his desk" width="1000" height="689" fetchpriority="high"/>` }[route] || "";
+  const page = renderPage({ ...meta, url, robots: "index, follow", extra });
+  write(route, route === "/" ? withHero(page) : page);
 }
 
 for (const p of projects) {

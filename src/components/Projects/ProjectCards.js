@@ -9,7 +9,7 @@ import ProjectTip from "./ProjectTip";
 import { dateRange, repoUrl } from "./projectUtils";
 import "./ProjectUi.css";
 
-function ProjectCards({ slug, imgPath, description }) {
+function ProjectCards({ slug, imgPath, description, eager }) {
   const project = cards.find((item) => item.slug === slug);
   const ghLink = repoUrl(project);
   const text = description || project.tagline;
@@ -21,7 +21,7 @@ function ProjectCards({ slug, imgPath, description }) {
             variant="top"
             src={imgPath}
             alt={`${project.title} project logo`}
-            loading="lazy"
+            loading={eager ? "eager" : "lazy"}
             decoding="async"
           />
           <div className="project-card-overlay" aria-hidden="true">

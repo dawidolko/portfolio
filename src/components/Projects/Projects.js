@@ -190,9 +190,9 @@ function Projects() {
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          {featured.map((item) => (
+          {featured.map((item, index) => (
             <Col md={4} className="project-card" key={item.slug}>
-              <ProjectCard {...item} />
+              <ProjectCard {...item} eager={index < 3} />
             </Col>
           ))}
         </Row>

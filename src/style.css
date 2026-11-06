@@ -1413,6 +1413,14 @@ button:focus {
 
 /* The main landmark is focus target of the skip link; never show a ring
    for the programmatic focus it receives. */
+/*
+ * Keeps the footer below the fold while a route chunk loads, otherwise it
+ * jumps down the page when the content arrives.
+ */
+#main-content {
+  min-height: 100vh;
+}
+
 #main-content:focus,
 #main-content:focus-visible {
   outline: none !important;
