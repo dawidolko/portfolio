@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../assets/about.webp";
+import homeLogoSmall from "../../assets/about-700.webp";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
@@ -48,11 +49,13 @@ function Home() {
             <Col md={5} style={{ paddingBottom: 20 }}>
               <img
                 src={homeLogo}
+                srcSet={`${homeLogoSmall} 700w, ${homeLogo} 800w`}
+                sizes="(max-width: 767px) calc(100vw - 24px), 42vw"
                 alt="Dawid Olko working at his desk"
                 className="img-fluid"
                 width="1000"
                 height="689"
-                decoding="async"
+                fetchpriority="high"
                 style={{
                   maxHeight: "450px",
                   borderRadius: "20px",

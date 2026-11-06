@@ -47,8 +47,7 @@ function About() {
                 className="img-fluid"
                 width="800"
                 height="800"
-                loading="lazy"
-                decoding="async"
+                fetchpriority="high"
                 style={{
                   borderRadius: "16px",
                   boxShadow: "0 8px 32px rgba(16,185,129,0.15)",

@@ -124,7 +124,8 @@ Automatically deployed to **GitHub Pages** via GitHub Actions on push to `main`.
 - Open Graph and Twitter Card meta tags
 - Canonical URL configured
 - `robots.txt`, `sitemap.xml` and `llms.txt` included
-- `scripts/static-routes.js` writes real HTML per route after the build; project detail pages are `noindex, follow` because they are indexed on dawidolko.pl
+- `scripts/static-routes.js` runs the built bundle in jsdom after the build and writes the rendered page per route with the stylesheet trimmed and inlined, which React then hydrates; project detail pages are `noindex, follow` because they are indexed on dawidolko.pl
+- The resume page opens on a picture of the CV and loads the PDF viewer on demand; run `npm run resume:preview` (needs poppler and cwebp) after replacing the PDF
 - Project text comes from `npm run projects:sync`; screenshots load from dawidolko.pl, listed in its `data/media.json`
 
 ---

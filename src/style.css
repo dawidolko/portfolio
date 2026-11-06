@@ -1241,6 +1241,47 @@ button:focus {
   justify-content: center;
 }
 
+/*
+ * An A4 page at the scale the document is drawn, 1011px wide or 357px on a
+ * phone. The size is held here so the picture and the canvas that replaces it
+ * take exactly the same box.
+ */
+.resume-page {
+  position: relative;
+  width: 1011px;
+  max-width: 100%;
+  aspect-ratio: 595 / 842;
+  padding: 0;
+  outline: none;
+}
+
+.resume-preview {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.resume-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.resume-pdf {
+  position: absolute;
+  inset: 0;
+}
+
+@media (max-width: 786px) {
+  .resume-page {
+    width: 357px;
+  }
+}
+
 .resume-left {
   padding-right: 80px !important;
 }

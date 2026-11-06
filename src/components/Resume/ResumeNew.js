@@ -1,30 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { lazy, Suspense, useRef, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import pdf from "../../assets/Dawid_Olko_CV.pdf";
+import preview714 from "../../assets/Resume/cv-714.webp";
+import preview1012 from "../../assets/Resume/cv-1012.webp";
+import preview2024 from "../../assets/Resume/cv-2024.webp";
 import { AiOutlineDownload } from "react-icons/ai";
-import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.js";
+
+const ResumePdf = lazy(() => import("./ResumePdf"));
 
 /*
- * PDF link annotations render as empty anchors over the page, so they get
- * their accessible name from where they lead.
+ * The page opens on a picture of the CV. react-pdf with its worker is the
+ * heaviest thing on the site and takes the main thread for seconds on a phone,
+ * so it loads when somebody reaches for the page: the pointer arriving over it,
+ * or a tap, click or key press. It then replaces the picture with the real
+ * document, with selectable text and working links.
  */
-function nameResumeLinks() {
-  document.querySelectorAll(".react-pdf__Page__annotations a").forEach((link) => {
-    const target = link.href.replace(/^(mailto:|https?:\/\/)/, "").replace(/\/$/, "");
-    link.setAttribute("aria-label", `Resume link: ${target}`);
-  });
-}
-
 function ResumeNew() {
-  const [width, setWidth] = useState(1200);
+  const page = useRef(null);
+  const [wanted, setWanted] = useState(false);
+  const [ready, setReady] = useState(false);
+  const movedFocus = useRef(false);
 
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
+  const onReady = () => {
+    setReady(true);
+    if (movedFocus.current) page.current.focus();
+  };
 
   return (
     <div>
@@ -39,7 +41,7 @@ function ResumeNew() {
             href={pdf}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Download Dawid Olko's CV as PDF (opens in a new tab)"
+            aria-label="Download CV as PDF (opens in a new tab)"
             style={{ maxWidth: "250px" }}
           >
             <AiOutlineDownload aria-hidden="true" />
@@ -48,14 +50,36 @@ function ResumeNew() {
         </Row>
 
         <Row className="resume">
-          <Document
-            file={pdf}
-            className="d-flex justify-content-center"
-            loading="Loading resume…"
-            error="The resume could not be displayed. Use the Download CV button instead."
-          >
-            <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} onRenderAnnotationLayerSuccess={nameResumeLinks} />
-          </Document>
+          <div className="resume-page" ref={page} tabIndex={-1}>
+            <button
+              type="button"
+              className="resume-preview"
+              hidden={ready}
+              aria-label="Resume of Dawid Olko, shown as a picture. Open the document with selectable text and links"
+              onPointerEnter={(event) => {
+                if (event.pointerType === "mouse") setWanted(true);
+              }}
+              onClick={(event) => {
+                movedFocus.current = event.detail === 0;
+                setWanted(true);
+              }}
+            >
+              <img
+                src={preview1012}
+                srcSet={`${preview714} 714w, ${preview1012} 1012w, ${preview2024} 2024w`}
+                sizes="(max-width: 786px) 357px, 1011px"
+                width="1012"
+                height="1433"
+                alt=""
+                fetchpriority="high"
+              />
+            </button>
+            {wanted && (
+              <Suspense fallback={null}>
+                <ResumePdf file={pdf} width={page.current.clientWidth} onReady={onReady} />
+              </Suspense>
+            )}
+          </div>
         </Row>
 
         {/* The hosted CV carries a Polish and an English version and prints to
@@ -73,7 +97,7 @@ function ResumeNew() {
             href={pdf}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Download Dawid Olko's CV as PDF (opens in a new tab)"
+            aria-label="Download CV as PDF (opens in a new tab)"
             style={{ maxWidth: "250px" }}
           >
             <AiOutlineDownload aria-hidden="true" />
@@ -84,7 +108,7 @@ function ResumeNew() {
             href="https://cv.dawidolko.pl/en/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Open the online CV at cv.dawidolko.pl (opens in a new tab)"
+            aria-label="View online at cv.dawidolko.pl (opens in a new tab)"
             style={{ maxWidth: "250px" }}
           >
             &nbsp;View online

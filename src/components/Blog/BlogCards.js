@@ -58,11 +58,12 @@ function BlogCards(props) {
         <div className="blog-img-wrapper">
           <Card.Img
             variant="top"
-            src={props.imgPath}
+            src={props.imgSmall}
+            srcSet={`${props.imgSmall} 640w, ${props.imgPath} 1400w`}
+            sizes="320px"
             alt=""
             className="blog-img"
-            loading="lazy"
-            decoding="async"
+            {...(props.priority ? { fetchpriority: "high" } : { loading: "lazy", decoding: "async" })}
           />
           <div className="blog-card-overlay" aria-hidden="true">
             <p>{props.description}</p>
