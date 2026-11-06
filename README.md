@@ -1,9 +1,11 @@
+<p align="center">
+  <a href="https://olkodawid.dawidolko.pl/"><img src="docs/readme/banner.webp" alt="dawidolko.pl — Portfolio: personal site. Personal portfolio website of Dawid Olko" width="100%"></a>
+</p>
+
 # dawidolko.pl — Portfolio
 
 > Personal portfolio website of **Dawid Olko** — Fullstack / AI Developer from Rzeszów, Poland.  
 > Built with **React.js**, featuring a modern dark theme with emerald accents.
-
-**Live:** [https://olkodawid.dawidolko.pl](https://olkodawid.dawidolko.pl)
 
 ![React](https://img.shields.io/badge/React-17-61DAFB?logo=react&logoColor=black)
 ![React Router](https://img.shields.io/badge/React%20Router-6-CA4245?logo=reactrouter&logoColor=white)
@@ -11,7 +13,7 @@
 ![WCAG](https://img.shields.io/badge/WCAG%202.1-AA-16A34A?logo=accessibleicon&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
----
+**[Live site](https://olkodawid.dawidolko.pl/)** · [Screenshots](#️-screenshots) · [Getting started](#-getting-started)
 
 ---
 
@@ -122,6 +124,8 @@ Automatically deployed to **GitHub Pages** via GitHub Actions on push to `main`.
 - Canonical URL configured
 - `robots.txt` and `sitemap.xml` included
 
+An accessibility panel in the corner of every page changes text size, contrast, font and motion, and remembers the choice on the device. It sits on top of the markup and does not replace accessible markup.
+
 ---
 
 ## 📄 License
@@ -132,10 +136,6 @@ This project is open source under the [MIT License](LICENSE).
 
 ## 👨‍💻 Author
 
-**Dawid Olko**  
-Fullstack / AI Developer · Rzeszów, Poland
+**Dawid Olko** · Fullstack / AI Developer
 
-- Website: [olkodawid.dawidolko.pl](https://olkodawid.dawidolko.pl)
-- GitHub: [@dawidolko](https://github.com/dawidolko)
-- LinkedIn: [dawidolko](https://www.linkedin.com/in/dawidolko/)
-- Email: dawid_olko@outlook.com
+[Portfolio](https://olkodawid.dawidolko.pl) · [CV](https://cv.dawidolko.pl) · [LinkedIn](https://www.linkedin.com/in/dawidolko/) · [GitHub](https://github.com/dawidolko)
