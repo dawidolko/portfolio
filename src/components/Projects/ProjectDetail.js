@@ -202,6 +202,14 @@ function ProjectDetail() {
         <h1 className="detail-title">{project.title}</h1>
         <p className="detail-dates">{dateRange(project)}</p>
         <p className="detail-tagline">{project.tagline}</p>
+        {project.creditUrl && (
+          <p className="detail-credit">
+            <a href={project.creditUrl} target="_blank" rel="noopener noreferrer">
+              {project.credit}
+              <span className="visually-hidden-a11y"> (opens in a new tab)</span>
+            </a>
+          </p>
+        )}
         <div className="detail-actions">
           {project.live && (
             <a className="btn btn-primary" href={project.live} target="_blank" rel="noopener noreferrer">

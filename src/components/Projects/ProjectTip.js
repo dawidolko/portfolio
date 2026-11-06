@@ -174,6 +174,7 @@ function ProjectTip({ project }) {
           <p className="tip__title">{project.title}</p>
           <p className="tip__date">{dateRange(project)}</p>
           <p className="tip__kind">{project.kind}</p>
+          {project.creditUrl && <p className="tip__kind">{project.credit}</p>}
           <p className="tip__label">Demonstrates</p>
           <ul className="tip__list">
             {project.shows.slice(0, 3).map((item) => (

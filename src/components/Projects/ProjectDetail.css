@@ -64,6 +64,16 @@
   font-size: 1.25rem;
 }
 
+.detail-credit {
+  margin: 6px 0 0;
+  color: #d6e0dc;
+}
+
+.detail-credit a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 .detail-actions {
   display: flex;
   flex-wrap: wrap;

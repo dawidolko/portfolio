@@ -523,7 +523,7 @@
     ],
     "repo": "Shop-App-Laravel-Vue",
     "live": "",
-    "video": "https://www.youtube.com/watch?v=WTi2i2wHPt0",
+    "video": "",
     "private": false
   },
   {
@@ -540,7 +540,7 @@
     ],
     "repo": "Weather-App-Laravel-React",
     "live": "",
-    "video": "https://www.youtube.com/watch?v=WTi2i2wHPt0",
+    "video": "",
     "private": false
   },
   {
@@ -728,7 +728,9 @@
     "repo": "Windows-Simulaing-System-GUI",
     "live": "https://windows.dawidolko.pl",
     "video": "",
-    "private": false
+    "private": false,
+    "credit": "Based on Portfolio_OS_Theme by Srinibas Biswal",
+    "creditUrl": "https://github.com/srinibasbiswal/Portfolio_OS_Theme"
   },
   {
     "slug": "ubuntu-desktop-portfolio",
@@ -745,7 +747,9 @@
     "repo": "Ubuntu-Simulaing-System-GUI",
     "live": "https://ubuntu.dawidolko.pl",
     "video": "",
-    "private": false
+    "private": false,
+    "credit": "Based on vivek9patel.github.io by Vivek Patel",
+    "creditUrl": "https://github.com/vivek9patel/vivek9patel.github.io"
   },
   {
     "slug": "deepin-desktop-portfolio",
@@ -762,7 +766,9 @@
     "repo": "Linux-Simulaing-System-GUI",
     "live": "https://linux.dawidolko.pl",
     "video": "",
-    "private": false
+    "private": false,
+    "credit": "Based on GoodManWEN.github.io by GoodManWEN",
+    "creditUrl": "https://github.com/GoodManWEN/GoodManWEN.github.io"
   },
   {
     "slug": "macos-desktop-portfolio",
@@ -779,7 +785,9 @@
     "repo": "Macos-Simulaing-System-GUI",
     "live": "https://macos.dawidolko.pl",
     "video": "",
-    "private": false
+    "private": false,
+    "credit": "Based on playground-macos by Xiaohan Zou",
+    "creditUrl": "https://github.com/Renovamen/playground-macos"
   },
   {
     "slug": "website-templates",

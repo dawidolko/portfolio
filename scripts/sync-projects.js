@@ -20,7 +20,7 @@ async function load() {
 }
 
 load().then((projects) => {
-  const cards = projects.map(({ slug, title, start, end, kind, tagline, shows, repo, live, video, private: closed }) => ({
+  const cards = projects.map(({ slug, title, start, end, kind, tagline, shows, repo, live, video, private: closed, credit, creditUrl }) => ({
     slug,
     title,
     start,
@@ -32,6 +32,11 @@ load().then((projects) => {
     live,
     video,
     private: closed,
+    /*
+     * Only a linked credit names an original project. A plain credit is a person
+     * and stays in the full data, so it is not added to the home page cards.
+     */
+    ...(creditUrl ? { credit, creditUrl } : {}),
   }));
   fs.writeFileSync(path.join(dataDir, "projects.json"), `${JSON.stringify(projects, null, 2)}\n`);
   fs.writeFileSync(path.join(dataDir, "project-cards.json"), `${JSON.stringify(cards, null, 2)}\n`);
