@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import PageMeta from "./components/PageMeta";
-import Home from "./components/Home/Home";
 /*
  * Bootstrap first so the project's own styles (including the focus rules in
  * style.css) cascade over the framework defaults rather than under them.
@@ -19,6 +18,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
 import "./App.css";
 
+const Home = lazy(() => import("./components/Home/Home"));
 const About = lazy(() => import("./components/About/About"));
 const Projects = lazy(() => import("./components/Projects/Projects"));
 const Blog = lazy(() => import("./components/Blog/Blog"));
