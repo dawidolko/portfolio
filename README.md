@@ -137,7 +137,7 @@ An accessibility panel in the corner of every page changes text size, contrast, 
 
 ## 📄 License
 
-This project is open source under the [MIT License](LICENSE).
+This project is open source under the [MIT License](LICENSE). Fonts and other third-party material keep their own licences, listed in [CREDITS.md](CREDITS.md).
 
 ---
 
