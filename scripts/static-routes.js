@@ -117,10 +117,19 @@ function trimCss(css, sources) {
   tree.walkAtRules(/^(media|supports|container)$/, (rule) => {
     if (rule.nodes.length === 0) rule.remove();
   });
+  tree.walkAtRules("charset", (rule) => rule.remove());
   tree.walkComments((comment) => {
     if (comment.text.startsWith("# sourceMappingURL")) comment.remove();
   });
   return tree.toString();
+}
+
+/*
+ * Some react-icons carry a `t` attribute left by the tool that exported them,
+ * which is not valid on an svg. React does not restore it when hydrating.
+ */
+function cleanMarkup(body) {
+  return body.replace(/(<svg\b[^>]*?) t="\d+"/g, "$1");
 }
 
 function setContent(html, pattern, value) {
@@ -199,7 +208,8 @@ const pages = [
 
 async function main() {
   for (const page of pages) {
-    Object.assign(page, await prerender(page.pathname));
+    const { body, chunks } = await prerender(page.pathname);
+    Object.assign(page, { body: cleanMarkup(body), chunks });
   }
 
   const scripts = [...new Set([manifest.files["main.js"], ...pages.flatMap((page) => page.chunks)])]
