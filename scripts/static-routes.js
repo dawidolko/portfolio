@@ -48,10 +48,10 @@ function setContent(html, pattern, value) {
 function renderPage({ title, description, url, robots, heading, text, extra, image }) {
   let html = shell;
   html = html.replace(/<title>.*?<\/title>/, `<title>${esc(title)}</title>`);
-  for (const name of ['name="title"', 'property="og:title"', 'name="twitter:title"', 'itemprop="name"']) {
+  for (const name of ['name="title"', 'property="og:title"', 'name="twitter:title"']) {
     html = setContent(html, new RegExp(`(<meta\\s+${name}\\s+content=")[^"]*(")`), title);
   }
-  for (const name of ['name="description"', 'property="og:description"', 'name="twitter:description"', 'itemprop="description"']) {
+  for (const name of ['name="description"', 'property="og:description"', 'name="twitter:description"']) {
     html = setContent(html, new RegExp(`(<meta\\s+${name}\\s+content=")[^"]*(")`), description);
   }
   for (const name of ['property="og:url"', 'name="twitter:url"']) {
@@ -62,7 +62,7 @@ function renderPage({ title, description, url, robots, heading, text, extra, ima
     ? html.replace(/(<link\s+rel="canonical"\s+href=")[^"]*(")/, `$1${url}$2`)
     : html.replace(/<link\s+rel="canonical"[^>]*>/, "");
   if (image) {
-    html = html.replace(/(<meta\s+(?:property="og:image(?::secure_url)?"|name="twitter:image"|itemprop="image")\s+content=")[^"]*(")/g, `$1${image}$2`);
+    html = html.replace(/(<meta\s+(?:property="og:image(?::secure_url)?"|name="twitter:image")\s+content=")[^"]*(")/g, `$1${image}$2`);
     html = html.replace(/(<meta\s+property="og:image:alt"\s+content=")[^"]*(")/, `$1${esc(title)}$2`);
     html = html.replace(/(<meta\s+name="twitter:image:alt"\s+content=")[^"]*(")/, `$1${esc(title)}$2`);
   }
