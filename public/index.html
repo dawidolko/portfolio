@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
 
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://dawidolko.pl; font-src 'self'; connect-src 'self' https://dawidolko.pl https://github-contributions-api.jogruber.de; frame-src https://www.youtube-nocookie.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <link rel="preload" as="font" type="font/woff2" href="%PUBLIC_URL%/fonts/jakarta-latin.woff2" crossorigin />
+    <link rel="stylesheet" href="%PUBLIC_URL%/fonts/fonts.css" />
 
     <!-- Favicons -->
     <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
@@ -23,7 +23,7 @@
     <meta name="title" content="Dawid Olko | Fullstack / AI Developer Portfolio" />
     <meta
       name="description"
-      content="Dawid Olko - Fullstack / AI Developer from Rzeszów, Poland. Building with Laravel, Django, React and Vue.js — from database to interface. View my projects, blog, and resume." />
+      content="Dawid Olko is a Fullstack / AI Developer from Rzeszów, Poland, building with Laravel, Django, React and Vue.js. View his projects, blog and resume." />
     <meta
       name="keywords"
       content="Dawid Olko, Fullstack / AI Developer, Laravel, Django, React, Vue.js, TypeScript, PHP, Python, Docker, AI Developer, Portfolio, Rzeszów, Poland, dawidolko" />
@@ -57,13 +57,13 @@
     <meta property="og:locale" content="en_US" />
     <meta
       property="og:image"
-      content="https://olkodawid.dawidolko.pl/og-image.png" />
+      content="https://olkodawid.dawidolko.pl/og-image.jpg" />
     <meta
       property="og:image:secure_url"
-      content="https://olkodawid.dawidolko.pl/og-image.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1000" />
-    <meta property="og:image:height" content="689" />
+      content="https://olkodawid.dawidolko.pl/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
       content="Dawid Olko, Fullstack / AI Developer, working at his desk" />
@@ -79,7 +79,7 @@
       content="Fullstack / AI Developer from Rzeszów, Poland. Building with Laravel, Django, React and Vue.js. View projects, blog, and resume." />
     <meta
       name="twitter:image"
-      content="https://olkodawid.dawidolko.pl/og-image.png" />
+      content="https://olkodawid.dawidolko.pl/og-image.jpg" />
     <meta
       name="twitter:image:alt"
       content="Dawid Olko, Fullstack / AI Developer, working at his desk" />
@@ -91,7 +91,7 @@
       content="Fullstack / AI Developer from Rzeszów, Poland. Building with Laravel, Django, React and Vue.js — from database to interface." />
     <meta
       itemprop="image"
-      content="https://olkodawid.dawidolko.pl/og-image.png" />
+      content="https://olkodawid.dawidolko.pl/og-image.jpg" />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -145,27 +145,20 @@
         }
       }
     </script>
-    <script>
-      /*
-        Counterpart to public/404.html: GitHub Pages redirects an unknown path
-        there, which bounces back here with the original path encoded as a
-        query string. This restores it before React Router mounts, so a deep
-        link such as /project renders that route rather than the home page.
-      */
-      (function (l) {
-        if (l.search[1] === "/") {
-          var decoded = l.search
-            .slice(1)
-            .split("&")
-            .map(function (s) {
-              return s.replace(/~and~/g, "&");
-            })
-            .join("?");
-          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
-        }
-      })(window.location);
-    </script>
     <script src="/a11y/a11y-panel.js" data-accent="#1d4ed8" defer></script>
+    <style>
+      .static-page {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 24px 16px;
+        color: #fff;
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .static-page a {
+        color: #6ee7b7;
+        margin-right: 12px;
+      }
+    </style>
   </head>
 
   <body>

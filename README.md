@@ -21,7 +21,7 @@
 
 - **Modern UI** — Dark theme with glassmorphism navbar, smooth animations, and emerald accent colors
 - **Responsive Design** — Fully optimized for mobile, tablet, and desktop
-- **Project Showcase** — Card grid with hover overlays, GitHub/Demo/YouTube links
+- **Project Showcase** — Card grid with hover overlays, an info tooltip on every card and a detail page per project
 - **Personal Blog** — Photo blog with lightbox viewer (fullscreen with close button)
 - **Resume/CV** — Built-in PDF viewer with download option
 - **About Section** — Professional skillset badges, toolstack, and GitHub activity calendar
@@ -94,13 +94,14 @@ src/
 │   ├── About/         # About page, skills, tools, GitHub calendar
 │   ├── Blog/          # Blog cards with lightbox and hover overlay
 │   ├── Home/          # Landing page, intro, social links
-│   ├── Projects/      # Project cards with hover effects
+│   ├── Projects/      # Project cards, tooltip and detail page
 │   ├── Resume/        # PDF resume viewer
 │   ├── Navbar.js      # Glassmorphism navigation bar
 │   ├── Footer.js      # Multi-column footer with tech badges
 │   ├── Particle.js    # TSParticles background
 │   ├── Pre.js         # CSS preloader spinner
 │   └── ScrollToTop.js # Scroll restoration
+├── data/              # Route table and project data synced from dawidolko.pl
 ├── style.css          # Main stylesheet
 ├── index.css          # Font imports & base styles
 └── App.js             # Router & layout
@@ -116,13 +117,19 @@ Automatically deployed to **GitHub Pages** via GitHub Actions on push to `main`.
 
 ---
 
-## 🔍 SEO & Accessibility
+## 🔍 SEO
 
 - Google Search Console verified via HTML file and meta tags
 - JSON-LD structured data for Person and WebSite schemas
 - Open Graph and Twitter Card meta tags
 - Canonical URL configured
-- `robots.txt` and `sitemap.xml` included
+- `robots.txt`, `sitemap.xml` and `llms.txt` included
+- `scripts/static-routes.js` writes real HTML per route after the build; project detail pages are `noindex, follow` because they are indexed on dawidolko.pl
+- Project text comes from `npm run projects:sync`; screenshots load from dawidolko.pl, listed in its `data/media.json`
+
+---
+
+## ♿ Accessibility
 
 An accessibility panel in the corner of every page changes text size, contrast, font and motion, and remembers the choice on the device. It sits on top of the markup and does not replace accessible markup.
 

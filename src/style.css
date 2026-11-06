@@ -47,49 +47,6 @@ button:focus {
 }
 
 /* --------- */
-/*  Preloader */
-/* --------- */
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999999;
-  background-color: #05130e;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 0.4s ease;
-}
-
-#preloader::after {
-  content: "";
-  width: 48px;
-  height: 48px;
-  border: 3px solid rgba(16, 185, 129, 0.12);
-  border-top-color: #10b981;
-  border-radius: 50%;
-  animation: preloader-spin 0.7s linear infinite;
-}
-
-@keyframes preloader-spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-#preloader-none {
-  opacity: 0;
-  pointer-events: none;
-}
-
-#no-scroll {
-  overflow: hidden;
-  height: 100vh;
-}
-
-/* --------- */
 /* Scrollbar  */
 /* --------- */
 
@@ -640,7 +597,7 @@ button:focus {
 }
 
 .footer-location {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 0.85em;
   display: flex;
   align-items: center;
@@ -772,7 +729,7 @@ button:focus {
 }
 
 .footer-bottom p {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 0.85em;
   margin: 0;
 }

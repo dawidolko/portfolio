@@ -6,7 +6,18 @@ import pdf from "../../assets/Dawid_Olko_CV.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.js";
+
+/*
+ * PDF link annotations render as empty anchors over the page, so they get
+ * their accessible name from where they lead.
+ */
+function nameResumeLinks() {
+  document.querySelectorAll(".react-pdf__Page__annotations a").forEach((link) => {
+    const target = link.href.replace(/^(mailto:|https?:\/\/)/, "").replace(/\/$/, "");
+    link.setAttribute("aria-label", `Resume link: ${target}`);
+  });
+}
 
 function ResumeNew() {
   const [width, setWidth] = useState(1200);
@@ -43,7 +54,7 @@ function ResumeNew() {
             loading="Loading resume…"
             error="The resume could not be displayed. Use the Download CV button instead."
           >
-            <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
+            <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} onRenderAnnotationLayerSuccess={nameResumeLinks} />
           </Document>
         </Row>
 
