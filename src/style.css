@@ -159,7 +159,7 @@ button:focus {
   opacity: 0.9 !important;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .navbar {
     padding: 1rem 2rem !important;
     font-size: 1.4rem !important;
@@ -395,14 +395,21 @@ button:focus {
 }
 
 .myAvtar {
+  display: flex;
   justify-content: center !important;
   padding-top: 9em !important;
+}
+
+.myAvtar > div {
+  width: 100%;
+  max-width: 280px;
 }
 
 .myAvtar img {
   border-radius: 50%;
   box-shadow: 0 8px 40px rgba(16, 185, 129, 0.2);
   border: 3px solid rgba(16, 185, 129, 0.2);
+  width: 100%;
   max-width: 280px;
 }
 

@@ -40,7 +40,7 @@ function Blog() {
           Personal stories, thoughts, and experiences from my life.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="blog-card">
+          <Col xs={12} sm={6} lg={4} className="blog-card">
             <BlogCards
               imgPath={hello}
               imgSmall={helloSmall}
@@ -50,7 +50,7 @@ function Blog() {
             />
           </Col>
 
-          <Col md={4} className="blog-card">
+          <Col xs={12} sm={6} lg={4} className="blog-card">
             <BlogCards
               imgPath={childhood}
               imgSmall={childhoodSmall}
@@ -59,7 +59,7 @@ function Blog() {
             />
           </Col>
 
-          <Col md={4} className="blog-card">
+          <Col xs={12} sm={6} lg={4} className="blog-card">
             <BlogCards
               imgPath={love}
               imgSmall={loveSmall}
@@ -68,7 +68,7 @@ function Blog() {
             />
           </Col>
 
-          <Col md={4} className="blog-card">
+          <Col xs={12} sm={6} lg={4} className="blog-card">
             <BlogCards
               imgPath={sport}
               imgSmall={sportSmall}
@@ -77,7 +77,7 @@ function Blog() {
             />
           </Col>
 
-          <Col md={4} className="blog-card">
+          <Col xs={12} sm={6} lg={4} className="blog-card">
             <BlogCards
               imgPath={computerscience}
               imgSmall={computerscienceSmall}
@@ -86,7 +86,7 @@ function Blog() {
             />
           </Col>
 
-          <Col md={4} className="blog-card">
+          <Col xs={12} sm={6} lg={4} className="blog-card">
             <BlogCards
               imgPath={family}
               imgSmall={familySmall}
@@ -95,7 +95,7 @@ function Blog() {
             />
           </Col>
 
-          <Col md={4} className="blog-card">
+          <Col xs={12} sm={6} lg={4} className="blog-card">
             <BlogCards
               imgPath={graduation}
               imgSmall={graduationSmall}
@@ -104,7 +104,7 @@ function Blog() {
             />
           </Col>
 
-          <Col md={4} className="blog-card">
+          <Col xs={12} sm={6} lg={4} className="blog-card">
             <BlogCards
               imgPath={egypt}
               imgSmall={egyptSmall}
@@ -117,7 +117,7 @@ function Blog() {
             The ninth card completes the grid: with `md={4}` a row fits three items, so
             with eight the last row ended in an empty gap.
           */}
-          <Col md={4} className="blog-card">
+          <Col xs={12} sm={6} lg={4} className="blog-card">
             <BlogCards
               imgPath={mountains}
               imgSmall={mountainsSmall}

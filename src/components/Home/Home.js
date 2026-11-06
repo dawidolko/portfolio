@@ -78,28 +78,28 @@ function Home() {
             A few highlights from my recent work.
           </p>
           <Row style={{ justifyContent: "center" }}>
-            <Col md={3} className="project-card">
+            <Col xs={12} sm={6} xl={3} className="project-card">
               <ProjectCard
                 slug="skribly"
                 imgPath={skribly}
                 description="A set of three tools for building software with AI coding agents: a task tracker, a desktop app that runs the agents and a shared library of rules."
               />
             </Col>
-            <Col md={3} className="project-card">
+            <Col xs={12} sm={6} xl={3} className="project-card">
               <ProjectCard
                 slug="bitrecruit"
                 imgPath={bitrecruit}
                 description="Recruitment platform built with Next.js featuring job listings, candidate management, employer dashboards, and a modern responsive design."
               />
             </Col>
-            <Col md={3} className="project-card">
+            <Col xs={12} sm={6} xl={3} className="project-card">
               <ProjectCard
                 slug="smartrecommender"
                 imgPath={smartrecommender}
                 description="Recommendation system built with Django and React featuring intelligent content suggestions, user authentication, and a fully responsive interface."
               />
             </Col>
-            <Col md={3} className="project-card">
+            <Col xs={12} sm={6} xl={3} className="project-card">
               <ProjectCard
                 slug="workstation"
                 imgPath={workstation}

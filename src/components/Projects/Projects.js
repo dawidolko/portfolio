@@ -191,7 +191,7 @@ function Projects() {
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           {featured.map((item, index) => (
-            <Col md={4} className="project-card" key={item.slug}>
+            <Col xs={12} sm={6} lg={4} className="project-card" key={item.slug}>
               <ProjectCard {...item} eager={index < 3} priority={index === 0} />
             </Col>
           ))}
@@ -201,7 +201,7 @@ function Projects() {
         </h2>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           {others.map((item) => (
-            <Col md={4} className="project-card project-card--compact" key={item.slug}>
+            <Col xs={12} sm={6} lg={4} className="project-card project-card--compact" key={item.slug}>
               <ProjectCard slug={item.slug} />
             </Col>
           ))}

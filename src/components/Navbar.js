@@ -46,7 +46,7 @@ function NavBar() {
     <Navbar
       expanded={expand}
       fixed="top"
-      expand="md"
+      expand="lg"
       role="navigation"
       aria-label="Primary"
       className={navColour ? "sticky" : "navbar"}
