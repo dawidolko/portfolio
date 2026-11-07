@@ -147,7 +147,7 @@ function Footer() {
                 aria-hidden="true"
                 style={{ marginRight: "8px", fontSize: "1.1em" }}
               />
-              <a href="mailto:dawid_olko@outlook.com">dawid_olko@outlook.com</a>
+              <a href="mailto:contact@dawidolko.pl">contact@dawidolko.pl</a>
             </p>
           </Col>
         </Row>
