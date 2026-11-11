@@ -8,20 +8,35 @@
     "dateSource": "user",
     "kind": "Developer tools for AI coding agents",
     "tagline": "From a task to an approved commit",
-    "summary": "Skribly is a set of three tools for people who build software with AI coding agents. Skribly Tracker holds the tasks, Skribly Agent starts AI agents on those tasks and shows what each one is doing, and agent-skills gives every agent the same rules for testing, reviewing and committing. Each app does one job and can be used alone; together they connect the task, the agent and the review, so nothing gets lost between them. Co-created with Piotr Smoła, Michał Pilecki, Konrad Pluta and Mateusz Olko as a non-commercial project.",
+    "summary": "Skribly is a private project I build with four friends, independent of my employment. It is a family of developer tools for people who write software with AI coding agents, and it is non-commercial: nothing is sold, it has no clients and offers no services. Skribly Agent is a desktop app for macOS, Windows and Linux that runs AI coding agents side by side and shows which one is working, which waits for a decision and which has finished; it is in development and its installers are not public yet. agent-skills gives seven coding agents 36 portable skills for tests, reviews, audits and clean commits that adapt to each project through a project profile. Skribly Tracker is the issue tracker of the family, with Kanban boards and a REST API described in OpenAPI. Skribly Core holds the shared contracts in TypeScript, Skribly UI is the design system, built to WCAG 2.2 AA as a target and shown at ui.skribly.pl, and Skribly Docs explains all of it at docs.skribly.pl in English and Polish. Co-created with Piotr Smoła, Michał Pilecki, Konrad Pluta and Mateusz Olko; the repositories stay private while we build.",
+    "metaDescription": "Skribly is a private, non-commercial project of five developers: developer tools for planning work and building software with AI coding agents.",
     "shows": [
       "Task tracking people and agents can share",
       "Agents you can watch while they work",
-      "One library of rules for every agent",
-      "You read every change before it goes in",
-      "Work stays on your own computer and server"
+      "Skills that adapt to each project",
+      "Shared contracts and one design system",
+      "Risky steps wait for your OK",
+      "Built to WCAG 2.2 AA as a target"
     ],
     "stack": [
       "Electron",
       "Laravel",
-      "TypeScript"
+      "Node.js",
+      "TypeScript",
+      "React Aria",
+      "Astro"
     ],
     "live": "https://skribly.pl",
+    "links": [
+      {
+        "label": "Documentation",
+        "url": "https://docs.skribly.pl"
+      },
+      {
+        "label": "Design system",
+        "url": "https://ui.skribly.pl"
+      }
+    ],
     "video": "",
     "private": true,
     "credit": "Piotr Smoła, Michał Pilecki, Konrad Pluta, Mateusz Olko"
