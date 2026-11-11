@@ -34,7 +34,7 @@ const featured = [
     slug: "skribly",
     imgPath: skribly,
     description:
-      "A set of three tools for building software with AI coding agents: a task tracker, a desktop app that runs the agents and a shared library of rules. Electron, Laravel, TypeScript.",
+      "A private, non-commercial project of five developers: a desktop app for AI coding agents, a task tracker and 36 shared skills. Electron, Laravel, TypeScript.",
   },
   {
     slug: "smartrecommender",

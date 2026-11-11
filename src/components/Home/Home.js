@@ -82,7 +82,7 @@ function Home() {
               <ProjectCard
                 slug="skribly"
                 imgPath={skribly}
-                description="A set of three tools for building software with AI coding agents: a task tracker, a desktop app that runs the agents and a shared library of rules."
+                description="A private, non-commercial project of five developers: a desktop app for AI coding agents, a task tracker and 36 shared skills."
               />
             </Col>
             <Col xs={12} sm={6} xl={3} className="project-card">
