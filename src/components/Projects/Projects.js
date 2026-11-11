@@ -34,7 +34,7 @@ const featured = [
     slug: "skribly",
     imgPath: skribly,
     description:
-      "A private, non-commercial project of five developers: a desktop app for AI coding agents, a task tracker and 36 shared skills. Electron, Laravel, TypeScript.",
+      "A private, non-commercial project of five developers: a desktop app for AI coding agents, a task tracker and 38 shared skills. Node.js, TypeScript, Electron.",
   },
   {
     slug: "smartrecommender",
