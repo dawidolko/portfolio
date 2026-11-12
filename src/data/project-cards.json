@@ -1,5 +1,22 @@
 [
   {
+    "slug": "frontend-skills",
+    "title": "Frontend Skills",
+    "start": "Nov 2026",
+    "end": "present",
+    "kind": "Open-source skills for AI coding agents",
+    "tagline": "Front-end skills for every AI coding agent",
+    "shows": [
+      "One command for every agent",
+      "275 sourced rules with fixes",
+      "Learns your project's conventions"
+    ],
+    "repo": "frontend-skills",
+    "live": "https://skills.dawidolko.pl",
+    "video": "",
+    "private": false
+  },
+  {
     "slug": "skribly",
     "title": "Skribly",
     "start": "Oct 2026",
