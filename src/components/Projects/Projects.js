@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import cards from "../../data/project-cards.json";
+import frontendskills from "../../assets/Projects/frontend-skills.svg";
 import skribly from "../../assets/Projects/skribly.svg";
 import smartrecommender from "../../assets/Projects/smartrecommender.svg";
 import fitnessgym from "../../assets/Projects/fitnessgym.svg";
@@ -30,6 +31,12 @@ import framevision from "../../assets/Projects/framevision.svg";
 import projectBg from "../../assets/Backgrounds/backgroundProjects.webp";
 
 const featured = [
+  {
+    slug: "frontend-skills",
+    imgPath: frontendskills,
+    description:
+      "Free, open-source front-end skills for 17 AI coding agents. One command learns the project's stack and installs what fits; the audit checks 275 sourced rules and gives the line and the fix. Node.js, no dependencies.",
+  },
   {
     slug: "skribly",
     imgPath: skribly,
