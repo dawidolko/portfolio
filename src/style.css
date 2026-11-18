@@ -863,13 +863,22 @@ button:focus {
 .project-card-img-wrapper {
   position: relative;
   overflow: hidden;
-  height: 200px;
+  height: 236px;
+  padding: 24px 24px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/*
+  The project images are square app logos with their own rounded background. Scaled to cover a wide box they
+  touched the top edge of the card and lost their corners, so they are contained in a padded frame instead.
+*/
 .project-card-img-wrapper img {
-  width: 100%;
+  width: auto !important;
+  max-width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   padding: 0 !important;
   border-radius: 0 !important;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
