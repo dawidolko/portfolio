@@ -23,7 +23,7 @@
 - **Responsive Design** — Fully optimized for mobile, tablet, and desktop
 - **Project Showcase** — Card grid with hover overlays, an info tooltip on every card and a detail page per project
 - **Personal Blog** — Photo blog with lightbox viewer (fullscreen with close button)
-- **Resume/CV** — Built-in PDF viewer with download option
+- **Resume/CV** — The live CV from cv.dawidolko.pl, readable on a phone, with a PDF download
 - **About Section** — Professional skillset badges, toolstack, and GitHub activity calendar
 - **SEO Optimized** — JSON-LD structured data, Open Graph tags, Google Search Console integration
 - **Performance** — Lazy loading, code splitting, optimized images, preconnect hints
@@ -44,9 +44,9 @@
 |---|---|
 | [<img src="docs/screenshots/projects.webp" alt="Projects page with card grid and hover overlays linking to GitHub and live demos"/>](docs/screenshots/projects.webp) | [<img src="docs/screenshots/blog.webp" alt="Blog page with photo cards opening in a fullscreen lightbox"/>](docs/screenshots/blog.webp) |
 
-| Resume — built-in PDF viewer |
+| Resume — the live CV from cv.dawidolko.pl |
 |---|
-| [<img src="docs/screenshots/resume.webp" alt="Resume page rendering the CV in an embedded PDF viewer with a download button" width="49%"/>](docs/screenshots/resume.webp) |
+| [<img src="docs/screenshots/resume.webp" alt="Resume page showing the live CV from cv.dawidolko.pl with a download button" width="49%"/>](docs/screenshots/resume.webp) |
 
 ---
 
@@ -95,7 +95,7 @@ src/
 │   ├── Blog/          # Blog cards with lightbox and hover overlay
 │   ├── Home/          # Landing page, intro, social links
 │   ├── Projects/      # Project cards, tooltip and detail page
-│   ├── Resume/        # PDF resume viewer
+│   ├── Resume/        # the live CV from cv.dawidolko.pl in a frame
 │   ├── Navbar.js      # Glassmorphism navigation bar
 │   ├── Footer.js      # Multi-column footer with tech badges
 │   ├── Particle.js    # TSParticles background
@@ -125,7 +125,7 @@ Automatically deployed to **GitHub Pages** via GitHub Actions on push to `main`.
 - Canonical URL configured
 - `robots.txt`, `sitemap.xml` and `llms.txt` included
 - `scripts/static-routes.js` runs the built bundle in jsdom after the build and writes the rendered page per route with the stylesheet trimmed and inlined, which React then hydrates; project detail pages are `noindex, follow` because they are indexed on dawidolko.pl
-- The resume page reads the CV from the API of [cv.dawidolko.pl](https://cv.dawidolko.pl/api/cv.json): it opens on the preview picture from there and loads the PDF viewer on demand, so a new CV needs no change here.
+- The resume page shows the live CV from [cv.dawidolko.pl](https://cv.dawidolko.pl/) in a frame that takes the height the page reports, so it reads well on a phone and a new CV needs no change here. The download buttons point at the PDF there.
 - Project text comes from `npm run projects:sync`; screenshots load from dawidolko.pl, listed in its `data/media.json`
 
 ---

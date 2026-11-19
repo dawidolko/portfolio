@@ -1251,49 +1251,47 @@ button:focus {
 }
 
 .resume {
-  padding-top: 50px;
+  padding-top: 24px;
   padding-bottom: 50px;
   justify-content: center;
 }
 
-/*
- * An A4 page at the scale the document is drawn, 1011px wide or 357px on a
- * phone. The size is held here so the picture and the canvas that replaces it
- * take exactly the same box.
- */
-.resume-page {
+.resume-actions {
+  justify-content: center;
+  gap: 0.75rem;
   position: relative;
-  width: 1011px;
-  max-width: 100%;
-  aspect-ratio: 595 / 842;
-  padding: 0;
-  outline: none;
 }
 
-.resume-preview {
+.resume-actions .btn {
+  width: auto;
+  max-width: 280px;
+}
+
+/*
+ * The live CV from cv.dawidolko.pl. Its height comes from the page inside
+ * (ResumeNew.js); the fallback below covers the moment before it reports.
+ */
+.resume-frame {
   display: block;
   width: 100%;
-  height: 100%;
+  max-width: 210mm;
+  height: 1500px;
+  margin: 0 auto;
   padding: 0;
   border: 0;
-  background: none;
-  cursor: pointer;
-}
-
-.resume-preview img {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.resume-pdf {
-  position: absolute;
-  inset: 0;
+  border-radius: 6px;
+  background: #ffffff;
+  box-shadow: 0 8px 28px rgb(0 0 0 / 35%);
 }
 
 @media (max-width: 786px) {
-  .resume-page {
-    width: 357px;
+  .resume-section {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .resume-frame {
+    height: 2600px;
   }
 }
 

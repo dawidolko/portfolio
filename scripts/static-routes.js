@@ -220,8 +220,6 @@ async function main() {
     else write(page.route, html);
   }
 
-  fs.copyFileSync(require.resolve("pdfjs-dist/build/pdf.worker.min.js"), path.join(buildDir, "pdf.worker.min.js"));
-
   const routeList = Object.entries(routes)
     .map(([route, meta]) => `- [${meta.heading}](${SITE}${route === "/" ? "/" : `${route}/`}): ${meta.description}`)
     .join("\n");
