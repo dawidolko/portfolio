@@ -2,13 +2,14 @@ import React, { lazy, Suspense, useRef, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
-import pdf from "../../assets/Dawid_Olko_CV.pdf";
-import preview714 from "../../assets/Resume/cv-714.webp";
-import preview1012 from "../../assets/Resume/cv-1012.webp";
-import preview2024 from "../../assets/Resume/cv-2024.webp";
 import { AiOutlineDownload } from "react-icons/ai";
 
 const ResumePdf = lazy(() => import("./ResumePdf"));
+
+// The CV lives in cv.dawidolko.pl only; these are the stable addresses of its API (api/cv.json there).
+const CV = "https://cv.dawidolko.pl";
+const pdf = `${CV}/Dawid_Olko_CV_EN.pdf`;
+const preview = (width) => `${CV}/api/preview/en-${width}.webp`;
 
 /*
  * The page opens on a picture of the CV. react-pdf with its worker is the
@@ -65,8 +66,8 @@ function ResumeNew() {
               }}
             >
               <img
-                src={preview1012}
-                srcSet={`${preview714} 714w, ${preview1012} 1012w, ${preview2024} 2024w`}
+                src={preview(1012)}
+                srcSet={`${preview(714)} 714w, ${preview(1012)} 1012w, ${preview(2024)} 2024w`}
                 sizes="(max-width: 786px) 357px, 1011px"
                 width="1012"
                 height="1433"

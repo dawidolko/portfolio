@@ -14,7 +14,6 @@
  * also left out of sitemap.xml. build/404.html answers everything else with a
  * real 404 status.
  */
-const crypto = require("crypto");
 const fs = require("fs");
 const path = require("path");
 const { JSDOM, ResourceLoader, VirtualConsole } = require("jsdom");
@@ -32,11 +31,6 @@ if (!fs.existsSync(indexPath)) {
   process.exit(1);
 }
 
-const cvHash = crypto.createHash("sha256").update(fs.readFileSync(path.join(root, "src/assets/Dawid_Olko_CV.pdf"))).digest("hex");
-if (cvHash !== fs.readFileSync(path.join(root, "src/assets/Resume/source.sha256"), "utf8").trim()) {
-  console.error("The resume preview is older than the PDF — run npm run resume:preview.");
-  process.exit(1);
-}
 
 const shell = fs.readFileSync(indexPath, "utf8");
 const manifest = JSON.parse(fs.readFileSync(path.join(buildDir, "asset-manifest.json"), "utf8"));
