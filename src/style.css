@@ -922,7 +922,8 @@ button:focus {
 }
 
 .project-card-desc {
-  text-align: justify;
+  text-align: center;
+  text-wrap: pretty;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -933,15 +934,46 @@ button:focus {
   color: rgba(255, 255, 255, 0.7);
 }
 
+/*
+  The buttons sit centred under the centred title. A card measures its own width (a container query), so the
+  same card works in the three-column projects page and the four-column home page: when three buttons no longer
+  fit on one line, Show takes the full width and the links share the line below, instead of one button
+  dropping alone to a second line.
+*/
+.project-card-view .card-body {
+  container-type: inline-size;
+}
+
 .project-card-buttons {
   display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
   gap: 8px;
-  flex-wrap: wrap;
 }
 
 .project-card-buttons .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 10px;
+  white-space: nowrap;
   font-size: 0.85em;
   border-radius: 8px;
+}
+
+@container (max-width: 236px) {
+  .project-card-buttons {
+    flex-wrap: wrap;
+  }
+
+  .project-card-buttons .btn {
+    flex: 1 1 0;
+  }
+
+  .project-card-buttons .btn:first-child:nth-last-child(3) {
+    flex-basis: 100%;
+  }
 }
 
 /* --------- */

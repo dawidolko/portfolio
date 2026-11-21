@@ -47,7 +47,8 @@ function ProjectCards({ slug, imgPath, description, eager, priority }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${project.title} source code on GitHub (opens in a new tab)`}>
-              <BsGithub aria-hidden="true" /> &nbsp;GitHub
+              <BsGithub aria-hidden="true" />
+              GitHub
             </Button>
           )}
           {project.live && (
@@ -57,7 +58,8 @@ function ProjectCards({ slug, imgPath, description, eager, priority }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${project.title} live demo (opens in a new tab)`}>
-              <CgWebsite aria-hidden="true" /> &nbsp;Demo
+              <CgWebsite aria-hidden="true" />
+              Demo
             </Button>
           )}
           {!project.live && project.video && (
@@ -67,7 +69,8 @@ function ProjectCards({ slug, imgPath, description, eager, priority }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${project.title} video walkthrough on YouTube (opens in a new tab)`}>
-              <BsYoutube aria-hidden="true" /> &nbsp;Video
+              <BsYoutube aria-hidden="true" />
+              Video
             </Button>
           )}
         </div>
