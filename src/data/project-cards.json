@@ -17,6 +17,23 @@
     "private": false
   },
   {
+    "slug": "comment-moderator-llm",
+    "title": "Comment Moderator LLM",
+    "start": "Nov 2026",
+    "end": "Nov 2026",
+    "kind": "LLM application",
+    "tagline": "Forum comment moderation with a local LLM and RAG over the forum rules",
+    "shows": [
+      "Verdicts constrained by a JSON schema",
+      "Memes read by a vision model",
+      "Batch moderation with TXT and SVG reports"
+    ],
+    "repo": "CommentModerator-LLM-Python",
+    "live": "",
+    "video": "",
+    "private": false
+  },
+  {
     "slug": "skribly",
     "title": "Skribly",
     "start": "Oct 2026",
