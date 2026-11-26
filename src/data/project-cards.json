@@ -34,6 +34,40 @@
     "private": false
   },
   {
+    "slug": "student-assistant-llm",
+    "title": "Student Assistant LLM",
+    "start": "Nov 2026",
+    "end": "Nov 2026",
+    "kind": "LLM application",
+    "tagline": "Polish student assistant on Bielik with RAG over university documents",
+    "shows": [
+      "Answers that cite the paragraph",
+      "Hybrid search with bge-m3",
+      "Questions about photos"
+    ],
+    "repo": "StudentAssistant-LLM-Python",
+    "live": "",
+    "video": "",
+    "private": false
+  },
+  {
+    "slug": "marketing-creator-llm",
+    "title": "Marketing Creator LLM",
+    "start": "Nov 2026",
+    "end": "Nov 2026",
+    "kind": "LLM application",
+    "tagline": "Marketing copy from a local LLM, from typed facts or a product photo",
+    "shows": [
+      "Three brand voices in two languages",
+      "Copy from a product photo",
+      "Batch catalogue from a CSV"
+    ],
+    "repo": "MarketingCreator-LLM-Python",
+    "live": "",
+    "video": "",
+    "private": false
+  },
+  {
     "slug": "skribly",
     "title": "Skribly",
     "start": "Oct 2026",
